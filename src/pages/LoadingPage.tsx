@@ -8,13 +8,13 @@ import { track } from '../lib/analytics';
 const RITUAL_DURATION_MS = 3500;
 
 const ritualPhases = [
-  { text: '우주 에너지 채널 연결 중...', sub: '당신의 고유 파장을 탐색합니다' },
-  { text: '생년월일 기반 운명선 추적 중...', sub: '수비학 알고리즘 가동' },
-  { text: '최근 48시간 행동 패턴 분석 중...', sub: '무의식적 선택들을 읽고 있습니다' },
-  { text: '금융 리듬과 감정 주기 대조 중...', sub: '숨겨진 상관관계 발견' },
-  { text: '오늘의 행운 좌표 계산 중...', sub: '시간대별 에너지 흐름 매핑' },
-  { text: '귀인(貴人) 시그니처 탐색 중...', sub: '당신과 공명하는 기운 감지' },
-  { text: '최종 운세 리포트 생성 중...', sub: '결과가 거의 완성되었습니다' },
+  { text: '✨ 별들과 교신 중...', sub: '당신의 영혼 주파수를 찾고 있습니다' },
+  { text: '🌙 태어난 날의 기운을 읽는 중...', sub: '운명의 실이 펼쳐집니다' },
+  { text: '🔮 과거의 선택들을 비추는 중...', sub: '숨겨진 패턴이 드러납니다' },
+  { text: '💫 오늘의 에너지 흐름 감지 중...', sub: '시간의 강이 흐르고 있습니다' },
+  { text: '🌟 행운의 좌표를 계산 중...', sub: '별자리가 속삭입니다' },
+  { text: '👤 귀인의 기운을 탐색 중...', sub: '인연의 실이 빛납니다' },
+  { text: '📜 운명의 두루마리를 펼치는 중...', sub: '당신의 이야기가 드러납니다' },
 ];
 
 export default function LoadingPage() {
@@ -69,43 +69,66 @@ export default function LoadingPage() {
 
   return (
     <div className="container">
-      <Header title="운명 분석 중" subtitle={`${birthYear}년생의 오늘을 읽고 있습니다`} />
+      <Header title="운명을 읽는 중" subtitle={`${birthYear}년생의 별자리가 속삭입니다`} />
 
-      <div className="card" style={{ textAlign: 'center', padding: '24px 16px' }}>
+      <div className="card" style={{ textAlign: 'center', padding: '32px 16px' }}>
+        {/* Mystical Orb */}
         <div style={{
-          width: 64,
-          height: 64,
-          margin: '0 auto 16px',
-          borderRadius: '50%',
-          background: 'conic-gradient(from 0deg, rgba(59,130,246,0.8), rgba(139,92,246,0.8), rgba(236,72,153,0.8), rgba(59,130,246,0.8))',
-          animation: 'spin 2s linear infinite',
-        }} />
+          position: 'relative',
+          width: 80,
+          height: 80,
+          margin: '0 auto 24px',
+        }}>
+          <div style={{
+            position: 'absolute',
+            inset: 0,
+            borderRadius: '50%',
+            background: 'radial-gradient(circle at 30% 30%, rgba(255,215,0,0.4), rgba(147,112,219,0.6), rgba(75,0,130,0.8))',
+            animation: 'pulse 2s ease-in-out infinite',
+            boxShadow: '0 0 40px rgba(147, 112, 219, 0.6), 0 0 80px rgba(255, 215, 0, 0.3)',
+          }} />
+          <div style={{
+            position: 'absolute',
+            inset: 4,
+            borderRadius: '50%',
+            background: 'radial-gradient(circle at 40% 40%, rgba(255,255,255,0.3), transparent 60%)',
+          }} />
+          <div style={{
+            position: 'absolute',
+            inset: 0,
+            borderRadius: '50%',
+            border: '2px solid rgba(255, 215, 0, 0.3)',
+            animation: 'spin 8s linear infinite',
+          }} />
+        </div>
 
-        <div className="badge" style={{ marginBottom: 12 }}>
+        <div className="h2 glow-text" style={{ marginBottom: 8, fontSize: 16 }}>
           {phase.text}
         </div>
 
-        <div className="small" style={{ marginBottom: 16, minHeight: 18 }}>
+        <div className="small" style={{ marginBottom: 20, minHeight: 18, color: 'rgba(255,255,255,0.7)' }}>
           {phase.sub}
         </div>
 
+        {/* Progress Bar */}
         <div style={{
           width: '100%',
           height: 6,
           borderRadius: 3,
-          background: 'rgba(255,255,255,0.1)',
+          background: 'rgba(147, 112, 219, 0.2)',
           overflow: 'hidden',
         }}>
           <div style={{
             width: `${progress}%`,
             height: '100%',
             borderRadius: 3,
-            background: 'linear-gradient(90deg, #3B82F6, #8B5CF6)',
+            background: 'linear-gradient(90deg, #9370db, #ffd700)',
+            boxShadow: '0 0 10px rgba(147, 112, 219, 0.6)',
             transition: 'width 0.1s linear',
           }} />
         </div>
 
-        <div className="small" style={{ marginTop: 12, opacity: 0.6 }}>
+        <div className="small" style={{ marginTop: 12, color: 'var(--accent)' }}>
           {Math.round(progress)}% 완료
         </div>
       </div>
@@ -114,6 +137,10 @@ export default function LoadingPage() {
         @keyframes spin {
           from { transform: rotate(0deg); }
           to { transform: rotate(360deg); }
+        }
+        @keyframes pulse {
+          0%, 100% { transform: scale(1); opacity: 1; }
+          50% { transform: scale(1.05); opacity: 0.8; }
         }
       `}</style>
     </div>
