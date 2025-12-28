@@ -1,3 +1,5 @@
+import { parse } from 'yaml';
+import rawYaml from '../data/copyVariants.yaml?raw';
 import type { Variant } from './variant';
 
 export type CopyPack = {
@@ -9,23 +11,28 @@ export type CopyPack = {
   unlockedReason: string;
 };
 
-export function copyFor(v: Variant): CopyPack {
-  if (v === 'A') {
-    return {
-      landingSubtitle: '오늘의 기운이 당신을 기다립니다. 운명의 문을 여세요.',
-      startCta: '✨ 운명의 문 열기',
-      shareDaily: (link) => `✨ 오늘 별들이 내게 전한 메시지야. 너의 운명도 확인해봐: ${link}`,
-      shareChemistry: (link) => `🔮 우리 사이의 인연이 궁금해. 운명의 실을 이어볼래? ${link}`,
-      lockReason: '깊은 운명이 봉인되어 있습니다. 기운을 모으거나 인연을 맺으면 열립니다.',
-      unlockedReason: '봉인이 해제되었습니다. 인연의 실을 이어 운명을 공유하세요.',
-    };
-  }
+type RawCopyPack = {
+  landingSubtitle: string;
+  startCta: string;
+  shareDaily: string;
+  shareChemistry: string;
+  lockReason: string;
+  unlockedReason: string;
+};
+
+const data = parse(rawYaml) as { A: RawCopyPack; B: RawCopyPack };
+
+function toCopyPack(raw: RawCopyPack): CopyPack {
   return {
-    landingSubtitle: '별들이 당신에게 속삭이고 있어요. 오늘의 운명을 확인하세요.',
-    startCta: '✨ 운명 확인하기',
-    shareDaily: (link) => `🌟 오늘 나의 운명이 도착했어. 너도 확인해봐: ${link}`,
-    shareChemistry: (link) => `💫 우리의 인연이 궁금하지 않아? 운명을 확인해보자: ${link}`,
-    lockReason: '깊은 메시지가 봉인되어 있어요. 기운을 모으거나 인연을 맺으면 열려요.',
-    unlockedReason: '운명의 봉인이 풀렸어요. 인연에게 공유하면 함께 볼 수 있어요.',
+    landingSubtitle: raw.landingSubtitle,
+    startCta: raw.startCta,
+    shareDaily: (link: string) => raw.shareDaily.replace('{link}', link),
+    shareChemistry: (link: string) => raw.shareChemistry.replace('{link}', link),
+    lockReason: raw.lockReason,
+    unlockedReason: raw.unlockedReason,
   };
+}
+
+export function copyFor(v: Variant): CopyPack {
+  return v === 'A' ? toCopyPack(data.A) : toCopyPack(data.B);
 }

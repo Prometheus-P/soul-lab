@@ -10,3 +10,4 @@ server/data/
 # Reference docs (not source)
 llms-*.txt
 toss-examples.md
+.vercel
