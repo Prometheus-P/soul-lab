@@ -1,6 +1,15 @@
-# Soul Lab (소울 랩) — Apps in Toss WebView MVP
+# Soul Lab (소울 랩)
 
-## 0) 바로 실행
+[![License](https://img.shields.io/badge/license-Proprietary-red.svg)](./LICENSE)
+[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](./package.json)
+
+> **⚠️ PROPRIETARY SOFTWARE** - 이 프로젝트는 비공개 비즈니스 프로젝트입니다. 무단 복제, 배포, 사용을 금합니다.
+
+Toss WebView 기반 운세/궁합 분석 미니앱
+
+---
+
+## 빠른 시작
 ```bash
 pnpm install
 # 로컬 브라우저 확인(기본 UI만): 
