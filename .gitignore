@@ -3,3 +3,10 @@ dist
 .env
 .DS_Store
 server/data/
+
+# Build cache
+*.tsbuildinfo
+
+# Reference docs (not source)
+llms-*.txt
+toss-examples.md
