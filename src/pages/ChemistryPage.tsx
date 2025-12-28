@@ -114,15 +114,15 @@ const onMakeResponseLink = async () => {
 
   return (
     <div className="container">
-      <Header title="궁합 분석" subtitle="둘 다 접속해야 결과가 열립니다." />
+      <Header title="인연의 궁합" subtitle="두 영혼이 만나 운명이 드러납니다" />
 
       {status.mode === 'invalid' && (
         <div className="card">
-          <div className="h2">오류</div>
+          <div className="h2 glow-text">🌙 연결 끊김</div>
           <p className="p" style={{ marginTop: 8 }}>{status.message}</p>
           <div style={{ marginTop: 12 }}>
             <Button size="large" color="dark" variant="weak" display="full" onClick={() => nav('/')}>
-              홈으로
+              운명의 문으로
             </Button>
           </div>
         </div>
@@ -130,11 +130,11 @@ const onMakeResponseLink = async () => {
 
       {status.mode === 'expired' && (
         <div className="card">
-          <div className="h2">만료</div>
+          <div className="h2 glow-text">⏳ 시간의 흐름</div>
           <p className="p" style={{ marginTop: 8 }}>{status.message}</p>
           <div style={{ marginTop: 12 }}>
             <Button size="large" color="dark" variant="weak" display="full" onClick={() => nav('/')}>
-              홈으로
+              운명의 문으로
             </Button>
           </div>
         </div>
@@ -142,11 +142,11 @@ const onMakeResponseLink = async () => {
 
       {status.mode === 'outsider' && (
         <div className="card">
-          <div className="h2">접근 제한</div>
+          <div className="h2 glow-text">🔮 봉인된 인연</div>
           <p className="p" style={{ marginTop: 8 }}>{status.message}</p>
           <div style={{ marginTop: 12 }}>
             <Button size="large" color="dark" variant="weak" display="full" onClick={() => nav('/')}>
-              홈으로
+              운명의 문으로
             </Button>
           </div>
         </div>
@@ -154,11 +154,11 @@ const onMakeResponseLink = async () => {
 
       {status.mode === 'selfInvite' && (
         <div className="card">
-          <div className="h2">초대 대기</div>
+          <div className="h2 glow-text">✨ 인연의 실 대기</div>
           <p className="p" style={{ marginTop: 8 }}>{status.message}</p>
           <div style={{ marginTop: 12 }}>
             <Button size="large" color="dark" variant="weak" display="full" onClick={() => nav('/')}>
-              홈으로
+              운명의 문으로
             </Button>
           </div>
         </div>
@@ -179,14 +179,14 @@ const onMakeResponseLink = async () => {
               }}
             />
           )}
-          <div className="card">
-            <div className="h2">초대장이 도착했습니다</div>
+          <div className="card" style={{ border: '1px solid rgba(147, 112, 219, 0.4)' }}>
+            <div className="h2 mystical-title">✨ 인연의 부름</div>
             <p className="p" style={{ marginTop: 8 }}>
-              응답 링크를 만들어 상대에게 보내면 궁합이 열립니다.
+              누군가 당신과의 운명을 알고 싶어합니다. 응답하면 둘의 궁합이 드러납니다.
             </p>
             <div style={{ marginTop: 12 }}>
               <Button size="large" color="primary" variant="fill" display="full" onClick={onMakeResponseLink}>
-                궁합 확인하고 응답 보내기
+                ✨ 인연에 응답하기
               </Button>
             </div>
           </div>
@@ -196,30 +196,34 @@ const onMakeResponseLink = async () => {
       {status.mode === 'paired' && report && (
         <>
           <div className="card" style={{ marginBottom: 12 }}>
-            <div className="h2">궁합 점수</div>
-            <div style={{ fontSize: 32, fontWeight: 900, marginTop: 8 }}>{report.score}점</div>
-            <div className="small">{report.label}</div>
+            <div className="row">
+              <div className="h2 glow-text">인연의 기운</div>
+              <div className="score-display">{report.score}</div>
+            </div>
+            <div className="small" style={{ color: 'var(--accent)' }}>{report.label}</div>
           </div>
 
           <div className="card" style={{ marginBottom: 12 }}>
-            <div className="h2">요약</div>
+            <div className="h2 glow-text">🌟 운명의 메시지</div>
             <p className="p" style={{ marginTop: 8 }}>{report.summary}</p>
           </div>
 
           <div className="card" style={{ marginBottom: 12 }}>
-            <div className="h2">상세</div>
+            <div className="h2 glow-text">🔮 깊은 통찰</div>
 
             {unlocked ? (
               <div style={{ marginTop: 10 }}>
-                <p className="p"><b>요약</b>: {report.summary}</p>
-                <p className="p"><b>마찰 포인트</b>: {report.friction}</p>
-                <p className="p"><b>관계 부스터</b>: {report.booster}</p>
+                <p className="p"><b>💫 요약</b>: {report.summary}</p>
+                <hr className="hr" />
+                <p className="p"><b>⚡ 마찰의 기운</b>: {report.friction}</p>
+                <hr className="hr" />
+                <p className="p"><b>🌈 관계의 부스터</b>: {report.booster}</p>
               </div>
             ) : (
               <>
                 <LockedBlur
-                  title="상세 분석 잠김"
-                  subtitle="광고 시청으로 강점/마찰/부스터를 확인하세요"
+                  title="✨ 깊은 인연의 봉인"
+                  subtitle="기운을 모아 둘의 강점, 마찰, 부스터를 열어보세요"
                   onUnlock={unlockToday}
                   sections={[
                     { label: '강점' },
@@ -240,16 +244,16 @@ const onMakeResponseLink = async () => {
 
             <div style={{ marginTop: 10 }}>
               <Button size="large" color="dark" variant="weak" display="full" onClick={onSharePaired}>
-                결과 링크 공유
+                인연의 결과 공유하기
               </Button>
             </div>
           </div>
 
-          <div className="card">
-            <div className="h2">다음</div>
+          <div className="card" style={{ border: '1px solid rgba(147, 112, 219, 0.3)' }}>
+            <div className="h2 mystical-title">🌙 다음 여정</div>
             <div style={{ marginTop: 12 }}>
               <Button size="large" color="primary" variant="fill" display="full" onClick={() => nav('/')}>
-                오늘 운세로 돌아가기
+                오늘의 운명으로 돌아가기
               </Button>
             </div>
           </div>
