@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import { preloadRewardedAd } from '../lib/toss';
-import { hasRequiredAgreement, hasBirthDate, getBirthDate } from '../lib/storage';
+import { hasRequiredAgreement, hasBirthDate, getBirthDate, getLocal } from '../lib/storage';
 import { track } from '../lib/analytics';
 
-const RITUAL_DURATION_MS = 3500;
+const FIRST_VISIT_DURATION_MS = 3500;
+const RETURN_VISIT_DURATION_MS = 800;
 
 const ritualPhases = [
   { text: '✨ 별들과 교신 중...', sub: '당신의 영혼 주파수를 찾고 있습니다' },
@@ -26,6 +27,13 @@ export default function LoadingPage() {
 
   const birthYear = getBirthDate()?.slice(0, 4) || '????';
 
+  // Check if this is a returning user (has visited result page before)
+  const isReturningUser = useMemo(() => {
+    return getLocal<boolean>('sl_has_seen_result') === true;
+  }, []);
+
+  const duration = isReturningUser ? RETURN_VISIT_DURATION_MS : FIRST_VISIT_DURATION_MS;
+
   useEffect(() => {
     if (!hasRequiredAgreement() || !hasBirthDate()) {
       nav('/agreement', { replace: true });
@@ -41,9 +49,9 @@ export default function LoadingPage() {
       }
     } catch {}
 
-    const phaseInterval = RITUAL_DURATION_MS / ritualPhases.length;
+    const phaseInterval = duration / ritualPhases.length;
     const progressInterval = 50;
-    const progressStep = 100 / (RITUAL_DURATION_MS / progressInterval);
+    const progressStep = 100 / (duration / progressInterval);
 
     const t1 = setInterval(() => {
       setPhaseIndex((prev) => Math.min(prev + 1, ritualPhases.length - 1));
@@ -55,15 +63,16 @@ export default function LoadingPage() {
 
     const t3 = setTimeout(() => {
       track('loading_complete');
-      nav('/result', { replace: true });
-    }, RITUAL_DURATION_MS);
+      // Don't use replace so Result stays in browser history
+      nav('/result');
+    }, duration);
 
     return () => {
       clearInterval(t1);
       clearInterval(t2);
       clearTimeout(t3);
     };
-  }, [nav]);
+  }, [nav, duration]);
 
   const phase = ritualPhases[phaseIndex];
 

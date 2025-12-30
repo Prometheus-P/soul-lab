@@ -5,10 +5,13 @@ import LockedResultView from '../components/LockedResultView';
 import UnlockedResultView from '../components/UnlockedResultView';
 import { useUnlockLogic } from '../hooks/useUnlockLogic';
 import { track } from '../lib/analytics';
+import { setLocal } from '../lib/storage';
 
 export default function ResultPage() {
   React.useEffect(() => {
     track('result_view');
+    // Mark that user has seen result page (for faster loading on return visits)
+    setLocal('sl_has_seen_result', true);
   }, []);
 
   const { state, actions, reportData } = useUnlockLogic();
@@ -36,7 +39,7 @@ export default function ResultPage() {
       </div>
 
       {state.isLocked ? (
-        <LockedResultView state={state} actions={actions} />
+        <LockedResultView state={state} actions={actions} reportData={reportData} />
       ) : (
         <UnlockedResultView state={state} actions={actions} reportData={reportData} />
       )}

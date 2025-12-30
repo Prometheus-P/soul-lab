@@ -2,6 +2,11 @@ import React from 'react';
 
 const MASKED_PLACEHOLDER = '✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦';
 
+interface Section {
+  label: string;
+  preview?: string; // Optional preview hint (first few words)
+}
+
 export default function LockedBlur({
   title,
   subtitle,
@@ -11,7 +16,7 @@ export default function LockedBlur({
   title: string;
   subtitle: string;
   onUnlock: () => void;
-  sections: { label: string }[];
+  sections: Section[];
 }) {
   return (
     <div className="lockWrap">
@@ -21,7 +26,16 @@ export default function LockedBlur({
             <React.Fragment key={s.label}>
               {i > 0 && <hr className="hr" />}
               <div className="h2" style={{ color: 'rgba(147, 112, 219, 0.5)' }}>{s.label}</div>
-              <p className="p" style={{ marginTop: 8, color: 'rgba(147, 112, 219, 0.3)' }}>{MASKED_PLACEHOLDER}</p>
+              <p className="p" style={{ marginTop: 8, color: 'rgba(147, 112, 219, 0.3)' }}>
+                {s.preview ? (
+                  <span>
+                    <span style={{ color: 'rgba(255, 215, 0, 0.6)' }}>{s.preview}</span>
+                    <span style={{ filter: 'blur(4px)', marginLeft: 4 }}>... 더 알아보기</span>
+                  </span>
+                ) : (
+                  MASKED_PLACEHOLDER
+                )}
+              </p>
             </React.Fragment>
           ))}
         </div>

@@ -1,7 +1,8 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import { Button, AgreementV4, TextField } from '@toss/tds-mobile';
+import { Button, AgreementV4 } from '@toss/tds-mobile';
 import Header from '../components/Header';
+import BirthDatePicker from '../components/BirthDatePicker';
 import { COMPLIANCE_COPY } from '../lib/complianceCopy';
 import { getAgreement, setAgreement, getBirthDate, setBirthDate, hasRequiredAgreement, hasBirthDate } from '../lib/storage';
 import { track } from '../lib/analytics';
@@ -40,7 +41,7 @@ export default function AgreementPage() {
     setErr(null);
     if (!isYYYYMMDD(birth)) {
       track('agreement_error', { reason: 'birth_invalid' });
-      setErr('생년월일을 YYYYMMDD로 입력하세요. 예: 19990101');
+      setErr('생년월일을 모두 선택해주세요.');
       return;
     }
     if (!terms) {
@@ -104,19 +105,14 @@ export default function AgreementPage() {
 
         <hr className="hr" />
         <div className="h2 glow-text">{COMPLIANCE_COPY.birthTitle}</div>
-        <div className="small">{COMPLIANCE_COPY.birthHint}</div>
+        <div className="small" style={{ marginBottom: 8 }}>{COMPLIANCE_COPY.birthHint}</div>
 
-        <div style={{ marginTop: 8 }}>
-          <TextField
-            value={birth}
-            onChange={(v) => setBirth(v.replace(/[^0-9]/g, '').slice(0, 8))}
-            placeholder="YYYYMMDD"
-            inputMode="numeric"
-            maxLength={8}
-            error={!!err}
-            errorMessage={err ?? undefined}
-          />
-        </div>
+        <BirthDatePicker
+          value={birth}
+          onChange={setBirth}
+          error={!!err}
+          errorMessage={err ?? undefined}
+        />
       </div>
 
       <Button

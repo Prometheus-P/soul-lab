@@ -3,16 +3,24 @@ import { useNavigate } from 'react-router-dom';
 import { Button } from '@toss/tds-mobile';
 import LockedBlur from './LockedBlur';
 import AdRewardButton from './AdRewardButton';
-import { UnlockActions, UnlockState } from '../hooks/useUnlockLogic';
+import { UnlockActions, UnlockState, ReportData } from '../hooks/useUnlockLogic';
 
 interface LockedResultViewProps {
   state: UnlockState;
   actions: UnlockActions;
+  reportData: ReportData;
 }
 
-export default function LockedResultView({ state, actions }: LockedResultViewProps) {
+// Extract preview (first N characters) from a string
+function getPreview(text: string, maxLen = 12): string {
+  if (text.length <= maxLen) return text;
+  return text.slice(0, maxLen);
+}
+
+export default function LockedResultView({ state, actions, reportData }: LockedResultViewProps) {
   const nav = useNavigate();
   const adGroupId = (import.meta.env.VITE_REWARDED_AD_GROUP_ID as string) || 'ait-ad-test-rewarded-id';
+  const { report } = reportData;
 
   return (
     <>
@@ -21,9 +29,9 @@ export default function LockedResultView({ state, actions }: LockedResultViewPro
         subtitle="기운을 모아 행운의 시간, 귀인, 주의점을 열어보세요"
         onUnlock={actions.unlock}
         sections={[
-          { label: '행운의 시간' },
-          { label: '귀인' },
-          { label: '주의할 것' },
+          { label: '🌟 행운의 시간', preview: getPreview(report.luckyTime) },
+          { label: '👤 오늘의 귀인', preview: getPreview(report.helper) },
+          { label: '⚠️ 주의할 기운', preview: getPreview(report.caution) },
         ]}
       />
 
