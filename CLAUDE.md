@@ -21,6 +21,13 @@ pnpm build:web         # TypeScript + Vite build
 pnpm build:server      # Compile server TypeScript
 pnpm lint              # ESLint
 pnpm format            # Prettier
+
+# Testing
+pnpm test              # Watch mode
+pnpm test:run          # Single run (frontend only)
+pnpm test:server       # Backend tests only
+pnpm test:all          # All tests (frontend + backend)
+npx vitest run src/lib/seed.test.ts  # Single test file
 ```
 
 ## Architecture
@@ -37,6 +44,20 @@ pnpm format            # Prettier
 - **Invite System**: Create/join/reissue invites with 24h TTL for paired chemistry unlocks
 - **Rate Limiting**: Fixed-window limits per IP and user key (configurable via env)
 - **Reward Tracking**: Server-side record of rewarded ad completions (1 per user per day)
+- **Credit System** (`server/src/credits/store.ts`): 크레딧 잔액, 구매, 트랜잭션 관리
+  - IAP Flow: `/api/credits/purchase/start` → `/api/credits/purchase/complete`
+  - 보상: 레퍼럴(초대자 +5, 피초대자 +3), 스트릭(7d:+3, 14d:+5, 21d:+10, 30d:+20)
+- **Tarot Engine** (`server/src/tarot/engine.ts`): AI 기반 타로 해석
+
+### Credit & IAP (`src/lib/iap.ts`)
+- `purchaseCredits`: 인앱결제로 크레딧 구매
+- `claimReferralReward`: 레퍼럴 보상 청구
+- `claimStreakReward`: 스트릭 보상 청구 (마일스톤 + 3일 간격 데일리 보너스)
+
+### Tarot (`src/lib/tarot.ts`)
+- 78장 타로 카드 시스템 (Major 22 + Minor 56 Arcana)
+- `drawThreeCardSpread`: 과거-현재-미래 3장 스프레드
+- `drawDailyCard`: 오늘의 카드 1장
 
 ### Key Integration Points
 - `granite.config.ts`: Toss mini-app configuration (permissions: contacts, clipboard, photos)
@@ -65,7 +86,7 @@ pnpm format            # Prettier
 | 2. 외부 설정 | 수동 설정 필요 시 GitHub Issue 등록 필수 |
 | 3. 디자인 시스템 | Clean Architecture, DI, Event-Driven |
 | 4. 커밋 메시지 | Conventional Commits, AI 언급 금지 |
-| 5. 코드 스타일 | gofmt, golangci-lint, 단일 책임 원칙 |
+| 5. 코드 스타일 | ESLint, Prettier, 단일 책임 원칙 |
 | 6. 응답 원칙 | CTO 관점, 객관적, 근거 필수 |
 | 7. PR 체크리스트 | 7개 항목 체크 후 머지 |
 
@@ -84,7 +105,7 @@ pnpm format            # Prettier
 
 ### 근거 확보
 - 공식 문서 참조
-- 코드 라인 명시 (예: `file.go:123`)
+- 코드 라인 명시 (예: `file.ts:123`)
 - 테스트 결과 포함
 - 벤치마크 데이터
 
