@@ -11,6 +11,7 @@ import { ogImageUrl } from '../lib/og';
 import { copyFor } from '../lib/copyVariants';
 import { getVariant } from '../lib/variant';
 import { track } from '../lib/analytics';
+import { toast } from '../components/Toast';
 
 export default function DetailPage() {
   React.useEffect(() => { track('detail_view'); }, []);
@@ -55,13 +56,13 @@ export default function DetailPage() {
 
   const onInviteContacts = async () => {
   if (!thirdOk) {
-    alert('친구 초대 기능은 "제3자 정보 제공 동의" 후에만 활성화됩니다.');
+    toast('친구 초대 기능은 "제3자 정보 제공 동의" 후에만 활성화됩니다.', 'warning');
     nav('/agreement');
     return;
   }
 
   if (!moduleId.trim()) {
-    alert('연락처 모듈 ID(VITE_CONTACTS_MODULE_ID)가 비어있습니다. 링크 공유(대체)로 진행하세요.');
+    toast('연락처 모듈 ID가 비어있습니다. 링크 공유로 진행하세요.', 'warning');
     return;
   }
 
@@ -73,21 +74,21 @@ export default function DetailPage() {
 
     runContactsViral(
       moduleId,
-      () => alert('연락처 초대 UI가 열렸습니다. 메시지 입력칸에 "붙여넣기"로 링크를 보내세요. (링크는 이미 복사됨)'),
+      () => toast('연락처 초대 UI가 열렸습니다. 링크는 이미 복사되었습니다.', 'info'),
       () => {}
     );
 
-    alert('상대가 링크로 접속하면 궁합이 열립니다.');
+    toast('상대가 링크로 접속하면 궁합이 열립니다.', 'success');
     nav(`/chemistry?${qs}`);
   } catch (e) {
     console.error(e);
-    alert('초대 생성 실패. 설정/권한을 확인하세요.');
+    toast('초대 생성 실패. 설정/권한을 확인하세요.', 'error');
   }
 };
 
   const onInviteShare = async () => {
   if (!thirdOk) {
-    alert('친구 초대 기능은 "제3자 정보 제공 동의" 후에만 활성화됩니다.');
+    toast('친구 초대 기능은 "제3자 정보 제공 동의" 후에만 활성화됩니다.', 'warning');
     nav('/agreement');
     return;
   }
@@ -98,13 +99,13 @@ export default function DetailPage() {
       try {
         await navigator.clipboard.writeText(shareLink);
       } catch {}
-      alert('공유 실패 → 링크를 복사했습니다.');
+      toast('공유 실패 → 링크를 복사했습니다.', 'warning');
     }
-    alert('상대가 링크로 접속하면 궁합이 열립니다.');
+    toast('상대가 링크로 접속하면 궁합이 열립니다.', 'success');
     nav(`/chemistry?${qs}`);
   } catch (e) {
     console.error(e);
-    alert('초대 링크 생성 실패.');
+    toast('초대 링크 생성 실패.', 'error');
   }
 };
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../components/Header';
+import { toast } from '../components/Toast';
 import { clearEvents, exportEventsPretty, getEvents } from '../lib/analytics';
 
 function fmt(ts: number) {
@@ -22,9 +23,9 @@ export default function DebugPage() {
     const text = exportEventsPretty();
     try {
       await navigator.clipboard.writeText(text);
-      alert('이벤트 JSON을 복사했습니다.');
+      toast('이벤트 JSON을 복사했습니다.', 'success');
     } catch {
-      alert('복사 실패. 콘솔에서 exportEventsPretty()로 확인하세요.');
+      toast('복사 실패. 콘솔에서 exportEventsPretty()로 확인하세요.', 'error');
     }
   };
 

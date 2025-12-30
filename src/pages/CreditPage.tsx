@@ -12,6 +12,7 @@ import {
   CreditBalance,
 } from '../lib/iap';
 import { track } from '../lib/analytics';
+import { toast } from '../components/Toast';
 
 type ViewMode = 'main' | 'purchasing';
 
@@ -66,16 +67,16 @@ export default function CreditPage() {
           credits: result.credits,
         });
         await loadData();
-        alert(`${product.totalCredits} 크레딧이 충전되었습니다!`);
+        toast(`${product.totalCredits} 크레딧이 충전되었습니다!`, 'success');
       } else {
         track('credit_purchase_failed', { sku: product.sku, error: result.error });
         if (result.error !== 'user_cancelled') {
-          alert('결제에 실패했습니다. 다시 시도해주세요.');
+          toast('결제에 실패했습니다. 다시 시도해주세요.', 'error');
         }
       }
     } catch (e) {
       console.error('Purchase error:', e);
-      alert('결제 중 오류가 발생했습니다.');
+      toast('결제 중 오류가 발생했습니다.', 'error');
     } finally {
       setPurchasing(false);
       setSelectedProduct(null);
@@ -89,13 +90,13 @@ export default function CreditPage() {
       const restored = await restorePendingPurchases(userKey);
       if (restored > 0) {
         await loadData();
-        alert(`${restored}건의 미완료 구매가 복원되었습니다.`);
+        toast(`${restored}건의 미완료 구매가 복원되었습니다.`, 'success');
       } else {
-        alert('복원할 구매 내역이 없습니다.');
+        toast('복원할 구매 내역이 없습니다.', 'info');
       }
     } catch (e) {
       console.error('Restore error:', e);
-      alert('복원 중 오류가 발생했습니다.');
+      toast('복원 중 오류가 발생했습니다.', 'error');
     } finally {
       setLoading(false);
     }

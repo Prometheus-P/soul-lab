@@ -20,6 +20,7 @@ import { getVariant } from '../lib/variant';
 import { makeTodayReport } from '../lib/report';
 import { tomorrowHint } from '../utils/engine';
 import { track } from '../lib/analytics';
+import { toast } from '../components/Toast';
 
 export interface UnlockState {
   isLocked: boolean;
@@ -89,11 +90,11 @@ export function useUnlockLogic() {
       const ok = await shareMessage(cp.shareDaily(link));
       if (!ok) {
         await navigator.clipboard.writeText(link);
-        alert('공유 실패 → 링크를 복사했습니다.');
+        toast('공유 실패 → 링크를 복사했습니다.', 'warning');
       }
     } catch (e) {
       console.error(e);
-      alert('공유 실패. 권한/환경을 확인하세요.');
+      toast('공유 실패. 권한/환경을 확인하세요.', 'error');
     }
   }, [cp]);
 
@@ -102,13 +103,13 @@ export function useUnlockLogic() {
   const onInviteChemistryContacts = useCallback(async () => {
     track('invite_click_contacts');
     if (!thirdOk) {
-      alert('친구 초대 기능은 "제3자 정보 제공 동의" 후에만 활성화됩니다.');
+      toast('친구 초대 기능은 "제3자 정보 제공 동의" 후에만 활성화됩니다.', 'warning');
       nav('/agreement');
       return;
     }
 
     if (!moduleId.trim()) {
-      alert('연락처 모듈 ID(VITE_CONTACTS_MODULE_ID)가 비어있습니다. 링크 공유(대체)로 진행하세요.');
+      toast('연락처 모듈 ID가 비어있습니다. 링크 공유로 진행하세요.', 'warning');
       return;
     }
 
@@ -121,7 +122,7 @@ export function useUnlockLogic() {
       runContactsViral(
         moduleId,
         () => {
-          alert('연락처 초대 UI가 열렸습니다. 메시지 입력칸에 "붙여넣기"로 링크를 보내세요. (링크는 이미 복사됨)');
+          toast('연락처 초대 UI가 열렸습니다. 링크는 이미 복사되었습니다.', 'info');
         },
         () => {}
       );
@@ -129,14 +130,14 @@ export function useUnlockLogic() {
       nav(`/chemistry?${qs}`);
     } catch (e) {
       console.error(e);
-      alert('초대 생성 실패. 설정 또는 권한을 확인하세요.');
+      toast('초대 생성 실패. 설정 또는 권한을 확인하세요.', 'error');
     }
   }, [thirdOk, moduleId, makeInviteLink, nav]);
 
   const onInviteChemistryLink = useCallback(async () => {
     track('invite_click_link');
     if (!thirdOk) {
-      alert('친구 초대 기능은 "제3자 정보 제공 동의" 후에만 활성화됩니다.');
+      toast('친구 초대 기능은 "제3자 정보 제공 동의" 후에만 활성화됩니다.', 'warning');
       nav('/agreement');
       return;
     }
@@ -148,13 +149,13 @@ export function useUnlockLogic() {
         try {
           await navigator.clipboard.writeText(shareLink);
         } catch {}
-        alert('공유 실패 → 링크를 복사했습니다.');
+        toast('공유 실패 → 링크를 복사했습니다.', 'warning');
       }
-      alert('상대가 링크로 접속하면 궁합이 열립니다.');
+      toast('상대가 링크로 접속하면 궁합이 열립니다.', 'success');
       nav(`/chemistry?${qs}`);
     } catch (e) {
       console.error(e);
-      alert('초대 링크 생성 실패.');
+      toast('초대 링크 생성 실패.', 'error');
     }
   }, [thirdOk, makeInviteLink, cp, nav]);
 

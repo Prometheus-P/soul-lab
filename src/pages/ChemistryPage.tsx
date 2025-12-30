@@ -11,6 +11,7 @@ import { todayKey } from '../lib/seed';
 import { makeShareLink, shareMessage } from '../lib/toss';
 import { buildInviteDeepLink, buildResponseDeepLink, parseHandshake } from '../lib/handshake';
 import { track } from '../lib/analytics';
+import { toast } from '../components/Toast';
 import { incrementReferral, getLevelUpMessage } from '../lib/referralLevel';
 
 export default function ChemistryPage() {
@@ -91,7 +92,7 @@ export default function ChemistryPage() {
 ${shareLink}`);
     } catch (e) {
       console.error(e);
-      alert('초대 링크 생성 실패');
+      toast('초대 링크 생성 실패', 'error');
     }
   };
 
@@ -114,7 +115,7 @@ const onMakeResponseLink = async () => {
       nav(`/chemistry?${qs}`, { replace: true });
     } catch (e) {
       console.error(e);
-      alert('응답 링크 생성 실패');
+      toast('응답 링크 생성 실패', 'error');
     }
   };
 
@@ -171,14 +172,64 @@ const onMakeResponseLink = async () => {
       )}
 
       {status.mode === 'selfInvite' && (
-        <div className="card">
-          <div className="h2 glow-text">✨ 인연의 실 대기</div>
-          <p className="p" style={{ marginTop: 8 }}>{status.message}</p>
-          <div style={{ marginTop: 12 }}>
+        <div className="card" style={{ textAlign: 'center' }}>
+          {/* Waiting animation */}
+          <div style={{
+            width: 80,
+            height: 80,
+            margin: '0 auto 16px',
+            position: 'relative',
+          }}>
+            <div style={{
+              position: 'absolute',
+              inset: 0,
+              borderRadius: '50%',
+              border: '3px solid rgba(147, 112, 219, 0.2)',
+            }} />
+            <div style={{
+              position: 'absolute',
+              inset: 0,
+              borderRadius: '50%',
+              border: '3px solid transparent',
+              borderTopColor: '#9370db',
+              animation: 'waiting-spin 1.5s linear infinite',
+            }} />
+            <div style={{
+              position: 'absolute',
+              inset: 15,
+              borderRadius: '50%',
+              background: 'radial-gradient(circle at 30% 30%, rgba(147, 112, 219, 0.4), rgba(75, 0, 130, 0.6))',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontSize: 24,
+            }}>
+              💫
+            </div>
+          </div>
+
+          <div className="h2 glow-text">인연의 실 대기 중...</div>
+          <p className="p" style={{ marginTop: 8 }}>
+            친구가 링크를 열면 둘의 궁합이 드러납니다
+          </p>
+
+          <div style={{ marginTop: 16 }}>
+            <Button size="large" color="primary" variant="fill" display="full" onClick={onCopyInviteLink}>
+              📋 초대 링크 다시 보내기
+            </Button>
+          </div>
+          <div style={{ marginTop: 8 }}>
             <Button size="large" color="dark" variant="weak" display="full" onClick={() => nav('/')}>
               운명의 문으로
             </Button>
           </div>
+
+          <style>{`
+            @keyframes waiting-spin {
+              from { transform: rotate(0deg); }
+              to { transform: rotate(360deg); }
+            }
+          `}</style>
         </div>
       )}
 
