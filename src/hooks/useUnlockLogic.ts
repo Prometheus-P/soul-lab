@@ -86,7 +86,9 @@ export function useUnlockLogic() {
   const onShareResult = useCallback(async () => {
     track('share_click_daily');
     try {
-      const link = await makeShareLink(`intoss://soul-lab/result`, ogImageUrl('daily'));
+      // 공유 링크에 referrer 정보 추가
+      const deepLink = `intoss://soul-lab/result?type=solo&referrer_id=${myKey}`;
+      const link = await makeShareLink(deepLink, ogImageUrl('daily'));
       const ok = await shareMessage(cp.shareDaily(link));
       if (!ok) {
         await navigator.clipboard.writeText(link);
@@ -96,7 +98,7 @@ export function useUnlockLogic() {
       console.error(e);
       toast('공유 실패. 권한/환경을 확인하세요.', 'error');
     }
-  }, [cp]);
+  }, [cp, myKey]);
 
   const moduleId = (import.meta.env.VITE_CONTACTS_MODULE_ID as string) || '';
 

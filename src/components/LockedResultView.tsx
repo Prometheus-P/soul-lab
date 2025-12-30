@@ -4,6 +4,9 @@ import { Button } from '@toss/tds-mobile';
 import LockedBlur from './LockedBlur';
 import AdRewardButton from './AdRewardButton';
 import { UnlockActions, UnlockState, ReportData } from '../hooks/useUnlockLogic';
+import { getStreak } from '../lib/streak';
+import { qualifiesForFreeUnlock, getFreeUnlockMessage } from '../lib/streakBonus';
+import { track } from '../lib/analytics';
 
 interface LockedResultViewProps {
   state: UnlockState;
@@ -22,6 +25,15 @@ export default function LockedResultView({ state, actions, reportData }: LockedR
   const adGroupId = (import.meta.env.VITE_REWARDED_AD_GROUP_ID as string) || 'ait-ad-test-rewarded-id';
   const { report } = reportData;
 
+  const streak = getStreak();
+  const hasFreeUnlock = qualifiesForFreeUnlock(streak);
+  const freeUnlockMessage = getFreeUnlockMessage(streak);
+
+  const handleFreeUnlock = () => {
+    track('streak_free_unlock', { streak });
+    actions.unlock();
+  };
+
   return (
     <>
       <LockedBlur
@@ -34,6 +46,38 @@ export default function LockedResultView({ state, actions, reportData }: LockedR
           { label: '⚠️ 주의할 기운', preview: getPreview(report.caution) },
         ]}
       />
+
+      {/* 3일 연속 방문 무료 해제 보너스 */}
+      {hasFreeUnlock && (
+        <div style={{ marginTop: 12 }}>
+          <div
+            className="card"
+            style={{
+              background: 'linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(147, 112, 219, 0.2))',
+              border: '2px solid rgba(255, 215, 0, 0.5)',
+              textAlign: 'center',
+              animation: 'streak-bonus-glow 2s ease-in-out infinite',
+            }}
+          >
+            <div style={{ fontSize: 28, marginBottom: 8 }}>🎁</div>
+            <div className="h2" style={{ color: '#ffd700', marginBottom: 4 }}>
+              연속 방문 보너스!
+            </div>
+            <div className="small" style={{ color: 'rgba(255, 255, 255, 0.9)', marginBottom: 12 }}>
+              {freeUnlockMessage}
+            </div>
+            <Button size="large" color="primary" variant="fill" display="full" onClick={handleFreeUnlock}>
+              🔓 무료로 봉인 해제하기
+            </Button>
+          </div>
+          <style>{`
+            @keyframes streak-bonus-glow {
+              0%, 100% { box-shadow: 0 0 10px rgba(255, 215, 0, 0.3); }
+              50% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.5); }
+            }
+          `}</style>
+        </div>
+      )}
 
       <div style={{ height: 12 }} />
       <AdRewardButton

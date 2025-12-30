@@ -6,7 +6,7 @@ import ViralHookModal from '../components/ViralHookModal';
 import StreakBadge, { StreakProgress } from '../components/StreakBadge';
 import { hasRequiredAgreement, hasBirthDate, getPublicKey, getUserSeed } from '../lib/storage';
 import { getStreak, wasGraceUsed } from '../lib/streak';
-import { getStreakLevel, getStreakReward } from '../lib/streakBonus';
+import { getStreakLevel, getStreakReward, qualifiesForFreeUnlock } from '../lib/streakBonus';
 import { copyFor } from '../lib/copyVariants';
 import { getVariant } from '../lib/variant';
 import { getAttribution } from '../lib/attribution';
@@ -27,6 +27,7 @@ export default function LandingPage() {
   const streak = getStreak();
   const streakLevel = getStreakLevel(streak);
   const streakReward = getStreakReward(streak);
+  const hasFreeUnlock = qualifiesForFreeUnlock(streak);
   const graceUsed = wasGraceUsed();
   const attr = getAttribution();
 
@@ -131,6 +132,23 @@ export default function LandingPage() {
             }}
           >
             {streakReward}
+          </div>
+        )}
+
+        {/* 무료 해제 보너스 알림 */}
+        {hasFreeUnlock && !streakReward && (
+          <div
+            className="small"
+            style={{
+              marginTop: 8,
+              padding: '8px 12px',
+              background: 'linear-gradient(135deg, rgba(255, 215, 0, 0.25), rgba(147, 112, 219, 0.15))',
+              borderRadius: 8,
+              color: '#ffd700',
+              border: '1px solid rgba(255, 215, 0, 0.3)',
+            }}
+          >
+            🎁 {streak}일 연속 방문 보너스! 오늘은 무료 해제가 가능합니다
           </div>
         )}
 

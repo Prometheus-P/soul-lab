@@ -41,3 +41,19 @@ export function getStreakReward(streak: number): string | null {
     return '🎁 30일 달성! 전설의 "운명의 수호자" 등극!';
   return null;
 }
+
+/**
+ * 3일 연속 방문 시 무료 해제 보너스 체크
+ * - 3, 6, 9, 12... 일마다 무료 해제 자격 부여
+ */
+export function qualifiesForFreeUnlock(streak: number): boolean {
+  return streak >= 3 && streak % 3 === 0;
+}
+
+/**
+ * 무료 해제 보너스 메시지
+ */
+export function getFreeUnlockMessage(streak: number): string | null {
+  if (!qualifiesForFreeUnlock(streak)) return null;
+  return `🎉 ${streak}일 연속 방문! 오늘은 무료로 깊은 운명을 볼 수 있습니다`;
+}
