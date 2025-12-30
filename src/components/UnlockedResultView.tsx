@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Button } from '@toss/tds-mobile';
 import { ReportData, UnlockActions, UnlockState } from '../hooks/useUnlockLogic';
 import { ChemistryInviteCard, AIConsultCard } from './LockedResultView';
+import QuickAIInterpretation from './QuickAIInterpretation';
 
 interface UnlockedResultViewProps {
   state: UnlockState;
@@ -26,6 +27,18 @@ export default function UnlockedResultView({ state, actions, reportData }: Unloc
         <div className="h2 glow-text">⚠️ 주의할 기운</div>
         <p className="p" style={{ marginTop: 8 }}>{report.caution}</p>
       </div>
+
+      {/* AI 운세 해석 */}
+      <QuickAIInterpretation
+        fortuneData={{
+          score: report.score,
+          rankText: report.rankText,
+          oneLiner: report.oneLiner,
+          luckyTime: report.luckyTime,
+          helper: report.helper,
+          caution: report.caution,
+        }}
+      />
 
       <TomorrowPreview hint={hint} />
 

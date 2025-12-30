@@ -493,34 +493,54 @@ export async function fortuneRoutes(app: FastifyInstance): Promise<void> {
 
   /**
    * POST /api/ai/chat/stream
-   * AI 채팅 스트리밍
+   * AI 채팅 스트리밍 (messages 배열 지원)
    */
   app.post('/api/ai/chat/stream', async (req: FastifyRequest, reply: FastifyReply) => {
     try {
-      const body = req.body as AIConsultRequest;
+      const body = req.body as AIChatRequest;
 
-      if (!body.birthDate || !body.question) {
-        return reply.code(400).send({ error: 'birthDate and question required' });
+      if (!body.messages || body.messages.length === 0) {
+        return reply.code(400).send({ error: 'messages required' });
       }
 
       const tier = body.tier || 'mini';
 
+      // 마지막 사용자 메시지에서 질문 추출
+      const lastUserMessage = [...body.messages].reverse().find(m => m.role === 'user');
+      if (!lastUserMessage) {
+        return reply.code(400).send({ error: 'at least one user message required' });
+      }
+
       // Build context
       const context: FortuneContext = {
-        question: body.question,
-        zodiacSign: getZodiacSign(new Date(body.birthDate)).signKorean,
-        birthDate: body.birthDate,
-        transit: calculateTransit(),
+        question: lastUserMessage.content,
       };
 
-      // Add natal chart if location provided
-      if (body.birthTime && body.latitude !== undefined && body.longitude !== undefined) {
-        context.natalChart = calculateNatalChart(
-          new Date(body.birthDate),
-          body.birthTime,
-          body.latitude,
-          body.longitude
-        );
+      // 생년월일이 있으면 별자리 추가
+      if (body.birthdate) {
+        // birthdate is YYYYMMDD format
+        const year = body.birthdate.slice(0, 4);
+        const month = body.birthdate.slice(4, 6);
+        const day = body.birthdate.slice(6, 8);
+        const birthDate = new Date(`${year}-${month}-${day}`);
+
+        if (!isNaN(birthDate.getTime())) {
+          context.zodiacSign = getZodiacSign(birthDate).signKorean;
+          context.birthDate = birthDate.toISOString().split('T')[0];
+        }
+      }
+
+      // Add transit data
+      context.transit = calculateTransit();
+
+      // 이전 대화 컨텍스트를 질문에 포함
+      const previousContext = body.messages
+        .slice(-6, -1) // 최근 5개 메시지만 포함
+        .map(m => `${m.role === 'user' ? '사용자' : 'AI'}: ${m.content}`)
+        .join('\n');
+
+      if (previousContext) {
+        context.question = `이전 대화:\n${previousContext}\n\n현재 질문: ${lastUserMessage.content}`;
       }
 
       // Set up SSE response

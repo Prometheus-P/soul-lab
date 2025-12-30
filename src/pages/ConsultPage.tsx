@@ -28,6 +28,8 @@ export default function ConsultPage() {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [isStreaming, setIsStreaming] = useState(false);
+  const [streamingMessageId, setStreamingMessageId] = useState<string | null>(null);
   const [credits, setCredits] = useState(0);
   const [showInsufficientModal, setShowInsufficientModal] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -97,8 +99,26 @@ export default function ConsultPage() {
         throw new Error(useResult.error || 'Failed to use credits');
       }
 
-      // AI 응답 요청
-      const response = await fetch(`${API_BASE}/api/ai/chat`, {
+      // 스트리밍 AI 응답 요청
+      const assistantMessageId = `assistant_${Date.now()}`;
+      let streamedContent = '';
+
+      // 스트리밍 시작
+      setIsStreaming(true);
+      setStreamingMessageId(assistantMessageId);
+
+      // 먼저 빈 assistant 메시지 추가
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: assistantMessageId,
+          role: 'assistant',
+          content: '',
+          timestamp: new Date(),
+        },
+      ]);
+
+      const response = await fetch(`${API_BASE}/api/ai/chat/stream`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -115,19 +135,63 @@ export default function ConsultPage() {
         throw new Error('AI response failed');
       }
 
-      const data = await response.json();
+      // SSE 스트리밍 파싱
+      const reader = response.body?.getReader();
+      const decoder = new TextDecoder();
 
-      const assistantMessage: ChatMessage = {
-        id: `assistant_${Date.now()}`,
-        role: 'assistant',
-        content: data.response || '죄송합니다, 응답을 생성하지 못했습니다.',
-        timestamp: new Date(),
-      };
+      if (!reader) {
+        throw new Error('Stream not available');
+      }
 
-      setMessages((prev) => [...prev, assistantMessage]);
+      let buffer = '';
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+
+        buffer += decoder.decode(value, { stream: true });
+
+        // SSE 이벤트 파싱 (data: {...}\n\n 형식)
+        const lines = buffer.split('\n\n');
+        buffer = lines.pop() || '';
+
+        for (const line of lines) {
+          if (line.startsWith('data: ')) {
+            try {
+              const jsonStr = line.slice(6);
+              if (jsonStr === '[DONE]') continue;
+
+              const data = JSON.parse(jsonStr);
+              if (data.text) {
+                streamedContent += data.text;
+
+                // 실시간으로 메시지 업데이트
+                setMessages((prev) =>
+                  prev.map((msg) =>
+                    msg.id === assistantMessageId ? { ...msg, content: streamedContent } : msg
+                  )
+                );
+              }
+            } catch {
+              // JSON 파싱 실패는 무시 (불완전한 청크)
+            }
+          }
+        }
+      }
+
+      // 스트리밍 완료 후 최종 메시지 업데이트
+      if (!streamedContent) {
+        setMessages((prev) =>
+          prev.map((msg) =>
+            msg.id === assistantMessageId
+              ? { ...msg, content: '죄송합니다, 응답을 생성하지 못했습니다.' }
+              : msg
+          )
+        );
+      }
+
       await loadBalance();
-
-      track('consult_response_received', { tokensUsed: data.tokensUsed });
+      track('consult_response_received', { streaming: true });
     } catch (e) {
       console.error('Chat error:', e);
 
@@ -141,6 +205,8 @@ export default function ConsultPage() {
       setMessages((prev) => [...prev, errorMessage]);
     } finally {
       setIsLoading(false);
+      setIsStreaming(false);
+      setStreamingMessageId(null);
     }
   };
 
@@ -195,10 +261,15 @@ export default function ConsultPage() {
         }}
       >
         {messages.map((message) => (
-          <MessageBubble key={message.id} message={message} />
+          <MessageBubble
+            key={message.id}
+            message={message}
+            isStreaming={isStreaming && message.id === streamingMessageId}
+          />
         ))}
 
-        {isLoading && (
+        {/* 스트리밍 시작 전 로딩 인디케이터 */}
+        {isLoading && !isStreaming && (
           <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
             <div
               style={{
@@ -367,7 +438,12 @@ export default function ConsultPage() {
   );
 }
 
-function MessageBubble({ message }: { message: ChatMessage }) {
+interface MessageBubbleProps {
+  message: ChatMessage;
+  isStreaming?: boolean;
+}
+
+function MessageBubble({ message, isStreaming = false }: MessageBubbleProps) {
   const isUser = message.role === 'user';
   const isSystem = message.role === 'system';
 
@@ -419,19 +495,41 @@ function MessageBubble({ message }: { message: ChatMessage }) {
           }}
         >
           {message.content}
+          {isStreaming && (
+            <span
+              style={{
+                display: 'inline-block',
+                width: 2,
+                height: '1em',
+                background: 'rgba(147, 112, 219, 0.8)',
+                marginLeft: 2,
+                animation: 'blink 0.8s ease-in-out infinite',
+              }}
+            />
+          )}
         </p>
-        <div
-          className="small"
-          style={{
-            marginTop: 6,
-            color: 'rgba(255,255,255,0.4)',
-            fontSize: 11,
-            textAlign: isUser ? 'right' : 'left',
-          }}
-        >
-          {message.timestamp.toLocaleTimeString('ko-KR', { hour: '2-digit', minute: '2-digit' })}
-        </div>
+        {!isStreaming && (
+          <div
+            className="small"
+            style={{
+              marginTop: 6,
+              color: 'rgba(255,255,255,0.4)',
+              fontSize: 11,
+              textAlign: isUser ? 'right' : 'left',
+            }}
+          >
+            {message.timestamp.toLocaleTimeString('ko-KR', { hour: '2-digit', minute: '2-digit' })}
+          </div>
+        )}
       </div>
+
+      {/* 타이핑 커서 애니메이션 */}
+      <style>{`
+        @keyframes blink {
+          0%, 50% { opacity: 1; }
+          51%, 100% { opacity: 0; }
+        }
+      `}</style>
     </div>
   );
 }
