@@ -113,6 +113,9 @@ jobs:
 
       - run: pnpm install
 
+      - name: Install Server Dependencies
+        run: cd server && pnpm install
+
       - name: Build Frontend
         run: pnpm build:web
 
