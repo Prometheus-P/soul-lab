@@ -5,6 +5,7 @@ import Header from '../components/Header';
 import { getEffectiveUserKey, getBirthDate } from '../lib/storage';
 import { getBalance, useCredits, checkCredits, CREDIT_ACTIONS } from '../lib/iap';
 import { track } from '../lib/analytics';
+import { useFocusTrap } from '../hooks/useFocusTrap';
 
 interface ChatMessage {
   id: string;
@@ -33,6 +34,12 @@ export default function ConsultPage() {
   const [credits, setCredits] = useState(0);
   const [showInsufficientModal, setShowInsufficientModal] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const modalRef = useRef<HTMLDivElement>(null);
+
+  // Focus trap for insufficient credits modal (WCAG SC 2.4.3)
+  useFocusTrap(showInsufficientModal, modalRef, {
+    onEscape: () => setShowInsufficientModal(false),
+  });
 
   const userKey = getEffectiveUserKey();
   const birthdate = getBirthDate();
@@ -268,9 +275,14 @@ export default function ConsultPage() {
           />
         ))}
 
-        {/* 스트리밍 시작 전 로딩 인디케이터 */}
+        {/* 스트리밍 시작 전 로딩 인디케이터 - WCAG SC 4.1.3 */}
         {isLoading && !isStreaming && (
-          <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
+          <div
+            role="status"
+            aria-live="polite"
+            aria-label="AI가 응답을 작성하는 중"
+            style={{ display: 'flex', justifyContent: 'flex-start' }}
+          >
             <div
               style={{
                 background: 'rgba(147, 112, 219, 0.2)',
@@ -279,9 +291,9 @@ export default function ConsultPage() {
               }}
             >
               <div style={{ display: 'flex', gap: 4 }}>
-                <span style={{ animation: 'pulse 1s ease-in-out infinite' }}>✨</span>
-                <span style={{ animation: 'pulse 1s ease-in-out infinite', animationDelay: '0.2s' }}>✨</span>
-                <span style={{ animation: 'pulse 1s ease-in-out infinite', animationDelay: '0.4s' }}>✨</span>
+                <span aria-hidden="true" style={{ animation: 'pulse 1s ease-in-out infinite' }}>✨</span>
+                <span aria-hidden="true" style={{ animation: 'pulse 1s ease-in-out infinite', animationDelay: '0.2s' }}>✨</span>
+                <span aria-hidden="true" style={{ animation: 'pulse 1s ease-in-out infinite', animationDelay: '0.4s' }}>✨</span>
               </div>
             </div>
           </div>
@@ -332,11 +344,14 @@ export default function ConsultPage() {
         }}
       >
         <div style={{ display: 'flex', gap: 12 }}>
+          <label htmlFor="chat-input" className="sr-only">운명 상담 질문 입력</label>
           <input
+            id="chat-input"
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="운명에 대해 물어보세요..."
+            aria-label="운명에 대해 물어보세요"
             disabled={isLoading}
             style={{
               flex: 1,
@@ -346,7 +361,6 @@ export default function ConsultPage() {
               padding: '12px 18px',
               color: '#fff',
               fontSize: 15,
-              outline: 'none',
             }}
           />
           <Button
@@ -372,7 +386,7 @@ export default function ConsultPage() {
         </Button>
       </div>
 
-      {/* Insufficient Credits Modal */}
+      {/* Insufficient Credits Modal - WCAG SC 2.4.3 Focus Order, SC 4.1.2 Name Role Value */}
       {showInsufficientModal && (
         <div
           style={{
@@ -391,6 +405,11 @@ export default function ConsultPage() {
           onClick={() => setShowInsufficientModal(false)}
         >
           <div
+            ref={modalRef}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="insufficient-credits-title"
+            aria-describedby="insufficient-credits-desc"
             className="card"
             style={{
               maxWidth: 340,
@@ -399,11 +418,11 @@ export default function ConsultPage() {
             }}
             onClick={(e) => e.stopPropagation()}
           >
-            <div style={{ fontSize: 48, marginBottom: 16 }}>💎</div>
-            <h2 className="h2" style={{ marginBottom: 8 }}>
+            <div style={{ fontSize: 48, marginBottom: 16 }} aria-hidden="true">💎</div>
+            <h2 id="insufficient-credits-title" className="h2" style={{ marginBottom: 8 }}>
               크레딧이 부족합니다
             </h2>
-            <p className="p" style={{ color: 'rgba(255,255,255,0.7)', marginBottom: 20 }}>
+            <p id="insufficient-credits-desc" className="p" style={{ color: 'rgba(255,255,255,0.7)', marginBottom: 20 }}>
               AI 상담을 이용하려면 크레딧이 필요합니다.
               <br />
               크레딧을 충전하시겠어요?

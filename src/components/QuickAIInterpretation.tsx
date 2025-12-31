@@ -1,9 +1,10 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@toss/tds-mobile';
 import { getEffectiveUserKey, getBirthDate } from '../lib/storage';
 import { getBalance, useCredits, checkCredits, CREDIT_ACTIONS } from '../lib/iap';
 import { track } from '../lib/analytics';
+import { useFocusTrap } from '../hooks/useFocusTrap';
 
 interface QuickAIInterpretationProps {
   fortuneData: {
@@ -24,6 +25,12 @@ export default function QuickAIInterpretation({ fortuneData }: QuickAIInterpreta
   const [interpretation, setInterpretation] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [showCreditsModal, setShowCreditsModal] = useState(false);
+  const modalRef = useRef<HTMLDivElement>(null);
+
+  // Focus trap for credits modal (WCAG SC 2.4.3)
+  useFocusTrap(showCreditsModal, modalRef, {
+    onEscape: () => setShowCreditsModal(false),
+  });
 
   const userKey = getEffectiveUserKey();
   const birthdate = getBirthDate();
@@ -94,7 +101,7 @@ ${fortuneData.caution ? `- 주의사항: ${fortuneData.caution}` : ''}
     return (
       <div className="card" style={{ marginTop: 12 }}>
         <div className="row" style={{ marginBottom: 12 }}>
-          <div className="h2 glow-text">🔮 AI 루나의 해석</div>
+          <h2 className="h2 glow-text"><span aria-hidden="true">🔮</span> AI 루나의 해석</h2>
         </div>
         <p
           className="p"
@@ -131,7 +138,7 @@ ${fortuneData.caution ? `- 주의사항: ${fortuneData.caution}` : ''}
         }}
       >
         <div className="row" style={{ marginBottom: 8 }}>
-          <div className="h2 glow-text">🔮 AI 운세 해석</div>
+          <h2 className="h2 glow-text"><span aria-hidden="true">🔮</span> AI 운세 해석</h2>
           <span className="small" style={{ color: 'rgba(255, 215, 0, 0.8)' }}>
             1 크레딧
           </span>
@@ -174,7 +181,7 @@ ${fortuneData.caution ? `- 주의사항: ${fortuneData.caution}` : ''}
         </Button>
       </div>
 
-      {/* 크레딧 부족 모달 */}
+      {/* 크레딧 부족 모달 - WCAG SC 2.4.3 Focus Order, SC 4.1.2 Name Role Value */}
       {showCreditsModal && (
         <div
           style={{
@@ -193,6 +200,11 @@ ${fortuneData.caution ? `- 주의사항: ${fortuneData.caution}` : ''}
           onClick={() => setShowCreditsModal(false)}
         >
           <div
+            ref={modalRef}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="credits-modal-title"
+            aria-describedby="credits-modal-desc"
             className="card"
             style={{
               maxWidth: 340,
@@ -201,11 +213,11 @@ ${fortuneData.caution ? `- 주의사항: ${fortuneData.caution}` : ''}
             }}
             onClick={(e) => e.stopPropagation()}
           >
-            <div style={{ fontSize: 48, marginBottom: 16 }}>💎</div>
-            <h2 className="h2" style={{ marginBottom: 8 }}>
+            <div style={{ fontSize: 48, marginBottom: 16 }} aria-hidden="true">💎</div>
+            <h2 id="credits-modal-title" className="h2" style={{ marginBottom: 8 }}>
               크레딧이 부족합니다
             </h2>
-            <p className="p" style={{ color: 'rgba(255,255,255,0.7)', marginBottom: 20 }}>
+            <p id="credits-modal-desc" className="p" style={{ color: 'rgba(255,255,255,0.7)', marginBottom: 20 }}>
               AI 해석을 받으려면 1 크레딧이 필요합니다.
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>

@@ -111,22 +111,29 @@ export default function LoadingPage() {
           }} />
         </div>
 
-        <div className="h2 glow-text" style={{ marginBottom: 8, fontSize: 16 }}>
+        <h2 className="h2 glow-text" style={{ marginBottom: 8, fontSize: 16 }}>
           {phase.text}
-        </div>
+        </h2>
 
-        <div className="small" style={{ marginBottom: 20, minHeight: 18, color: 'rgba(255,255,255,0.7)' }}>
+        <p className="small" aria-live="polite" style={{ marginBottom: 20, minHeight: 18, color: 'rgba(255,255,255,0.7)' }}>
           {phase.sub}
-        </div>
+        </p>
 
-        {/* Progress Bar */}
-        <div style={{
-          width: '100%',
-          height: 6,
-          borderRadius: 3,
-          background: 'rgba(147, 112, 219, 0.2)',
-          overflow: 'hidden',
-        }}>
+        {/* Progress Bar - WCAG SC 4.1.3 Status Messages */}
+        <div
+          role="progressbar"
+          aria-valuenow={Math.round(progress)}
+          aria-valuemin={0}
+          aria-valuemax={100}
+          aria-label="운세 분석 진행률"
+          style={{
+            width: '100%',
+            height: 6,
+            borderRadius: 3,
+            background: 'rgba(147, 112, 219, 0.2)',
+            overflow: 'hidden',
+          }}
+        >
           <div style={{
             width: `${progress}%`,
             height: '100%',
@@ -137,7 +144,7 @@ export default function LoadingPage() {
           }} />
         </div>
 
-        <div className="small" style={{ marginTop: 12, color: 'var(--accent)' }}>
+        <div className="small" aria-hidden="true" style={{ marginTop: 12, color: 'var(--accent)' }}>
           {Math.round(progress)}% 완료
         </div>
       </div>

@@ -77,47 +77,68 @@ export default function BirthDatePicker({ value, onChange, error, errorMessage }
     textAlign: 'center',
   };
 
+  const errorId = 'birthdate-error';
+
   return (
-    <div>
+    <fieldset style={{ border: 'none', margin: 0, padding: 0 }}>
+      <legend className="sr-only">생년월일 선택</legend>
       <div style={{ display: 'flex', gap: 8 }}>
-        <select
-          style={selectStyle}
-          value={parsed.year || ''}
-          onChange={(e) => handleChange('year', e.target.value)}
-        >
-          <option value="">년</option>
-          {years.map((y) => (
-            <option key={y} value={y}>{y}년</option>
-          ))}
-        </select>
+        <div style={{ flex: 1 }}>
+          <label htmlFor="birth-year" className="sr-only">출생 년도</label>
+          <select
+            id="birth-year"
+            style={selectStyle}
+            value={parsed.year || ''}
+            onChange={(e) => handleChange('year', e.target.value)}
+            aria-describedby={error ? errorId : undefined}
+            aria-invalid={error ? 'true' : undefined}
+          >
+            <option value="">년</option>
+            {years.map((y) => (
+              <option key={y} value={y}>{y}년</option>
+            ))}
+          </select>
+        </div>
 
-        <select
-          style={selectStyle}
-          value={parsed.month || ''}
-          onChange={(e) => handleChange('month', e.target.value)}
-        >
-          <option value="">월</option>
-          {months.map((m) => (
-            <option key={m} value={m}>{m}월</option>
-          ))}
-        </select>
+        <div style={{ flex: 1 }}>
+          <label htmlFor="birth-month" className="sr-only">출생 월</label>
+          <select
+            id="birth-month"
+            style={selectStyle}
+            value={parsed.month || ''}
+            onChange={(e) => handleChange('month', e.target.value)}
+            aria-describedby={error ? errorId : undefined}
+            aria-invalid={error ? 'true' : undefined}
+          >
+            <option value="">월</option>
+            {months.map((m) => (
+              <option key={m} value={m}>{m}월</option>
+            ))}
+          </select>
+        </div>
 
-        <select
-          style={selectStyle}
-          value={parsed.day || ''}
-          onChange={(e) => handleChange('day', e.target.value)}
-        >
-          <option value="">일</option>
-          {days.map((d) => (
-            <option key={d} value={d}>{d}일</option>
-          ))}
-        </select>
+        <div style={{ flex: 1 }}>
+          <label htmlFor="birth-day" className="sr-only">출생 일</label>
+          <select
+            id="birth-day"
+            style={selectStyle}
+            value={parsed.day || ''}
+            onChange={(e) => handleChange('day', e.target.value)}
+            aria-describedby={error ? errorId : undefined}
+            aria-invalid={error ? 'true' : undefined}
+          >
+            <option value="">일</option>
+            {days.map((d) => (
+              <option key={d} value={d}>{d}일</option>
+            ))}
+          </select>
+        </div>
       </div>
       {error && errorMessage && (
-        <div style={{ marginTop: 6, fontSize: 12, color: '#ff6b6b' }}>
+        <div id={errorId} role="alert" style={{ marginTop: 6, fontSize: 12, color: '#ff6b6b' }}>
           {errorMessage}
         </div>
       )}
-    </div>
+    </fieldset>
   );
 }

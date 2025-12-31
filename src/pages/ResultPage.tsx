@@ -62,8 +62,8 @@ export default function ResultPage() {
 
       <div className="card" style={{ marginBottom: 12 }}>
         <div className="row">
-          <div className="h2 glow-text">오늘의 기운</div>
-          <div className="score-display">{report.score}</div>
+          <h2 className="h2 glow-text">오늘의 기운</h2>
+          <div className="score-display" aria-label={`운세 점수 ${report.score}점`}>{report.score}</div>
         </div>
         <div className="small" style={{ color: 'var(--accent)' }}>{report.rankText}</div>
         <div style={{ marginTop: 10 }} className="p">

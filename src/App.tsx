@@ -37,37 +37,49 @@ function Bootstrap() {
   }, [loc.key, loc.pathname, loc.search]);
 
   return (
-    <Suspense
-      fallback={
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            height: '100vh',
-            color: '#9370DB',
-            fontSize: '18px',
-          }}
-        >
-          ✨ 로딩 중...
-        </div>
-      }
-    >
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/agreement" element={<AgreementPage />} />
-        <Route path="/loading" element={<LoadingPage />} />
-        <Route path="/result" element={<ResultPage />} />
-        <Route path="/detail" element={<DetailPage />} />
-        <Route path="/chemistry" element={<ChemistryPage />} />
-        <Route path="/tarot" element={<TarotPage />} />
-        <Route path="/credits" element={<CreditPage />} />
-        <Route path="/consult" element={<ConsultPage />} />
-        <Route path="/debug" element={<DebugPage />} />
-        <Route path="/404" element={<NotFoundPage />} />
-        <Route path="*" element={<Navigate to="/404" replace />} />
-      </Routes>
-    </Suspense>
+    <>
+      {/* WCAG SC 2.4.1: Skip link for keyboard navigation */}
+      <a href="#main-content" className="skip-link">
+        메인 콘텐츠로 건너뛰기
+      </a>
+      <Suspense
+        fallback={
+          <div
+            role="status"
+            aria-live="polite"
+            aria-label="페이지 로딩 중"
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              height: '100vh',
+              color: '#9370DB',
+              fontSize: '18px',
+            }}
+          >
+            <span aria-hidden="true">✨</span> 로딩 중...
+          </div>
+        }
+      >
+        {/* WCAG SC 1.3.1: Main landmark for page content */}
+        <main id="main-content">
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/agreement" element={<AgreementPage />} />
+            <Route path="/loading" element={<LoadingPage />} />
+            <Route path="/result" element={<ResultPage />} />
+            <Route path="/detail" element={<DetailPage />} />
+            <Route path="/chemistry" element={<ChemistryPage />} />
+            <Route path="/tarot" element={<TarotPage />} />
+            <Route path="/credits" element={<CreditPage />} />
+            <Route path="/consult" element={<ConsultPage />} />
+            <Route path="/debug" element={<DebugPage />} />
+            <Route path="/404" element={<NotFoundPage />} />
+            <Route path="*" element={<Navigate to="/404" replace />} />
+          </Routes>
+        </main>
+      </Suspense>
+    </>
   );
 }
 

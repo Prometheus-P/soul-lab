@@ -28,11 +28,12 @@ export function Button({
   type = 'button',
   style,
 }: ButtonProps) {
+  // WCAG SC 2.5.8: Target Size - minimum 24x24px, recommended 44x44px for touch
   const sizeStyles: Record<string, React.CSSProperties> = {
-    small: { padding: '8px 12px', fontSize: 13 },
-    medium: { padding: '12px 16px', fontSize: 14 },
-    large: { padding: '14px 20px', fontSize: 15 },
-    xlarge: { padding: '16px 24px', fontSize: 16 },
+    small: { padding: '10px 14px', fontSize: 13, minHeight: 44 },
+    medium: { padding: '12px 16px', fontSize: 14, minHeight: 44 },
+    large: { padding: '14px 20px', fontSize: 15, minHeight: 48 },
+    xlarge: { padding: '16px 24px', fontSize: 16, minHeight: 52 },
   };
 
   const colorStyles: Record<string, Record<string, React.CSSProperties>> = {
@@ -173,11 +174,12 @@ function AgreementSingleCheckboxField({
         cursor: 'pointer',
       }}
     >
+      {/* WCAG SC 2.5.8: Target Size - minimum 24x24px */}
       <input
         type="checkbox"
         checked={checked}
         onChange={(e) => onCheckedChange?.(e.target.checked)}
-        style={{ marginTop: 2, width: 20, height: 20, accentColor: '#9370db' }}
+        style={{ marginTop: 2, width: 24, height: 24, accentColor: '#9370db' }}
       />
       <span
         style={{
@@ -418,6 +420,7 @@ export function TextField({
 
   return (
     <div>
+      {/* WCAG SC 2.4.7: Focus Visible - uses global focus-visible styles */}
       <input
         type="text"
         value={value}
@@ -425,19 +428,20 @@ export function TextField({
         placeholder={placeholder}
         inputMode={inputMode}
         maxLength={maxLength}
+        aria-invalid={error ? 'true' : undefined}
+        aria-describedby={error && errorMessage ? 'textfield-error' : undefined}
         style={{
           width: '100%',
           background: 'rgba(255,255,255,0.06)',
           border: error ? '1px solid #f04452' : '1px solid rgba(255,255,255,0.1)',
           color: 'inherit',
           fontSize: 16,
-          outline: 'none',
           ...variantStyles[variant],
           ...style,
         }}
       />
       {error && errorMessage && (
-        <div style={{ marginTop: 8, fontSize: 13, color: '#f04452' }}>{errorMessage}</div>
+        <div id="textfield-error" role="alert" style={{ marginTop: 8, fontSize: 13, color: '#f04452' }}>{errorMessage}</div>
       )}
     </div>
   );

@@ -29,8 +29,8 @@ jobs:
 
       - run: pnpm lint
 
-  build:
-    name: Build
+  test:
+    name: Test
     runs-on: ubuntu-latest
     needs: lint
     steps:
@@ -46,6 +46,75 @@ jobs:
           cache: 'pnpm'
 
       - run: pnpm install
+
+      - name: Run Frontend Tests
+        run: pnpm test:run
+
+      - name: Run Server Tests
+        run: pnpm test:server
+
+  accessibility:
+    name: Accessibility Tests (WCAG 2.2 AA)
+    runs-on: ubuntu-latest
+    needs: lint
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - run: pnpm install
+
+      - name: Run Accessibility Tests
+        run: pnpm test:a11y
+
+  security:
+    name: Security Audit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - run: pnpm install
+
+      - name: Audit Dependencies
+        run: pnpm audit --audit-level=high
+        continue-on-error: true
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    needs: [lint, test, accessibility]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - run: pnpm install
+
+      - name: Install Server Dependencies
+        run: cd server && pnpm install
 
       - name: Build Frontend
         run: pnpm build:web
