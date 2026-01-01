@@ -32,6 +32,17 @@ export default function TarotPage() {
     }
   };
 
+  // Apply empathy overlay to spread reading when all cards are revealed
+  // Must be called unconditionally (before any conditional returns) to follow React hooks rules
+  const empathyResult = useMemo(() => {
+    if (!spreadReading || revealedCards.length < 3) return null;
+
+    return applyEmpathyOverlay(spreadReading.summary, {
+      cards: spreadReading.cards.map((c) => c.card.name),
+      baseReading: spreadReading.summary,
+    });
+  }, [spreadReading, revealedCards.length]);
+
   if (viewMode === 'selection') {
     return (
       <div className="container">
@@ -131,16 +142,6 @@ export default function TarotPage() {
       </div>
     );
   }
-
-  // Apply empathy overlay to spread reading when all cards are revealed
-  const empathyResult = useMemo(() => {
-    if (!spreadReading || revealedCards.length < 3) return null;
-
-    return applyEmpathyOverlay(spreadReading.summary, {
-      cards: spreadReading.cards.map((c) => c.card.name),
-      baseReading: spreadReading.summary,
-    });
-  }, [spreadReading, revealedCards.length]);
 
   if (viewMode === 'spread' && spreadReading) {
     const allRevealed = revealedCards.length === 3;
