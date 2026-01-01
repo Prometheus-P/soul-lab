@@ -107,15 +107,23 @@ function fixParticleMarkers(text: string): { out: string; fixes: number } {
   let fixes = 0;
   let out = text;
 
-  const re = /([0-9A-Za-z가-힣'"”’\)\]]+?)\s*\((이)가|(을)를|(은)는|(와)과|(으)로\)/g;
+  // Handle each particle type separately to avoid regex precedence issues
+  const particlePatterns: Array<{ re: RegExp; pair: "(이)가" | "(을)를" | "(은)는" | "(와)과" | "(으)로" }> = [
+    { re: /([0-9A-Za-z가-힣'""'\)\]]+)\(이\)가/g, pair: "(이)가" },
+    { re: /([0-9A-Za-z가-힣'""'\)\]]+)\(을\)를/g, pair: "(을)를" },
+    { re: /([0-9A-Za-z가-힣'""'\)\]]+)\(은\)는/g, pair: "(은)는" },
+    { re: /([0-9A-Za-z가-힣'""'\)\]]+)\(와\)과/g, pair: "(와)과" },
+    { re: /([0-9A-Za-z가-힣'""'\)\]]+)\(으\)로/g, pair: "(으)로" },
+  ];
 
-  out = out.replace(re, (m, w, p) => {
-    const pair = `(${p})` as "(이)가" | "(을)를" | "(은)는" | "(와)과" | "(으)로";
-    const cleanW = (w as string).replace(/['"”’\)\]]+$/g, "");
-    const particle = chooseParticle(cleanW, pair);
-    fixes += 1;
-    return `${w}${particle}`;
-  });
+  for (const { re, pair } of particlePatterns) {
+    out = out.replace(re, (_, w) => {
+      const cleanW = (w as string).replace(/['""'\)\]]+$/g, "");
+      const particle = chooseParticle(cleanW, pair);
+      fixes += 1;
+      return `${w}${particle}`;
+    });
+  }
 
   out = out.replace(/\s+([이가를은는와과]|으로|로)/g, "$1");
   return { out, fixes };

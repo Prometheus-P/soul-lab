@@ -4,6 +4,7 @@ import { getBirthDate, getUserName, getBirthInfo, getUserQuestion, getEffectiveU
 import { getDailyFortune, fortuneToLegacyReport, QuestionTag } from './fortune-api';
 import { enhanceFortuneSummary, getValidationStatement } from './coldReading';
 import { buildEmpathicAnswer, type EmpathyInput, type EmpathyMeta } from '../utils/empathyEngine';
+import { refineTarotOutput } from '../utils/refineOutput';
 
 // Feature flag for new engine (can be disabled via env for rollback)
 const USE_NEW_ENGINE = import.meta.env.VITE_USE_NEW_ENGINE !== 'false';
@@ -50,7 +51,13 @@ export function applyEmpathyOverlay(
     if (result.meta && !result.meta.belief_ok) {
       console.warn('[empathy] Belief violations detected:', result.meta.belief_violations);
     }
-    return result;
+
+    // v8: Apply refiner post-processing to remove "machine feel"
+    const refined = refineTarotOutput(result.text, {
+      name: input.name,
+    });
+
+    return { text: refined.text, meta: result.meta };
   } catch (err) {
     console.error('[empathy] Engine error, falling back to base text:', err);
     return { text: baseText, meta: null };
