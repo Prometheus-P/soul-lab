@@ -17,6 +17,7 @@ import {
   type CacheType,
 } from './cache.js';
 import { logger } from '../lib/logger.js';
+import { sanitizeForPrompt, prepareQuestion } from '../lib/promptSecurity.js';
 
 // ============================================================
 // Types
@@ -260,9 +261,13 @@ ${reading.spread.map((drawnCard) => {
   }
 
   if (context.question) {
-    parts.push(`
+    const prepared = prepareQuestion(context.question);
+    if (prepared) {
+      const sanitized = sanitizeForPrompt(prepared.question);
+      parts.push(`
 ## 사용자 질문
-"${context.question}"`);
+"${sanitized.sanitized}"`);
+    }
   }
 
   parts.push(`
@@ -314,8 +319,12 @@ ${synastry.aspects.slice(0, 8).map((a: { person1Planet: string; person2Planet: s
 export function buildTarotPrompt(reading: TarotReading, question?: string): string {
   const parts: string[] = [];
 
+  // Sanitize user question for prompt injection defense
+  const rawQuestion = question || reading.question || '오늘의 메시지';
+  const sanitized = sanitizeForPrompt(rawQuestion);
+
   parts.push(`## 타로 스프레드: ${reading.spreadTypeKorean}`);
-  parts.push(`질문: "${question || reading.question || '오늘의 메시지'}"\n`);
+  parts.push(`질문: "${sanitized.sanitized}"\n`);
 
   reading.spread.forEach((drawn) => {
     parts.push(`### ${drawn.positionKorean}

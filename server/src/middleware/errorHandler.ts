@@ -1,6 +1,7 @@
 import { FastifyPluginAsync, FastifyError, FastifyRequest, FastifyReply } from 'fastify';
 import { logger } from '../lib/logger.js';
 import { isProduction } from '../config/index.js';
+import { sanitizeForErrorMessage } from '../lib/promptSecurity.js';
 
 export interface ErrorResponse {
   success: false;
@@ -52,12 +53,30 @@ export const errorHandlerPlugin: FastifyPluginAsync = async (app) => {
         'request_error'
       );
 
+      // In production, sanitize error messages to prevent information leakage
+      // - 5xx errors: generic message
+      // - 4xx errors: sanitized message (no paths, IPs, or internal details)
+      let userMessage: string;
+      if (isProd) {
+        if (statusCode >= 500) {
+          userMessage = 'Internal server error';
+        } else {
+          // Sanitize 4xx error messages to remove sensitive info
+          userMessage = sanitizeForErrorMessage(error.message);
+        }
+      } else {
+        userMessage = error.message;
+      }
+
       const response: ErrorResponse = {
         success: false,
         error: {
           code: errorCode,
-          message: isProd && statusCode >= 500 ? 'Internal server error' : error.message,
+          message: userMessage,
           requestId: request.requestId,
+          // Include correlationId for log tracing (safe to expose)
+          ...(request.correlationId ? { correlationId: request.correlationId } : {}),
+          // Only include stack trace in development
           ...(isProd ? {} : { details: error.stack }),
         },
       };
