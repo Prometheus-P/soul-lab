@@ -1,6 +1,9 @@
 /**
  * ProfileStore - Server-side user profile storage with encryption.
  * Stores birthdate and consent information for cross-device continuity.
+ *
+ * Schema versioning: Uses migration framework for data evolution.
+ * Issue #14: 데이터 스키마 버저닝
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -9,6 +12,8 @@ import { writeFileAtomic } from '../lib/atomicWrite.js';
 import * as mutex from '../lib/mutex.js';
 import { logger } from '../lib/logger.js';
 import { isSafeObjectKey } from '../lib/validation.js';
+import { isVersionedData, wrapData, type VersionedData } from '../lib/migration.js';
+import { profileMigrations, PROFILE_SCHEMA_VERSION, type ProfileDBCurrent } from './migrations.js';
 
 // ============================================================
 // Types
@@ -53,7 +58,8 @@ export interface ProfileResponse {
   syncedAt: string;
 }
 
-type DB = { profiles: Record<string, UserProfile> };
+// Internal DB type (unwrapped data)
+type DB = ProfileDBCurrent;
 
 // ============================================================
 // Store Implementation
@@ -76,27 +82,67 @@ function assertSafeKey(key: string): void {
 export class ProfileStore {
   private filePath: string;
   private db: DB;
+  private schemaVersion: number;
 
   constructor(dataDir: string) {
     ensureDir(dataDir);
     this.filePath = path.join(dataDir, 'user_profiles.json');
-    this.db = this.load();
+    const { db, version, migrated } = this.load();
+    this.db = db;
+    this.schemaVersion = version;
+
+    // If migrations were applied, save immediately
+    if (migrated) {
+      this.save();
+      logger.info(
+        { filePath: this.filePath, version: this.schemaVersion },
+        'profile_store_migrated'
+      );
+    }
   }
 
-  private load(): DB {
+  private load(): { db: DB; version: number; migrated: boolean } {
     try {
-      if (!fs.existsSync(this.filePath)) return { profiles: {} };
+      if (!fs.existsSync(this.filePath)) {
+        return {
+          db: { profiles: {} },
+          version: PROFILE_SCHEMA_VERSION,
+          migrated: false,
+        };
+      }
+
       const raw = fs.readFileSync(this.filePath, 'utf-8');
-      const parsed = JSON.parse(raw) as DB;
-      if (!parsed.profiles) return { profiles: {} };
-      return parsed;
-    } catch {
-      return { profiles: {} };
+      const parsed = JSON.parse(raw);
+
+      // Run migrations (handles both legacy and versioned data)
+      const result = profileMigrations.migrate(parsed);
+
+      return {
+        db: result.data.data,
+        version: result.data.version,
+        migrated: result.wasModified,
+      };
+    } catch (err) {
+      logger.error({ filePath: this.filePath, err }, 'profile_store_load_error');
+      return {
+        db: { profiles: {} },
+        version: PROFILE_SCHEMA_VERSION,
+        migrated: false,
+      };
     }
   }
 
   private save() {
-    writeFileAtomic(this.filePath, JSON.stringify(this.db, null, 2));
+    // Wrap data with version metadata
+    const versionedData: VersionedData<DB> = wrapData(this.db, this.schemaVersion);
+    writeFileAtomic(this.filePath, JSON.stringify(versionedData, null, 2));
+  }
+
+  /**
+   * Get current schema version.
+   */
+  getSchemaVersion(): number {
+    return this.schemaVersion;
   }
 
   /**

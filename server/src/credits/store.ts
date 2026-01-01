@@ -5,9 +5,12 @@
  *
  * Security: Uses mutex for thread-safe operations and atomic writes
  * to prevent race conditions and data corruption.
+ *
+ * Schema versioning: Uses migration framework for data evolution.
+ * Issue #14: 데이터 스키마 버저닝
  */
 
-import { existsSync, mkdirSync } from 'fs';
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'fs';
 import { join, dirname } from 'path';
 import * as mutex from '../lib/mutex.js';
 import { generateTransactionId } from '../lib/secureId.js';
@@ -16,6 +19,14 @@ import {
   writeEncryptedJson,
   isDataEncryptionConfigured,
 } from '../lib/encryptedStorage.js';
+import { logger } from '../lib/logger.js';
+import {
+  creditMigrations,
+  CREDIT_SCHEMA_VERSION,
+  createDefaultMetadata,
+  type CreditSchemaMetadata,
+  type CreditDataCurrent,
+} from './migrations.js';
 
 // ============================================================
 // Types
@@ -200,12 +211,14 @@ export interface StreakRewardRecord {
 
 export class CreditStore {
   private dataDir: string;
+  private schemaFile: string;
   private balancesFile: string;
   private transactionsFile: string;
   private purchasesFile: string;
   private referralsFile: string;
   private streakRewardsFile: string;
 
+  private schemaVersion: number;
   private balances: Map<string, CreditBalance> = new Map();
   private transactions: CreditTransaction[] = [];
   private purchases: Map<string, PurchaseRecord> = new Map();
@@ -214,12 +227,48 @@ export class CreditStore {
 
   constructor(dataDir: string) {
     this.dataDir = dataDir;
+    this.schemaFile = join(dataDir, 'credit_schema.json');
     this.balancesFile = join(dataDir, 'credit_balances.json');
     this.transactionsFile = join(dataDir, 'credit_transactions.json');
     this.purchasesFile = join(dataDir, 'credit_purchases.json');
     this.referralsFile = join(dataDir, 'credit_referrals.json');
     this.streakRewardsFile = join(dataDir, 'credit_streak_rewards.json');
+    this.schemaVersion = CREDIT_SCHEMA_VERSION;
     this.load();
+  }
+
+  /**
+   * Get current schema version.
+   */
+  getSchemaVersion(): number {
+    return this.schemaVersion;
+  }
+
+  private loadSchemaMetadata(): CreditSchemaMetadata {
+    try {
+      if (existsSync(this.schemaFile)) {
+        const raw = readFileSync(this.schemaFile, 'utf-8');
+        return JSON.parse(raw) as CreditSchemaMetadata;
+      }
+    } catch (err) {
+      logger.error({ err }, 'credit_schema_load_error');
+    }
+    return createDefaultMetadata();
+  }
+
+  private saveSchemaMetadata(): void {
+    const metadata: CreditSchemaMetadata = {
+      version: this.schemaVersion,
+      migratedAt: new Date().toISOString(),
+      fileVersions: {
+        balances: this.schemaVersion,
+        transactions: this.schemaVersion,
+        purchases: this.schemaVersion,
+        referrals: this.schemaVersion,
+        streakRewards: this.schemaVersion,
+      },
+    };
+    writeFileSync(this.schemaFile, JSON.stringify(metadata, null, 2), 'utf-8');
   }
 
   private load(): void {
@@ -227,6 +276,10 @@ export class CreditStore {
       if (!existsSync(this.dataDir)) {
         mkdirSync(this.dataDir, { recursive: true });
       }
+
+      // Load schema metadata to check for migrations
+      const metadata = this.loadSchemaMetadata();
+      const needsMigration = metadata.version < CREDIT_SCHEMA_VERSION;
 
       // Load with encrypted storage support (handles both encrypted and plaintext files)
       const balancesData = readEncryptedJson<Record<string, CreditBalance>>(
@@ -257,8 +310,58 @@ export class CreditStore {
         {}
       );
       this.streakRewards = new Map(Object.entries(streakData));
+
+      // Run migrations if needed
+      if (needsMigration) {
+        this.runMigrations(metadata.version);
+      }
     } catch (e) {
-      console.error('CreditStore load error:', e);
+      logger.error({ err: e }, 'credit_store_load_error');
+    }
+  }
+
+  private runMigrations(fromVersion: number): void {
+    try {
+      // Combine all data for migration
+      const combinedData: CreditDataCurrent = {
+        balances: Object.fromEntries(this.balances),
+        transactions: this.transactions,
+        purchases: Object.fromEntries(this.purchases),
+        referrals: Object.fromEntries(this.referrals),
+        streakRewards: Object.fromEntries(this.streakRewards),
+      };
+
+      // Run migrations
+      const result = creditMigrations.migrate({
+        version: fromVersion,
+        migratedAt: null,
+        data: combinedData,
+      });
+
+      if (result.wasModified) {
+        // Update in-memory data
+        this.balances = new Map(Object.entries(result.data.data.balances));
+        this.transactions = result.data.data.transactions;
+        this.purchases = new Map(Object.entries(result.data.data.purchases));
+        this.referrals = new Map(Object.entries(result.data.data.referrals));
+        this.streakRewards = new Map(Object.entries(result.data.data.streakRewards));
+        this.schemaVersion = result.data.version;
+
+        // Save migrated data
+        this.save();
+        this.saveSchemaMetadata();
+
+        logger.info(
+          {
+            fromVersion,
+            toVersion: this.schemaVersion,
+            migrationsApplied: result.migrationsApplied,
+          },
+          'credit_store_migrated'
+        );
+      }
+    } catch (err) {
+      logger.error({ fromVersion, err }, 'credit_store_migration_error');
     }
   }
 
