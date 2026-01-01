@@ -7,6 +7,7 @@
 
 import { getRedis } from './redis.js';
 import { logger } from './logger.js';
+import { secureRandomHex } from './secureId.js';
 
 const RATE_LIMIT_PREFIX = 'ratelimit:';
 
@@ -57,7 +58,7 @@ export async function checkRateLimit(options: RateLimitOptions): Promise<RateLim
       return { ok: false, remaining: 0, resetAt, retryAfter: retryAfter > 0 ? retryAfter : 1 };
     }
 
-    const uniqueId = `${now}:${Math.random().toString(36).slice(2, 8)}`;
+    const uniqueId = `${now}:${secureRandomHex(4)}`;
     await redis.zadd(redisKey, now, uniqueId);
     await redis.expire(redisKey, Math.ceil(windowMs / 1000) + 60);
 

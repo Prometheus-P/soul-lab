@@ -7,6 +7,7 @@
 
 import { getRedis } from '../lib/redis.js';
 import { withLock } from '../lib/lock.js';
+import { generateTransactionId } from '../lib/secureId.js';
 import type {
   ICreditStore,
   CreditBalance,
@@ -48,10 +49,10 @@ const TTL = {
 };
 
 /**
- * Generate a unique transaction ID
+ * Generate a unique transaction ID using crypto.randomBytes
  */
 function generateTxId(): string {
-  return `tx_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
+  return generateTransactionId();
 }
 
 /**

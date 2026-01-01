@@ -11,6 +11,7 @@ import { existsSync, readFileSync, mkdirSync } from 'fs';
 import { join, dirname } from 'path';
 import * as mutex from '../lib/mutex.js';
 import { writeJsonAtomic } from '../lib/atomicWrite.js';
+import { generateTransactionId } from '../lib/secureId.js';
 
 // ============================================================
 // Types
@@ -345,7 +346,7 @@ export class CreditStore {
     balance.lastUpdated = new Date().toISOString();
 
     const transaction: CreditTransaction = {
-      id: `tx_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`,
+      id: generateTransactionId(),
       userKey,
       type,
       amount,
@@ -386,7 +387,7 @@ export class CreditStore {
     balance.lastUpdated = new Date().toISOString();
 
     const transaction: CreditTransaction = {
-      id: `tx_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`,
+      id: generateTransactionId(),
       userKey,
       type: 'use',
       amount: -amount,
