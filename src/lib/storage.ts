@@ -2,6 +2,7 @@ const K_BIRTHDATE = 'sl_birthdate_yyyymmdd';
 const K_AGREEMENT = 'sl_agreement_v1';
 const K_VIRAL_UNLOCKED_DATE = 'sl_viral_unlocked_date';
 const K_USER_NAME = 'sl_user_name';
+const K_FIRST_VISIT = 'sl_first_visit_date';
 
 const KEY = {
   userSeed: 'soul_lab:user_seed',
@@ -138,4 +139,44 @@ export function setAdminToken(token: string): void {
 
 export function clearAdminToken(): void {
   localStorage.removeItem(K_ADMIN_TOKEN);
+}
+
+// First visit tracking for ad delay
+export function getFirstVisitDate(): string | null {
+  return localStorage.getItem(K_FIRST_VISIT);
+}
+
+export function setFirstVisitDate(dateKey: string): void {
+  // Only set if not already set (preserve original first visit)
+  if (!localStorage.getItem(K_FIRST_VISIT)) {
+    localStorage.setItem(K_FIRST_VISIT, dateKey);
+  }
+}
+
+/**
+ * Calculate days since first visit.
+ * Returns 1 on first day, 2 on second day, etc.
+ * Returns 0 if first visit date not set.
+ */
+export function getDaysSinceFirstVisit(): number {
+  const firstVisit = getFirstVisitDate();
+  if (!firstVisit || !/^\d{8}$/.test(firstVisit)) return 0;
+
+  const today = new Date();
+  const todayKey = today.toISOString().slice(0, 10).replace(/-/g, '');
+
+  const firstYear = parseInt(firstVisit.slice(0, 4));
+  const firstMonth = parseInt(firstVisit.slice(4, 6)) - 1;
+  const firstDay = parseInt(firstVisit.slice(6, 8));
+  const firstDate = new Date(firstYear, firstMonth, firstDay);
+
+  const todayYear = parseInt(todayKey.slice(0, 4));
+  const todayMonth = parseInt(todayKey.slice(4, 6)) - 1;
+  const todayDay = parseInt(todayKey.slice(6, 8));
+  const todayDate = new Date(todayYear, todayMonth, todayDay);
+
+  const diffTime = todayDate.getTime() - firstDate.getTime();
+  const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+
+  return diffDays + 1; // 1-indexed (first day = 1)
 }

@@ -6,7 +6,11 @@ import AdRewardButton from './AdRewardButton';
 import { UnlockActions, UnlockState, ReportData } from '../hooks/useUnlockLogic';
 import { getStreak } from '../lib/streak';
 import { qualifiesForFreeUnlock, getFreeUnlockMessage } from '../lib/streakBonus';
+import { getDaysSinceFirstVisit } from '../lib/storage';
 import { track } from '../lib/analytics';
+
+// 광고 노출 시작일 (첫 방문 후 N일차부터)
+const AD_DELAY_DAYS = 3;
 
 interface LockedResultViewProps {
   state: UnlockState;
@@ -29,6 +33,10 @@ export default function LockedResultView({ state, actions, reportData }: LockedR
   const streak = getStreak();
   const hasFreeUnlock = qualifiesForFreeUnlock(streak);
   const freeUnlockMessage = getFreeUnlockMessage(streak);
+
+  // 광고는 3일차부터 노출 (신규 유저 친화적)
+  const daysSinceFirstVisit = getDaysSinceFirstVisit();
+  const showAds = daysSinceFirstVisit >= AD_DELAY_DAYS;
 
   const handleFreeUnlock = () => {
     track('streak_free_unlock', { streak });
@@ -80,13 +88,33 @@ export default function LockedResultView({ state, actions, reportData }: LockedR
         </div>
       )}
 
-      <div style={{ height: 12 }} />
-      <AdRewardButton
-        adGroupId={adGroupId}
-        userKey={state.myKey}
-        scope="daily"
-        onUnlocked={actions.unlock}
-      />
+      {/* 광고는 3일차부터 노출 */}
+      {showAds ? (
+        <>
+          <div style={{ height: 12 }} />
+          <AdRewardButton
+            adGroupId={adGroupId}
+            userKey={state.myKey}
+            scope="daily"
+            onUnlocked={actions.unlock}
+          />
+        </>
+      ) : (
+        <div style={{ height: 12 }}>
+          <div
+            className="card"
+            style={{
+              background: 'linear-gradient(135deg, rgba(147, 112, 219, 0.1), rgba(75, 0, 130, 0.2))',
+              border: '1px solid rgba(147, 112, 219, 0.3)',
+              textAlign: 'center',
+            }}
+          >
+            <div className="small" style={{ color: 'rgba(255,255,255,0.7)' }}>
+              🌙 {AD_DELAY_DAYS - daysSinceFirstVisit}일 후 추가 해제 방법이 열립니다
+            </div>
+          </div>
+        </div>
+      )}
 
       <div style={{ height: 12 }} />
       <Button size="large" color="dark" variant="weak" display="full" onClick={actions.onShareResult}>

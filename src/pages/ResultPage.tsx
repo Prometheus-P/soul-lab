@@ -6,7 +6,8 @@ import LockedResultView from '../components/LockedResultView';
 import UnlockedResultView from '../components/UnlockedResultView';
 import { useUnlockLogic } from '../hooks/useUnlockLogic';
 import { track } from '../lib/analytics';
-import { setLocal } from '../lib/storage';
+import { setLocal, setFirstVisitDate } from '../lib/storage';
+import { todayKey } from '../lib/seed';
 
 export default function ResultPage() {
   const [sp] = useSearchParams();
@@ -24,6 +25,8 @@ export default function ResultPage() {
     track('result_view', { hasReferrer: !!referrerInfo });
     // Mark that user has seen result page (for faster loading on return visits)
     setLocal('sl_has_seen_result', true);
+    // Record first visit date for ad delay logic (only sets once)
+    setFirstVisitDate(todayKey());
   }, [referrerInfo]);
 
   const { state, actions, reportData } = useUnlockLogic();
