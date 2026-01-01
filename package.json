@@ -27,6 +27,7 @@
     "test:all": "vitest run && vitest run --config server/vitest.config.ts"
   },
   "dependencies": {
+    "korean-lunar-calendar": "^0.3.6",
     "ogl": "^1.0.11",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -47,7 +48,7 @@
     "@typescript-eslint/eslint-plugin": "^8.18.0",
     "@typescript-eslint/parser": "^8.51.0",
     "@vercel/node": "^5.5.16",
-    "@vitejs/plugin-react": "^4.3.4",
+    "@vitejs/plugin-react": "^5.1.2",
     "@vitest/coverage-v8": "^4.0.16",
     "eslint": "^9.17.0",
     "eslint-plugin-react-hooks": "^5.0.0",
@@ -58,7 +59,7 @@
     "rollup-plugin-visualizer": "^6.0.5",
     "tsx": "^4.19.2",
     "typescript": "^5.7.2",
-    "vite": "^6.0.6",
+    "vite": "^7.3.0",
     "vite-plugin-compression": "^0.5.1",
     "vitest": "^4.0.16",
     "vitest-axe": "^0.1.0"
