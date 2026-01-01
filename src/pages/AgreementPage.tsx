@@ -3,6 +3,7 @@ import { useNavigate, useSearchParams } from 'react-router';
 import { Button, AgreementV4 } from '@toss/tds-mobile';
 import Header from '../components/Header';
 import BirthDatePicker from '../components/BirthDatePicker';
+import { FormTextarea } from '../components/form';
 import { COMPLIANCE_COPY } from '../lib/complianceCopy';
 import {
   getAgreement,
@@ -92,19 +93,6 @@ export default function AgreementPage() {
     nav('/loading', { replace: true });
   };
 
-  const textareaStyle: React.CSSProperties = {
-    width: '100%',
-    minHeight: 80,
-    padding: 12,
-    fontSize: 15,
-    background: 'rgba(26, 15, 46, 0.9)',
-    border: '1px solid rgba(147, 112, 219, 0.3)',
-    borderRadius: 8,
-    color: 'rgba(255, 255, 255, 0.95)',
-    resize: 'vertical',
-    fontFamily: 'inherit',
-  };
-
   return (
     <div className="container">
       <Header title={COMPLIANCE_COPY.headline} subtitle={COMPLIANCE_COPY.sub} />
@@ -169,17 +157,15 @@ export default function AgreementPage() {
         <div className="small" style={{ marginBottom: 8 }}>
           연애, 돈, 커리어... 지금 마음에 걸리는 주제가 있다면 적어보세요 (선택)
         </div>
-        <textarea
+        <FormTextarea
           value={question}
           onChange={(e) => setQuestion(e.target.value)}
           placeholder="예: 이직 타이밍이 맞는지 모르겠어요"
-          style={textareaStyle}
           maxLength={200}
+          minRows={3}
           aria-label="오늘 궁금한 질문"
+          showProgress={true}
         />
-        <div className="small" style={{ textAlign: 'right', marginTop: 4, color: 'rgba(255,255,255,0.5)' }}>
-          {question.length}/200
-        </div>
       </div>
 
       <Button
