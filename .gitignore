@@ -3,8 +3,11 @@ dist
 .env
 .DS_Store
 server/data/
-.claude/
 .playwright-mcp/
+
+# Claude Code - include commands, exclude local files
+.claude/*.local.md
+.claude/*-feedback.md
 
 # Build cache
 *.tsbuildinfo

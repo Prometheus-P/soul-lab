@@ -1,0 +1,26 @@
+{
+  "$schema": "https://claude.ai/code/settings.schema.json",
+  "project": {
+    "name": "Soul Lab",
+    "type": "fullstack",
+    "languages": ["typescript", "react"],
+    "packageManager": "pnpm"
+  },
+  "conventions": {
+    "commitStyle": "conventional",
+    "testFramework": "vitest",
+    "linter": "eslint",
+    "formatter": "prettier"
+  },
+  "workflows": {
+    "prChecklist": [
+      "pnpm build:web 성공",
+      "pnpm test:run 통과",
+      "pnpm lint 에러 없음",
+      "커밋 메시지 컨벤션 준수",
+      "console.log 제거",
+      "민감 정보 노출 없음",
+      "이슈 번호 참조"
+    ]
+  }
+}
