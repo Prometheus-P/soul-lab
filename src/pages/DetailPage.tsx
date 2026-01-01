@@ -203,17 +203,22 @@ export default function DetailPage() {
             <Button size="large" color="primary" variant="fill" display="full" onClick={onInviteContacts}>
               ✨ 인연 초대하기
             </Button>
-            <div style={{ height: 10 }} />
-            <Button size="large" color="dark" variant="weak" display="full" onClick={onInviteShare}>
-              초대 링크 보내기
-            </Button>
+            <div className="action-row" style={{ marginTop: 8 }}>
+              <Button size="small" color="dark" variant="weak" onClick={onInviteShare}>
+                📋 링크 공유
+              </Button>
+            </div>
           </>
         )}
       </div>
 
-      <Button size="large" color="dark" variant="weak" display="full" onClick={() => nav('/result')}>
-        오늘의 운명으로 돌아가기
-      </Button>
+      {/* 더보기 영역 */}
+      <section className="more-section">
+        <div className="more-section-header">더보기</div>
+        <Button size="small" color="dark" variant="weak" display="full" onClick={() => nav('/result')}>
+          ← 오늘의 운명으로
+        </Button>
+      </section>
 
       <div className="footer">* 엔터테인먼트 목적의 "연출된 분석"입니다.</div>
     </div>
