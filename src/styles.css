@@ -473,3 +473,14 @@ a:focus {
 
 @keyframes formSlideIn { from { opacity: 0; transform: translateX(-8px); } to { opacity: 1; transform: translateX(0); } }
 .form-slide-in { animation: formSlideIn 0.2s ease-out; }
+
+/* BirthDatePicker */
+.birthdate-picker { border: none; margin: 0; padding: 0; }
+.birthdate-picker__calendar-row { display: flex; gap: 16px; margin-bottom: 16px; align-items: center; flex-wrap: wrap; }
+.birthdate-picker__calendar-row .form-field { margin-bottom: 0; }
+.birthdate-picker__leap-month { opacity: 0; transform: translateX(-8px); transition: opacity 0.2s ease-out, transform 0.2s ease-out; }
+.birthdate-picker__leap-month--visible { opacity: 1; transform: translateX(0); }
+.birthdate-picker__leap-month .form-field { margin-bottom: 0; }
+.birthdate-picker__date-row { display: flex; gap: 8px; }
+.birthdate-picker__date-row .form-field { flex: 1; margin-bottom: 0; }
+.birthdate-picker__date-row .form-select-wrapper { width: 100%; }
