@@ -3,11 +3,14 @@
  *
  * Writes files atomically using the write-to-temp-then-rename pattern.
  * This prevents partial writes and data corruption on crash/power loss.
+ *
+ * Security: Uses safePath for path traversal prevention.
  */
 
 import { writeFileSync, renameSync, mkdirSync, existsSync, unlinkSync } from 'fs';
-import { dirname, basename, join } from 'path';
+import { dirname, basename, join, isAbsolute, resolve } from 'path';
 import { randomBytes } from 'crypto';
+import { hasDangerousPattern, PathTraversalError } from './safePath.js';
 
 /**
  * Write content to a file atomically.
@@ -20,6 +23,11 @@ import { randomBytes } from 'crypto';
  * @param content - Content to write
  */
 export function writeFileAtomic(filePath: string, content: string): void {
+  // Security: Validate path doesn't contain traversal patterns
+  if (hasDangerousPattern(filePath)) {
+    throw new PathTraversalError(`Dangerous path pattern detected: ${filePath}`);
+  }
+
   const dir = dirname(filePath);
   const base = basename(filePath);
 
@@ -74,6 +82,11 @@ export function writeJsonAtomic(filePath: string, data: unknown, pretty = true):
  */
 export function cleanupTempFiles(dir: string): number {
   let cleaned = 0;
+
+  // Security: Validate directory path
+  if (hasDangerousPattern(dir)) {
+    throw new PathTraversalError(`Dangerous directory pattern: ${dir}`);
+  }
 
   if (!existsSync(dir)) return cleaned;
 
