@@ -57,6 +57,11 @@ export function applyEmpathyOverlay(
       name: input.name,
     });
 
+    // Debug: log refiner meta in development
+    if (import.meta.env.DEV) {
+      console.log('[refiner] meta:', JSON.stringify(refined.meta));
+    }
+
     return { text: refined.text, meta: result.meta };
   } catch (err) {
     console.error('[empathy] Engine error, falling back to base text:', err);
