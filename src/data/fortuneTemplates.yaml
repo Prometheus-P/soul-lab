@@ -12666,3 +12666,608 @@ templates:
       moneyDetail: "83% 달성, 거의 다 왔습니다."
       loveDetail: "열정을 유지하세요."
       conditionDetail: "에너지를 비축하면서 나아가세요."
+
+  # T1051-T1060: 흙/땅
+  - id: T1051
+    open:
+      oneLiner: "땅에 발을 딛습니다."
+      summary: "단단한 땅 위에 서서 안정을 느낍니다."
+    locked:
+      luckyTime: "06:00~06:30 (기초의 시간)"
+      helper: "기초를 다져줄 멘토"
+      caution: "땅에만 머물지 말고 하늘도 보세요."
+      moneyDetail: "안정적인 기반을 다지세요."
+      loveDetail: "관계의 기초를 탄탄히 하세요."
+      conditionDetail: "기본기를 다지세요."
+
+  - id: T1052
+    open:
+      oneLiner: "씨앗이 땅에 묻힙니다."
+      summary: "보이지 않는 곳에서 성장이 시작됩니다."
+    locked:
+      luckyTime: "07:00~07:30 (파종의 시간)"
+      helper: "씨앗을 함께 심을 동료"
+      caution: "너무 빨리 캐보지 마세요."
+      moneyDetail: "장기 투자를 시작하세요."
+      loveDetail: "사랑의 씨앗을 심으세요."
+      conditionDetail: "좋은 습관의 씨앗을 심으세요."
+
+  - id: T1053
+    open:
+      oneLiner: "뿌리를 내립니다."
+      summary: "깊이 뿌리를 내려 흔들리지 않습니다."
+    locked:
+      luckyTime: "08:00~08:30 (착근의 시간)"
+      helper: "정착을 도와줄 친구"
+      caution: "뿌리가 너무 깊으면 움직이기 어렵습니다."
+      moneyDetail: "안정적인 수입원을 확보하세요."
+      loveDetail: "관계에 정착하세요."
+      conditionDetail: "생활 터전을 잡으세요."
+
+  - id: T1054
+    open:
+      oneLiner: "흙을 만집니다."
+      summary: "맨손으로 흙을 만지며 자연과 연결됩니다."
+    locked:
+      luckyTime: "09:00~09:30 (접지의 시간)"
+      helper: "자연과 연결해줄 안내자"
+      caution: "손이 더러워지는 것을 두려워하지 마세요."
+      moneyDetail: "실물 자산을 만져보세요."
+      loveDetail: "직접 만나서 대화하세요."
+      conditionDetail: "맨발로 땅을 밟으세요."
+
+  - id: T1055
+    open:
+      oneLiner: "비옥한 토양입니다."
+      summary: "무엇이든 자랄 수 있는 풍요로운 환경입니다."
+    locked:
+      luckyTime: "10:00~10:30 (옥토의 시간)"
+      helper: "풍요를 함께 누릴 파트너"
+      caution: "풍요 속에서도 관리가 필요합니다."
+      moneyDetail: "기회가 풍부합니다."
+      loveDetail: "사랑이 자라기 좋은 환경입니다."
+      conditionDetail: "건강이 좋아지기 좋은 조건입니다."
+
+  - id: T1056
+    open:
+      oneLiner: "지진이 일어납니다."
+      summary: "기존 기반이 흔들리며 재정립됩니다."
+    locked:
+      luckyTime: "12:00~12:30 (진동의 시간)"
+      helper: "흔들림 속에서 중심을 잡아줄 친구"
+      caution: "무너지기 전에 대비하세요."
+      moneyDetail: "재정 기반을 점검하세요."
+      loveDetail: "관계가 흔들릴 수 있습니다."
+      conditionDetail: "중심을 잡으세요."
+
+  - id: T1057
+    open:
+      oneLiner: "산이 솟습니다."
+      summary: "오랜 세월 축적되어 높이 솟아오릅니다."
+    locked:
+      luckyTime: "14:00~14:30 (융기의 시간)"
+      helper: "함께 높이 올라갈 동료"
+      caution: "높이 오르면 추락도 큽니다."
+      moneyDetail: "자산이 쌓여갑니다."
+      loveDetail: "신뢰가 쌓여갑니다."
+      conditionDetail: "체력이 축적됩니다."
+
+  - id: T1058
+    open:
+      oneLiner: "동굴을 발견합니다."
+      summary: "땅 속 숨겨진 공간이 나타납니다."
+    locked:
+      luckyTime: "16:00~16:30 (발굴의 시간)"
+      helper: "함께 탐험할 모험가"
+      caution: "어둠 속에서 길을 잃지 마세요."
+      moneyDetail: "숨겨진 자산을 발견하세요."
+      loveDetail: "상대방의 내면을 발견하세요."
+      conditionDetail: "몸의 숨겨진 문제를 찾으세요."
+
+  - id: T1059
+    open:
+      oneLiner: "광석을 캡니다."
+      summary: "땅 속에서 귀한 것을 캐냅니다."
+    locked:
+      luckyTime: "15:00~15:30 (채굴의 시간)"
+      helper: "함께 캘 동료"
+      caution: "너무 깊이 파면 위험합니다."
+      moneyDetail: "가치 있는 것을 발굴하세요."
+      loveDetail: "숨겨진 매력을 발견하세요."
+      conditionDetail: "잠재력을 끌어올리세요."
+
+  - id: T1060
+    open:
+      oneLiner: "대지가 쉽니다."
+      summary: "휴경지처럼 땅이 쉬며 힘을 비축합니다."
+    locked:
+      luckyTime: "19:00~19:30 (휴경의 시간)"
+      helper: "함께 쉴 친구"
+      caution: "너무 오래 쉬면 황폐해집니다."
+      moneyDetail: "투자를 잠시 쉬세요."
+      loveDetail: "관계도 쉬어가며."
+      conditionDetail: "충분한 휴식을 취하세요."
+
+  # T1061-T1070: 바람/공기
+  - id: T1061
+    open:
+      oneLiner: "바람이 붑니다."
+      summary: "새로운 바람이 불어와 변화를 가져옵니다."
+    locked:
+      luckyTime: "06:00~06:30 (풍기의 시간)"
+      helper: "변화를 함께할 동료"
+      caution: "바람에 휩쓸리지 마세요."
+      moneyDetail: "새로운 트렌드를 읽으세요."
+      loveDetail: "새로운 인연의 바람이 붑니다."
+      conditionDetail: "신선한 공기를 마시세요."
+
+  - id: T1062
+    open:
+      oneLiner: "숨을 쉽니다."
+      summary: "깊이 숨을 들이마시고 내쉽니다."
+    locked:
+      luckyTime: "07:00~07:30 (호흡의 시간)"
+      helper: "호흡을 가르쳐줄 스승"
+      caution: "숨이 가빠지면 쉬세요."
+      moneyDetail: "재정에 여유를 두세요."
+      loveDetail: "관계에서 숨을 쉬세요."
+      conditionDetail: "깊은 호흡을 하세요."
+
+  - id: T1063
+    open:
+      oneLiner: "바람을 탑니다."
+      summary: "순풍에 돛을 달아 멀리 나아갑니다."
+    locked:
+      luckyTime: "10:00~10:30 (순항의 시간)"
+      helper: "함께 항해할 선원"
+      caution: "바람이 바뀔 수 있습니다."
+      moneyDetail: "좋은 흐름을 타세요."
+      loveDetail: "사랑의 순풍을 즐기세요."
+      conditionDetail: "좋은 컨디션을 유지하세요."
+
+  - id: T1064
+    open:
+      oneLiner: "폭풍이 옵니다."
+      summary: "거센 바람이 모든 것을 흔듭니다."
+    locked:
+      luckyTime: "15:00~15:30 (폭풍의 시간)"
+      helper: "폭풍을 함께 이겨낼 동지"
+      caution: "폭풍 속에선 움직이지 마세요."
+      moneyDetail: "시장 변동에 대비하세요."
+      loveDetail: "관계의 위기에 대비하세요."
+      conditionDetail: "면역력을 강화하세요."
+
+  - id: T1065
+    open:
+      oneLiner: "바람이 잔잔해집니다."
+      summary: "폭풍이 지나고 평화가 찾아옵니다."
+    locked:
+      luckyTime: "18:00~18:30 (고요의 시간)"
+      helper: "평화를 나눌 친구"
+      caution: "폭풍이 다시 올 수 있습니다."
+      moneyDetail: "안정이 찾아옵니다."
+      loveDetail: "평화로운 시간을 보내세요."
+      conditionDetail: "마음이 편안해집니다."
+
+  - id: T1066
+    open:
+      oneLiner: "향기가 퍼집니다."
+      summary: "바람을 타고 좋은 향기가 퍼집니다."
+    locked:
+      luckyTime: "09:00~09:30 (향기의 시간)"
+      helper: "좋은 영향을 주는 사람"
+      caution: "나쁜 냄새도 퍼질 수 있습니다."
+      moneyDetail: "좋은 평판이 수익을 가져옵니다."
+      loveDetail: "좋은 이미지를 전하세요."
+      conditionDetail: "아로마테라피를 시도하세요."
+
+  - id: T1067
+    open:
+      oneLiner: "날아오릅니다."
+      summary: "땅을 떠나 하늘로 날아오릅니다."
+    locked:
+      luckyTime: "11:00~11:30 (비상의 시간)"
+      helper: "함께 날 수 있는 동반자"
+      caution: "너무 높이 날면 위험합니다."
+      moneyDetail: "수익이 상승합니다."
+      loveDetail: "관계가 도약합니다."
+      conditionDetail: "가벼운 마음을 가지세요."
+
+  - id: T1068
+    open:
+      oneLiner: "바람개비가 돕니다."
+      summary: "바람의 방향에 따라 유연하게 돌아갑니다."
+    locked:
+      luckyTime: "13:00~13:30 (순응의 시간)"
+      helper: "유연한 사고의 친구"
+      caution: "주대 없이 돌기만 하면 안 됩니다."
+      moneyDetail: "시장 변화에 맞추세요."
+      loveDetail: "상대에게 맞춰주세요."
+      conditionDetail: "유연하게 대처하세요."
+
+  - id: T1069
+    open:
+      oneLiner: "공기가 맑습니다."
+      summary: "탁한 것이 걷히고 맑은 공기가 찹니다."
+    locked:
+      luckyTime: "08:00~08:30 (청정의 시간)"
+      helper: "맑은 에너지를 주는 사람"
+      caution: "탁한 환경을 피하세요."
+      moneyDetail: "투명한 거래를 하세요."
+      loveDetail: "솔직한 대화를 하세요."
+      conditionDetail: "공기 좋은 곳에서 운동하세요."
+
+  - id: T1070
+    open:
+      oneLiner: "회오리가 칩니다."
+      summary: "빠르게 돌아가는 에너지가 모든 것을 빨아들입니다."
+    locked:
+      luckyTime: "12:00~12:30 (소용돌이의 시간)"
+      helper: "중심을 잡아줄 멘토"
+      caution: "회오리에 휩쓸리지 마세요."
+      moneyDetail: "빠른 변화에 대응하세요."
+      loveDetail: "격렬한 감정에 휘둘리지 마세요."
+      conditionDetail: "어지러움에 주의하세요."
+
+  # T1071-T1080: 나무/성장
+  - id: T1071
+    open:
+      oneLiner: "새싹이 돋습니다."
+      summary: "땅을 뚫고 새로운 생명이 나타납니다."
+    locked:
+      luckyTime: "06:00~06:30 (발아의 시간)"
+      helper: "성장을 지켜볼 멘토"
+      caution: "아직 여리니 조심하세요."
+      moneyDetail: "새로운 수입원이 싹틉니다."
+      loveDetail: "새로운 감정이 싹틉니다."
+      conditionDetail: "새로운 활력이 생깁니다."
+
+  - id: T1072
+    open:
+      oneLiner: "나무가 자랍니다."
+      summary: "천천히 하지만 확실하게 성장합니다."
+    locked:
+      luckyTime: "09:00~09:30 (성장의 시간)"
+      helper: "성장을 함께할 동료"
+      caution: "너무 빨리 자라면 약합니다."
+      moneyDetail: "자산이 꾸준히 성장합니다."
+      loveDetail: "관계가 깊어집니다."
+      conditionDetail: "건강이 좋아집니다."
+
+  - id: T1073
+    open:
+      oneLiner: "가지가 뻗습니다."
+      summary: "사방으로 가지를 뻗어 영역을 넓힙니다."
+    locked:
+      luckyTime: "10:00~10:30 (확장의 시간)"
+      helper: "확장을 도울 파트너"
+      caution: "너무 넓게 펼치면 약해집니다."
+      moneyDetail: "사업을 확장하세요."
+      loveDetail: "관계를 넓히세요."
+      conditionDetail: "활동 범위를 넓히세요."
+
+  - id: T1074
+    open:
+      oneLiner: "잎이 무성합니다."
+      summary: "푸른 잎이 우거져 그늘을 만듭니다."
+    locked:
+      luckyTime: "12:00~12:30 (번영의 시간)"
+      helper: "그늘을 함께 누릴 가족"
+      caution: "겉만 무성하면 안 됩니다."
+      moneyDetail: "풍요로운 시기입니다."
+      loveDetail: "사랑이 풍성합니다."
+      conditionDetail: "건강이 왕성합니다."
+
+  - id: T1075
+    open:
+      oneLiner: "꽃이 핍니다."
+      summary: "아름다운 꽃을 피워 존재를 드러냅니다."
+    locked:
+      luckyTime: "11:00~11:30 (개화의 시간)"
+      helper: "꽃을 함께 볼 친구"
+      caution: "꽃은 오래가지 않습니다."
+      moneyDetail: "수익이 꽃을 피웁니다."
+      loveDetail: "사랑이 꽃을 피웁니다."
+      conditionDetail: "건강미가 드러납니다."
+
+  - id: T1076
+    open:
+      oneLiner: "열매가 맺힙니다."
+      summary: "오랜 기다림 끝에 열매가 맺힙니다."
+    locked:
+      luckyTime: "15:00~15:30 (결실의 시간)"
+      helper: "열매를 함께 수확할 동료"
+      caution: "열매가 익기를 기다리세요."
+      moneyDetail: "투자의 열매를 거두세요."
+      loveDetail: "사랑의 열매를 거두세요."
+      conditionDetail: "노력의 결과가 나타납니다."
+
+  - id: T1077
+    open:
+      oneLiner: "낙엽이 집니다."
+      summary: "할 일을 다한 잎이 떨어져 다음을 준비합니다."
+    locked:
+      luckyTime: "17:00~17:30 (낙엽의 시간)"
+      helper: "정리를 도울 친구"
+      caution: "쓸쓸함에 빠지지 마세요."
+      moneyDetail: "불필요한 것을 정리하세요."
+      loveDetail: "지난 관계를 정리하세요."
+      conditionDetail: "몸을 정화하세요."
+
+  - id: T1078
+    open:
+      oneLiner: "고목이 됩니다."
+      summary: "오랜 세월을 견뎌 지혜로운 고목이 됩니다."
+    locked:
+      luckyTime: "19:00~19:30 (숙성의 시간)"
+      helper: "지혜를 나눌 스승"
+      caution: "고집스러운 고목이 되지 마세요."
+      moneyDetail: "경험에서 지혜를 얻으세요."
+      loveDetail: "오랜 사랑의 깊이를 느끼세요."
+      conditionDetail: "나이듦을 받아들이세요."
+
+  - id: T1079
+    open:
+      oneLiner: "숲이 됩니다."
+      summary: "혼자가 아닌 함께 숲을 이룹니다."
+    locked:
+      luckyTime: "14:00~14:30 (군락의 시간)"
+      helper: "함께 숲을 이룰 동료들"
+      caution: "숲에서 길을 잃지 마세요."
+      moneyDetail: "함께 성장하세요."
+      loveDetail: "가족을 이루세요."
+      conditionDetail: "커뮤니티에 참여하세요."
+
+  - id: T1080
+    open:
+      oneLiner: "뿌리와 가지의 균형입니다."
+      summary: "보이는 것과 보이지 않는 것이 균형을 이룹니다."
+    locked:
+      luckyTime: "18:00~18:30 (균형의 시간)"
+      helper: "균형을 조언할 멘토"
+      caution: "한쪽만 키우면 쓰러집니다."
+      moneyDetail: "내실과 외형의 균형을 맞추세요."
+      loveDetail: "안과 밖의 균형을 맞추세요."
+      conditionDetail: "몸과 마음의 균형을 맞추세요."
+
+  # T1081-T1090: 금속/단단함
+  - id: T1081
+    open:
+      oneLiner: "강철처럼 단단합니다."
+      summary: "어떤 것도 뚫지 못할 단단함을 가집니다."
+    locked:
+      luckyTime: "09:00~09:30 (강철의 시간)"
+      helper: "함께 단련할 동료"
+      caution: "너무 단단하면 부서집니다."
+      moneyDetail: "재정 방어력을 높이세요."
+      loveDetail: "약속을 지키세요."
+      conditionDetail: "근육을 단련하세요."
+
+  - id: T1082
+    open:
+      oneLiner: "금이 빛납니다."
+      summary: "가치 있는 것은 언제나 빛납니다."
+    locked:
+      luckyTime: "12:00~12:30 (황금의 시간)"
+      helper: "가치를 알아보는 감정사"
+      caution: "도금에 속지 마세요."
+      moneyDetail: "진짜 가치 있는 것에 투자하세요."
+      loveDetail: "진정한 사랑을 찾으세요."
+      conditionDetail: "진짜 건강을 추구하세요."
+
+  - id: T1083
+    open:
+      oneLiner: "녹이 슬기 전에."
+      summary: "관리하지 않으면 녹이 슬어 약해집니다."
+    locked:
+      luckyTime: "10:00~10:30 (관리의 시간)"
+      helper: "관리를 도와줄 전문가"
+      caution: "방치하면 녹슬어 무너집니다."
+      moneyDetail: "자산을 관리하세요."
+      loveDetail: "관계를 관리하세요."
+      conditionDetail: "건강을 관리하세요."
+
+  - id: T1084
+    open:
+      oneLiner: "담금질합니다."
+      summary: "불에 달구고 식혀서 더 단단해집니다."
+    locked:
+      luckyTime: "14:00~14:30 (담금질의 시간)"
+      helper: "담금질을 도울 장인"
+      caution: "과정이 고통스럽습니다."
+      moneyDetail: "시련을 통해 강해지세요."
+      loveDetail: "어려움을 통해 성장하세요."
+      conditionDetail: "훈련을 통해 강해지세요."
+
+  - id: T1085
+    open:
+      oneLiner: "칼날이 섭니다."
+      summary: "갈고 닦아 예리한 칼날이 됩니다."
+    locked:
+      luckyTime: "11:00~11:30 (연마의 시간)"
+      helper: "실력을 연마할 스승"
+      caution: "너무 예리하면 다칩니다."
+      moneyDetail: "투자 실력을 연마하세요."
+      loveDetail: "소통 능력을 연마하세요."
+      conditionDetail: "기술을 연마하세요."
+
+  - id: T1086
+    open:
+      oneLiner: "방패가 됩니다."
+      summary: "소중한 것을 지키는 방패가 됩니다."
+    locked:
+      luckyTime: "15:00~15:30 (수호의 시간)"
+      helper: "함께 지킬 동료"
+      caution: "공격도 필요할 때가 있습니다."
+      moneyDetail: "자산을 지키세요."
+      loveDetail: "사랑하는 사람을 지키세요."
+      conditionDetail: "면역력을 키우세요."
+
+  - id: T1087
+    open:
+      oneLiner: "동전이 쌓입니다."
+      summary: "하나하나 모여 큰 재산이 됩니다."
+    locked:
+      luckyTime: "16:00~16:30 (적립의 시간)"
+      helper: "함께 모을 파트너"
+      caution: "동전만 모으면 부자가 안 됩니다."
+      moneyDetail: "차곡차곡 저축하세요."
+      loveDetail: "추억을 쌓아가세요."
+      conditionDetail: "작은 습관을 쌓으세요."
+
+  - id: T1088
+    open:
+      oneLiner: "트리플 팔 금의 풍요입니다."
+      summary: "1088의 금빛 에너지가 풍요를 가져옵니다."
+    locked:
+      luckyTime: "10:08~10:38 (금빛의 시간)"
+      helper: "풍요를 함께할 파트너"
+      caution: "풍요에 교만해지지 마세요."
+      moneyDetail: "황금 같은 기회가 옵니다."
+      loveDetail: "금 같은 인연을 만나세요."
+      conditionDetail: "최상의 컨디션입니다."
+
+  - id: T1089
+    open:
+      oneLiner: "광맥을 찾습니다."
+      summary: "숨겨진 귀한 광맥을 발견합니다."
+    locked:
+      luckyTime: "13:00~13:30 (발견의 시간)"
+      helper: "함께 찾을 탐험가"
+      caution: "가짜 광맥에 속지 마세요."
+      moneyDetail: "숨겨진 기회를 찾으세요."
+      loveDetail: "숨겨진 매력을 발견하세요."
+      conditionDetail: "숨겨진 건강 문제를 찾으세요."
+
+  - id: T1090
+    open:
+      oneLiner: "주조됩니다."
+      summary: "녹은 금속이 틀에 들어가 형태를 갖춥니다."
+    locked:
+      luckyTime: "17:00~17:30 (주조의 시간)"
+      helper: "형태를 만들어줄 장인"
+      caution: "틀에 갇히지 마세요."
+      moneyDetail: "사업의 틀을 만드세요."
+      loveDetail: "관계의 틀을 만드세요."
+      conditionDetail: "생활의 틀을 만드세요."
+
+  # T1091-T1100: 계절/순환
+  - id: T1091
+    open:
+      oneLiner: "봄이 옵니다."
+      summary: "긴 겨울이 지나고 따뜻한 봄이 옵니다."
+    locked:
+      luckyTime: "06:00~06:30 (춘래의 시간)"
+      helper: "봄을 함께 맞이할 친구"
+      caution: "봄에도 꽃샘추위가 있습니다."
+      moneyDetail: "새로운 시작을 하세요."
+      loveDetail: "새로운 사랑이 시작됩니다."
+      conditionDetail: "활력이 돌아옵니다."
+
+  - id: T1092
+    open:
+      oneLiner: "여름이 왕성합니다."
+      summary: "뜨거운 태양 아래 모든 것이 왕성합니다."
+    locked:
+      luckyTime: "12:00~12:30 (성하의 시간)"
+      helper: "함께 활동할 동료"
+      caution: "너무 뜨거우면 타버립니다."
+      moneyDetail: "왕성한 활동을 하세요."
+      loveDetail: "뜨거운 사랑을 나누세요."
+      conditionDetail: "에너지가 최고조입니다."
+
+  - id: T1093
+    open:
+      oneLiner: "가을이 익어갑니다."
+      summary: "열매가 익어 수확의 시간이 옵니다."
+    locked:
+      luckyTime: "15:00~15:30 (추수의 시간)"
+      helper: "함께 수확할 파트너"
+      caution: "수확 시기를 놓치지 마세요."
+      moneyDetail: "결실을 거두세요."
+      loveDetail: "사랑의 결실을 거두세요."
+      conditionDetail: "노력의 결과를 거두세요."
+
+  - id: T1094
+    open:
+      oneLiner: "겨울이 쉽니다."
+      summary: "추운 겨울, 모든 것이 쉬며 힘을 비축합니다."
+    locked:
+      luckyTime: "21:00~21:30 (동면의 시간)"
+      helper: "함께 쉴 가족"
+      caution: "너무 오래 쉬면 안 일어납니다."
+      moneyDetail: "다음 기회를 위해 비축하세요."
+      loveDetail: "관계도 쉬어가며."
+      conditionDetail: "충분히 쉬세요."
+
+  - id: T1095
+    open:
+      oneLiner: "계절이 바뀝니다."
+      summary: "한 계절이 끝나고 새 계절이 시작됩니다."
+    locked:
+      luckyTime: "09:00~09:30 (전환의 시간)"
+      helper: "변화를 함께할 동료"
+      caution: "환절기에 건강 조심하세요."
+      moneyDetail: "새로운 국면이 시작됩니다."
+      loveDetail: "관계가 새 국면을 맞습니다."
+      conditionDetail: "환절기 건강에 주의하세요."
+
+  - id: T1096
+    open:
+      oneLiner: "해가 바뀝니다."
+      summary: "한 해가 끝나고 새해가 시작됩니다."
+    locked:
+      luckyTime: "00:00~00:30 (신년의 시간)"
+      helper: "새해를 함께 맞이할 가족"
+      caution: "새해 계획만 세우지 말고 실행하세요."
+      moneyDetail: "새해 목표를 세우세요."
+      loveDetail: "새해 소망을 빌으세요."
+      conditionDetail: "새해 건강 계획을 세우세요."
+
+  - id: T1097
+    open:
+      oneLiner: "순환합니다."
+      summary: "모든 것은 돌고 돌아 다시 옵니다."
+    locked:
+      luckyTime: "10:00~10:30 (순환의 시간)"
+      helper: "함께 순환할 동료"
+      caution: "같은 실수를 반복하지 마세요."
+      moneyDetail: "경기 순환을 이해하세요."
+      loveDetail: "관계의 순환을 이해하세요."
+      conditionDetail: "몸의 리듬을 이해하세요."
+
+  - id: T1098
+    open:
+      oneLiner: "리듬을 탑니다."
+      summary: "자연의 리듬에 맞춰 살아갑니다."
+    locked:
+      luckyTime: "07:00~07:30 (리듬의 시간)"
+      helper: "리듬을 맞춰줄 파트너"
+      caution: "리듬이 깨지면 혼란이 옵니다."
+      moneyDetail: "시장 리듬을 파악하세요."
+      loveDetail: "관계의 리듬을 맞추세요."
+      conditionDetail: "생체 리듬을 맞추세요."
+
+  - id: T1099
+    open:
+      oneLiner: "1099번째, 1100 직전입니다."
+      summary: "한 걸음만 더 내딛으면 또 다른 마일스톤입니다."
+    locked:
+      luckyTime: "10:09~10:39 (직전의 시간)"
+      helper: "마지막 한 걸음을 함께할 동료"
+      caution: "마지막 방심이 가장 위험합니다."
+      moneyDetail: "마지막까지 집중하세요."
+      loveDetail: "마지막까지 노력하세요."
+      conditionDetail: "마지막까지 버티세요."
+
+  - id: T1100
+    open:
+      oneLiner: "1100의 고지, 87%를 넘었습니다."
+      summary: "7/8을 지나 정상이 손에 잡힙니다."
+    locked:
+      luckyTime: "11:00~11:00 (고지의 순간)"
+      helper: "고지를 함께 밟을 등반 동료"
+      caution: "마지막 13%가 가장 가파릅니다."
+      moneyDetail: "87% 달성, 거의 다 왔습니다."
+      loveDetail: "함께 온 여정을 축하하세요."
+      conditionDetail: "마지막 힘을 내세요."
