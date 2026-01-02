@@ -137,6 +137,6 @@ B2C/B2B/B2G 전 영역 적용.
 ## Reference Docs
 
 심화 가이드는 `docs/` 폴더 참조:
-- [`docs/VIBE_CODING.md`](docs/VIBE_CODING.md) - AI 협업 워크플로우, 빠른 명령어
+- [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) - 전체 시스템 아키텍처, 성숙도 평가, 개선 로드맵
 - [`docs/ENGINEERING.md`](docs/ENGINEERING.md) - 프론트엔드 번들링, 최적화, 성능
 - [`docs/ROLES.md`](docs/ROLES.md) - 11개 전문가 역할별 체크리스트
