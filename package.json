@@ -24,7 +24,9 @@
     "test:coverage": "vitest run --coverage",
     "test:a11y": "vitest run src/test/accessibility.test.tsx",
     "test:server": "vitest run --config server/vitest.config.ts",
-    "test:all": "vitest run && vitest run --config server/vitest.config.ts"
+    "test:all": "vitest run && vitest run --config server/vitest.config.ts",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui"
   },
   "dependencies": {
     "korean-lunar-calendar": "^0.3.6",
@@ -40,6 +42,7 @@
   "devDependencies": {
     "@axe-core/react": "^4.11.0",
     "@eslint/js": "^9.39.2",
+    "@playwright/test": "^1.57.0",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.1",
     "@types/node": "^25.0.3",

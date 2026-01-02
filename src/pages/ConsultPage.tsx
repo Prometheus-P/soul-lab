@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router';
 import { Button } from '@toss/tds-mobile';
 import Header from '../components/Header';
 import { getEffectiveUserKey, getBirthDate } from '../lib/storage';
-import { getBalance, useCredits, checkCredits, CREDIT_ACTIONS } from '../lib/iap';
+import { getBalance, consumeCredits, checkCredits, CREDIT_ACTIONS } from '../lib/iap';
 import { track } from '../lib/analytics';
 import { useFocusTrap } from '../hooks/useFocusTrap';
 
@@ -113,7 +113,7 @@ export default function ConsultPage() {
 
     try {
       // 크레딧 차감
-      const useResult = await useCredits(userKey, CREDIT_ACTIONS.AI_CHAT, `AI 상담: ${content.slice(0, 30)}`);
+      const useResult = await consumeCredits(userKey, CREDIT_ACTIONS.AI_CHAT, `AI 상담: ${content.slice(0, 30)}`);
       if (!useResult.success) {
         throw new Error(useResult.error || 'Failed to use credits');
       }

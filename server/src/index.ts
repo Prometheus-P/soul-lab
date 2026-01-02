@@ -19,6 +19,7 @@ import { logger as pinoLogger } from './lib/logger.js';
 import { requestContextPlugin } from './middleware/requestContext.js';
 import { errorHandlerPlugin } from './middleware/errorHandler.js';
 import { userAuthPlugin } from './middleware/userAuth.js';
+import { globalRateLimitMiddleware } from './middleware/globalRateLimit.js';
 import { isRedisHealthy, closeRedis } from './lib/redis.js';
 import { initProcessedPaymentsStore } from './lib/iapVerifier.js';
 
@@ -119,6 +120,7 @@ await app.register(helmet, {
 await app.register(requestContextPlugin);
 await app.register(errorHandlerPlugin);
 await app.register(userAuthPlugin);
+await app.register(globalRateLimitMiddleware);
 
 // Register auth routes (session tokens)
 await app.register(authRoutes);

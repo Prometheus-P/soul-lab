@@ -2,7 +2,7 @@ import React, { useState, useCallback, useRef } from 'react';
 import { useNavigate } from 'react-router';
 import { Button } from '@toss/tds-mobile';
 import { getEffectiveUserKey, getBirthDate } from '../lib/storage';
-import { getBalance, useCredits, checkCredits, CREDIT_ACTIONS } from '../lib/iap';
+import { consumeCredits, checkCredits, CREDIT_ACTIONS } from '../lib/iap';
 import { track } from '../lib/analytics';
 import { useFocusTrap } from '../hooks/useFocusTrap';
 
@@ -50,7 +50,7 @@ export default function QuickAIInterpretation({ fortuneData }: QuickAIInterpreta
 
     try {
       // 크레딧 차감
-      const useResult = await useCredits(userKey, CREDIT_ACTIONS.AI_CHAT, 'AI 운세 해석');
+      const useResult = await consumeCredits(userKey, CREDIT_ACTIONS.AI_CHAT, 'AI 운세 해석');
       if (!useResult.success) {
         throw new Error(useResult.error || 'Failed to use credits');
       }

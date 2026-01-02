@@ -2,7 +2,7 @@ import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import {
   getProducts,
   getBalance,
-  useCredits,
+  consumeCredits,
   checkCredits,
   purchaseCredits,
   CREDIT_ACTIONS,
@@ -135,7 +135,7 @@ describe('IAP Module', () => {
     });
   });
 
-  describe('useCredits', () => {
+  describe('consumeCredits', () => {
     it('returns success with remaining credits', async () => {
       mockFetch.mockResolvedValueOnce({
         ok: true,
@@ -146,7 +146,7 @@ describe('IAP Module', () => {
           }),
       });
 
-      const result = await useCredits('user123', CREDIT_ACTIONS.AI_CHAT, 'AI chat message');
+      const result = await consumeCredits('user123', CREDIT_ACTIONS.AI_CHAT, 'AI chat message');
 
       expect(result.success).toBe(true);
       expect(result.remainingCredits).toBe(9);
@@ -165,7 +165,7 @@ describe('IAP Module', () => {
         json: () => Promise.resolve({ error: 'insufficient_credits' }),
       });
 
-      const result = await useCredits('user123', CREDIT_ACTIONS.AI_CHAT);
+      const result = await consumeCredits('user123', CREDIT_ACTIONS.AI_CHAT);
 
       expect(result.success).toBe(false);
       expect(result.error).toBe('insufficient_credits');
@@ -174,7 +174,7 @@ describe('IAP Module', () => {
     it('returns network_error on failure', async () => {
       mockFetch.mockRejectedValueOnce(new Error('Network error'));
 
-      const result = await useCredits('user123', CREDIT_ACTIONS.AI_CHAT);
+      const result = await consumeCredits('user123', CREDIT_ACTIONS.AI_CHAT);
 
       expect(result.success).toBe(false);
       expect(result.error).toBe('network_error');
@@ -315,7 +315,7 @@ describe('Integration: Credit Purchase → AI Chat Flow', () => {
         }),
     });
 
-    const useResult = await useCredits(userKey, CREDIT_ACTIONS.AI_CHAT, 'AI 상담 메시지');
+    const useResult = await consumeCredits(userKey, CREDIT_ACTIONS.AI_CHAT, 'AI 상담 메시지');
     expect(useResult.success).toBe(true);
     expect(useResult.remainingCredits).toBe(9);
   });
@@ -348,7 +348,7 @@ describe('Integration: Credit Purchase → AI Chat Flow', () => {
         }),
     });
 
-    const use1 = await useCredits(userKey, CREDIT_ACTIONS.AI_CHAT);
+    const use1 = await consumeCredits(userKey, CREDIT_ACTIONS.AI_CHAT);
     expect(use1.success).toBe(true);
 
     // Check again - no credits left

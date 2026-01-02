@@ -1,4 +1,5 @@
 import typescriptParser from '@typescript-eslint/parser';
+import typescriptPlugin from '@typescript-eslint/eslint-plugin';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import globals from 'globals';
@@ -6,7 +7,7 @@ import globals from 'globals';
 /** @type {import('eslint').Linter.Config[]} */
 export default [
   {
-    ignores: ['dist/**', 'node_modules/**', 'server/**'],
+    ignores: ['dist/**', 'node_modules/**', 'server/**', 'e2e/**'],
   },
   {
     files: ['**/*.{ts,tsx,js,jsx}'],
@@ -34,12 +35,25 @@ export default [
       },
     },
     plugins: {
+      '@typescript-eslint': typescriptPlugin,
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
     },
     rules: {
-      // Match previous minimal config - only react-refresh rule
+      // React
       'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
+      'react-hooks/rules-of-hooks': 'error',
+      'react-hooks/exhaustive-deps': 'warn',
+
+      // TypeScript
+      '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
+      '@typescript-eslint/no-explicit-any': 'warn',
+
+      // Best practices
+      'no-console': ['warn', { allow: ['warn', 'error'] }],
+      'prefer-const': 'warn',
+      'no-var': 'error',
+      eqeqeq: ['error', 'always', { null: 'ignore' }],
     },
   },
 ];

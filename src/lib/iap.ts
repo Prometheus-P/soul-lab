@@ -123,7 +123,7 @@ export async function getBalance(userKey: string): Promise<CreditBalance | null>
 /**
  * 크레딧 사용 (차감)
  */
-export async function useCredits(
+export async function consumeCredits(
   userKey: string,
   action: string,
   description?: string

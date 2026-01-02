@@ -267,7 +267,7 @@ export async function getBalance(userKey: string): Promise<CreditBalance> {
   return apiGet<CreditBalance>('/api/credits/balance', { userKey });
 }
 
-export async function useCredits(userKey: string, amount: number, description: string): Promise<{
+export async function consumeCredits(userKey: string, amount: number, description: string): Promise<{
   success: boolean;
   transaction?: CreditTransaction;
   error?: string;
