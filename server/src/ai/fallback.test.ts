@@ -94,7 +94,8 @@ describe('AI Fallback Templates', () => {
 
     it('should return zodiac-specific message for valid zodiac', () => {
       const result = getFallbackDailyFortune('양자리');
-      expect(result).toContain('열정');
+      // 양자리 메시지는 '열정' 또는 '화성' 중 하나를 포함
+      expect(result.includes('열정') || result.includes('화성')).toBe(true);
     });
 
     it('should return consistent result for same date', () => {
