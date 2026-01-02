@@ -2526,7 +2526,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 문제는 감정이 아니라, 감정이 의사결정을 납치하는 순간이다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 문제는 감정이 아니라, 감정이 의사결정을 납치하는 순간이다."
   },
   {
     "id": "EMP0294",
@@ -2536,7 +2536,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 문제는 감정이 아니라, 감정이 의사결정을 납치하는 순간이다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 문제는 감정이 아니라, 감정이 의사결정을 납치하는 순간이다."
   },
   {
     "id": "EMP0375",
@@ -2546,7 +2546,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "soft",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 스스로를 몰아붙이지 마. {topicNoun}에서 흔들리는 건 정상이고, 오히려 감각이 살아있다는 뜻이야."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 스스로를 몰아붙이지 마. {topicNoun}에서 흔들리는 건 정상이고, 오히려 감각이 살아있다는 뜻이야."
   },
   {
     "id": "EMP0414",
@@ -2556,7 +2556,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 이건 ‘자책’으로 풀릴 문제가 아니다. 전략을 바꾸면 된다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 이건 ‘자책’으로 풀릴 문제가 아니다. 전략을 바꾸면 된다."
   },
   {
     "id": "EMP0437",
@@ -2566,7 +2566,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 3,
     "style": "soft",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 스스로를 몰아붙이지 마. {topicNoun}에서 흔들리는 건 정상이고, 오히려 감각이 살아있다는 뜻이야."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 스스로를 몰아붙이지 마. {topicNoun}에서 흔들리는 건 정상이고, 오히려 감각이 살아있다는 뜻이야."
   },
   {
     "id": "EMP0265",
@@ -2576,7 +2576,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "soft",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 지금 {emotionWord}는 ‘문제’가 아니라 ‘정보’야. 네 마음이 뭘 지키고 싶은지 알려줘."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 지금 {emotionWord}는 ‘문제’가 아니라 ‘정보’야. 네 마음이 뭘 지키고 싶은지 알려줘."
   },
   {
     "id": "EMP0280",
@@ -2586,7 +2586,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 3,
     "style": "soft",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 요즘 {emotionWord}는 ‘문제’가 아니라 ‘정보’야. 네 마음이 뭘 지키고 싶은지 알려줘."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 요즘 {emotionWord}는 ‘문제’가 아니라 ‘정보’야. 네 마음이 뭘 지키고 싶은지 알려줘."
   },
   {
     "id": "EMP0359",
@@ -2596,7 +2596,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 3,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 이건 ‘자책’으로 풀릴 문제가 아니다. 전략을 바꾸면 된다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 이건 ‘자책’으로 풀릴 문제가 아니다. 전략을 바꾸면 된다."
   },
   {
     "id": "EMP0298",
@@ -2606,7 +2606,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 1,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 네가 느끼는 압박은 현실적인 신호다. 그래서 더더욱 데이터/기준을 세워야 한다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 네가 느끼는 압박은 현실적인 신호다. 그래서 더더욱 데이터/기준을 세워야 한다."
   },
   {
     "id": "EMP0338",
@@ -2616,7 +2616,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 1,
     "style": "soft",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 스스로를 몰아붙이지 마. {topicNoun}에서 흔들리는 건 정상이고, 오히려 감각이 살아있다는 뜻이야."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 스스로를 몰아붙이지 마. {topicNoun}에서 흔들리는 건 정상이고, 오히려 감각이 살아있다는 뜻이야."
   },
   {
     "id": "EMP0292",
@@ -2626,7 +2626,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 이건 ‘자책’으로 풀릴 문제가 아니다. 전략을 바꾸면 된다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 이건 ‘자책’으로 풀릴 문제가 아니다. 전략을 바꾸면 된다."
   },
   {
     "id": "EMP0296",
@@ -2646,7 +2646,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 네가 느끼는 압박은 현실적인 신호다. 그래서 더더욱 데이터/기준을 세워야 한다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 네가 느끼는 압박은 현실적인 신호다. 그래서 더더욱 데이터/기준을 세워야 한다."
   },
   {
     "id": "EMP0440",
@@ -2656,7 +2656,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 상대/환경이 애매하게 굴면 누구나 흔들린다. 네가 과민한 게 아니다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 상대/환경이 애매하게 굴면 누구나 흔들린다. 네가 과민한 게 아니다."
   },
   {
     "id": "EMP0340",
@@ -2666,7 +2666,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 1,
     "style": "soft",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 지금 {emotionWord}는 ‘문제’가 아니라 ‘정보’야. 네 마음이 뭘 지키고 싶은지 알려줘."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 지금 {emotionWord}는 ‘문제’가 아니라 ‘정보’야. 네 마음이 뭘 지키고 싶은지 알려줘."
   },
   {
     "id": "EMP0380",
@@ -2676,7 +2676,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 1,
     "style": "soft",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 지금은 속도를 늦추는 게 패배가 아니야. {zodiac} 기질은 페이스 조절이 곧 실력이지."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 지금은 속도를 늦추는 게 패배가 아니야. {zodiac} 기질은 페이스 조절이 곧 실력이지."
   },
   {
     "id": "EMP0420",
@@ -2686,7 +2686,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 1,
     "style": "soft",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 스스로를 몰아붙이지 마. {topicNoun}에서 흔들리는 건 정상이고, 오히려 감각이 살아있다는 뜻이야."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 스스로를 몰아붙이지 마. {topicNoun}에서 흔들리는 건 정상이고, 오히려 감각이 살아있다는 뜻이야."
   },
   {
     "id": "EMP0270",
@@ -2706,7 +2706,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "soft",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 지금 {emotionWord}는 ‘문제’가 아니라 ‘정보’야. 네 마음이 뭘 지키고 싶은지 알려줘."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 지금 {emotionWord}는 ‘문제’가 아니라 ‘정보’야. 네 마음이 뭘 지키고 싶은지 알려줘."
   },
   {
     "id": "EMP0346",
@@ -2716,7 +2716,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "soft",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 지금 {emotionWord}는 ‘문제’가 아니라 ‘정보’야. 네 마음이 뭘 지키고 싶은지 알려줘."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 지금 {emotionWord}는 ‘문제’가 아니라 ‘정보’야. 네 마음이 뭘 지키고 싶은지 알려줘."
   },
   {
     "id": "EMP0447",
@@ -2726,7 +2726,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 문제는 감정이 아니라, 감정이 의사결정을 납치하는 순간이다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 문제는 감정이 아니라, 감정이 의사결정을 납치하는 순간이다."
   },
   {
     "id": "EMP0313",
@@ -2756,7 +2756,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 문제는 감정이 아니라, 감정이 의사결정을 납치하는 순간이다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 문제는 감정이 아니라, 감정이 의사결정을 납치하는 순간이다."
   },
   {
     "id": "EMP0360",
@@ -2766,7 +2766,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 이건 ‘자책’으로 풀릴 문제가 아니다. 전략을 바꾸면 된다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 이건 ‘자책’으로 풀릴 문제가 아니다. 전략을 바꾸면 된다."
   },
   {
     "id": "EMP0372",
@@ -2776,7 +2776,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 이건 ‘자책’으로 풀릴 문제가 아니다. 전략을 바꾸면 된다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 이건 ‘자책’으로 풀릴 문제가 아니다. 전략을 바꾸면 된다."
   },
   {
     "id": "EMP0319",
@@ -2786,7 +2786,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 문제는 감정이 아니라, 감정이 의사결정을 납치하는 순간이다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 문제는 감정이 아니라, 감정이 의사결정을 납치하는 순간이다."
   },
   {
     "id": "EMP0353",
@@ -2816,7 +2816,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "soft",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 요즘 {emotionWord}는 ‘문제’가 아니라 ‘정보’야. 네 마음이 뭘 지키고 싶은지 알려줘."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 요즘 {emotionWord}는 ‘문제’가 아니라 ‘정보’야. 네 마음이 뭘 지키고 싶은지 알려줘."
   },
   {
     "id": "EMP0398",
@@ -2826,7 +2826,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 이건 ‘자책’으로 풀릴 문제가 아니다. 전략을 바꾸면 된다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 이건 ‘자책’으로 풀릴 문제가 아니다. 전략을 바꾸면 된다."
   },
   {
     "id": "EMP0427",
@@ -2836,7 +2836,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 문제는 감정이 아니라, 감정이 의사결정을 납치하는 순간이다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 문제는 감정이 아니라, 감정이 의사결정을 납치하는 순간이다."
   },
   {
     "id": "EMP0303",
@@ -2846,7 +2846,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 3,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 상대/환경이 애매하게 굴면 누구나 흔들린다. 네가 과민한 게 아니다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 상대/환경이 애매하게 굴면 누구나 흔들린다. 네가 과민한 게 아니다."
   },
   {
     "id": "EMP0364",
@@ -2856,7 +2856,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 3,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 문제는 감정이 아니라, 감정이 의사결정을 납치하는 순간이다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 문제는 감정이 아니라, 감정이 의사결정을 납치하는 순간이다."
   },
   {
     "id": "EMP0409",
@@ -2866,7 +2866,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 3,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 이건 ‘자책’으로 풀릴 문제가 아니다. 전략을 바꾸면 된다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 이건 ‘자책’으로 풀릴 문제가 아니다. 전략을 바꾸면 된다."
   },
   {
     "id": "EMP0332",
@@ -2876,7 +2876,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 1,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 네가 느끼는 압박은 현실적인 신호다. 그래서 더더욱 데이터/기준을 세워야 한다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 네가 느끼는 압박은 현실적인 신호다. 그래서 더더욱 데이터/기준을 세워야 한다."
   },
   {
     "id": "EMP0431",
@@ -2886,7 +2886,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 1,
     "style": "soft",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 스스로를 몰아붙이지 마. {topicNoun}에서 흔들리는 건 정상이고, 오히려 감각이 살아있다는 뜻이야."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 스스로를 몰아붙이지 마. {topicNoun}에서 흔들리는 건 정상이고, 오히려 감각이 살아있다는 뜻이야."
   },
   {
     "id": "EMP0284",
@@ -2896,7 +2896,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 네가 느끼는 압박은 현실적인 신호다. 그래서 더더욱 데이터/기준을 세워야 한다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 네가 느끼는 압박은 현실적인 신호다. 그래서 더더욱 데이터/기준을 세워야 한다."
   },
   {
     "id": "EMP0286",
@@ -2906,7 +2906,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 이건 ‘자책’으로 풀릴 문제가 아니다. 전략을 바꾸면 된다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 이건 ‘자책’으로 풀릴 문제가 아니다. 전략을 바꾸면 된다."
   },
   {
     "id": "EMP0320",
@@ -2916,7 +2916,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 문제는 감정이 아니라, 감정이 의사결정을 납치하는 순간이다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 문제는 감정이 아니라, 감정이 의사결정을 납치하는 순간이다."
   },
   {
     "id": "EMP0258",
@@ -2926,7 +2926,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 문제는 감정이 아니라, 감정이 의사결정을 납치하는 순간이다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 문제는 감정이 아니라, 감정이 의사결정을 납치하는 순간이다."
   },
   {
     "id": "EMP0304",
@@ -2936,7 +2936,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 이건 ‘자책’으로 풀릴 문제가 아니다. 전략을 바꾸면 된다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 이건 ‘자책’으로 풀릴 문제가 아니다. 전략을 바꾸면 된다."
   },
   {
     "id": "EMP0388",
@@ -2956,7 +2956,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 3,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 문제는 감정이 아니라, 감정이 의사결정을 납치하는 순간이다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 문제는 감정이 아니라, 감정이 의사결정을 납치하는 순간이다."
   },
   {
     "id": "EMP0269",
@@ -2966,7 +2966,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "soft",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 스스로를 몰아붙이지 마. {topicNoun}에서 흔들리는 건 정상이고, 오히려 감각이 살아있다는 뜻이야."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 스스로를 몰아붙이지 마. {topicNoun}에서 흔들리는 건 정상이고, 오히려 감각이 살아있다는 뜻이야."
   },
   {
     "id": "EMP0383",
@@ -2976,7 +2976,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 상대/환경이 애매하게 굴면 누구나 흔들린다. 네가 과민한 게 아니다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 상대/환경이 애매하게 굴면 누구나 흔들린다. 네가 과민한 게 아니다."
   },
   {
     "id": "EMP0444",
@@ -2996,7 +2996,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 1,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 상대/환경이 애매하게 굴면 누구나 흔들린다. 네가 과민한 게 아니다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 상대/환경이 애매하게 굴면 누구나 흔들린다. 네가 과민한 게 아니다."
   },
   {
     "id": "EMP0326",
@@ -3006,7 +3006,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 1,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 상대/환경이 애매하게 굴면 누구나 흔들린다. 네가 과민한 게 아니다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 상대/환경이 애매하게 굴면 누구나 흔들린다. 네가 과민한 게 아니다."
   },
   {
     "id": "EMP0354",
@@ -3016,7 +3016,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 1,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 네가 느끼는 압박은 현실적인 신호다. 그래서 더더욱 데이터/기준을 세워야 한다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 네가 느끼는 압박은 현실적인 신호다. 그래서 더더욱 데이터/기준을 세워야 한다."
   },
   {
     "id": "EMP0418",
@@ -3026,7 +3026,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 1,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 문제는 감정이 아니라, 감정이 의사결정을 납치하는 순간이다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 문제는 감정이 아니라, 감정이 의사결정을 납치하는 순간이다."
   },
   {
     "id": "EMP0281",
@@ -3036,7 +3036,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "soft",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 스스로를 몰아붙이지 마. {topicNoun}에서 흔들리는 건 정상이고, 오히려 감각이 살아있다는 뜻이야."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 스스로를 몰아붙이지 마. {topicNoun}에서 흔들리는 건 정상이고, 오히려 감각이 살아있다는 뜻이야."
   },
   {
     "id": "EMP0305",
@@ -3046,7 +3046,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 이건 ‘자책’으로 풀릴 문제가 아니다. 전략을 바꾸면 된다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 이건 ‘자책’으로 풀릴 문제가 아니다. 전략을 바꾸면 된다."
   },
   {
     "id": "EMP0330",
@@ -3056,7 +3056,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "soft",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 현재은 속도를 늦추는 게 패배가 아니야. {zodiac} 기질은 페이스 조절이 곧 실력이지."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 지금은 속도를 늦추는 게 패배가 아니야. {zodiac} 기질은 페이스 조절이 곧 실력이지."
   },
   {
     "id": "EMP0343",
@@ -3066,7 +3066,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 3,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 네가 느끼는 압박은 현실적인 신호다. 그래서 더더욱 데이터/기준을 세워야 한다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 네가 느끼는 압박은 현실적인 신호다. 그래서 더더욱 데이터/기준을 세워야 한다."
   },
   {
     "id": "EMP0274",
@@ -3076,7 +3076,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 상대/환경이 애매하게 굴면 누구나 흔들린다. 네가 과민한 게 아니다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 상대/환경이 애매하게 굴면 누구나 흔들린다. 네가 과민한 게 아니다."
   },
   {
     "id": "EMP0289",
@@ -3086,7 +3086,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "soft",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 현재은 속도를 늦추는 게 패배가 아니야. {zodiac} 기질은 페이스 조절이 곧 실력이지."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 지금은 속도를 늦추는 게 패배가 아니야. {zodiac} 기질은 페이스 조절이 곧 실력이지."
   },
   {
     "id": "EMP0315",
@@ -3096,7 +3096,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 상대/환경이 애매하게 굴면 누구나 흔들린다. 네가 과민한 게 아니다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 상대/환경이 애매하게 굴면 누구나 흔들린다. 네가 과민한 게 아니다."
   },
   {
     "id": "EMP0327",
@@ -3106,7 +3106,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "soft",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 현재 {emotionWord}는 ‘문제’가 아니라 ‘정보’야. 네 마음이 뭘 지키고 싶은지 알려줘."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 현재 {emotionWord}는 ‘문제’가 아니라 ‘정보’야. 네 마음이 뭘 지키고 싶은지 알려줘."
   },
   {
     "id": "EMP0285",
@@ -3116,7 +3116,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 3,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 이건 ‘자책’으로 풀릴 문제가 아니다. 전략을 바꾸면 된다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 이건 ‘자책’으로 풀릴 문제가 아니다. 전략을 바꾸면 된다."
   },
   {
     "id": "EMP0288",
@@ -3126,7 +3126,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 3,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 문제는 감정이 아니라, 감정이 의사결정을 납치하는 순간이다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 문제는 감정이 아니라, 감정이 의사결정을 납치하는 순간이다."
   },
   {
     "id": "EMP0316",
@@ -3136,7 +3136,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 3,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 이건 ‘자책’으로 풀릴 문제가 아니다. 전략을 바꾸면 된다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 이건 ‘자책’으로 풀릴 문제가 아니다. 전략을 바꾸면 된다."
   },
   {
     "id": "EMP0337",
@@ -3156,7 +3156,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "soft",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 스스로를 몰아붙이지 마. {topicNoun}에서 흔들리는 건 정상이고, 오히려 감각이 살아있다는 뜻이야."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 스스로를 몰아붙이지 마. {topicNoun}에서 흔들리는 건 정상이고, 오히려 감각이 살아있다는 뜻이야."
   },
   {
     "id": "EMP0309",
@@ -3176,7 +3176,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 네가 느끼는 압박은 현실적인 신호다. 그래서 더더욱 데이터/기준을 세워야 한다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 네가 느끼는 압박은 현실적인 신호다. 그래서 더더욱 데이터/기준을 세워야 한다."
   },
   {
     "id": "EMP0355",
@@ -3186,7 +3186,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 요즘 불안해도 정상이다. 다만 그 불안을 근거로 결론 내리지만 마."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 요즘 불안해도 정상이다. 다만 그 불안을 근거로 결론 내리지만 마."
   },
   {
     "id": "EMP0395",
@@ -3196,7 +3196,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "soft",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 현재은 속도를 늦추는 게 패배가 아니야. {zodiac} 기질은 페이스 조절이 곧 실력이지."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 지금은 속도를 늦추는 게 패배가 아니야. {zodiac} 기질은 페이스 조절이 곧 실력이지."
   },
   {
     "id": "EMP0251",
@@ -3226,7 +3226,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 상대/환경이 애매하게 굴면 누구나 흔들린다. 네가 과민한 게 아니다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 상대/환경이 애매하게 굴면 누구나 흔들린다. 네가 과민한 게 아니다."
   },
   {
     "id": "EMP0368",
@@ -3236,7 +3236,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 문제는 감정이 아니라, 감정이 의사결정을 납치하는 순간이다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 문제는 감정이 아니라, 감정이 의사결정을 납치하는 순간이다."
   },
   {
     "id": "EMP0371",
@@ -3246,7 +3246,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "soft",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 지금 {emotionWord}는 ‘문제’가 아니라 ‘정보’야. 네 마음이 뭘 지키고 싶은지 알려줘."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 지금 {emotionWord}는 ‘문제’가 아니라 ‘정보’야. 네 마음이 뭘 지키고 싶은지 알려줘."
   },
   {
     "id": "EMP0408",
@@ -3256,7 +3256,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 문제는 감정이 아니라, 감정이 의사결정을 납치하는 순간이다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 문제는 감정이 아니라, 감정이 의사결정을 납치하는 순간이다."
   },
   {
     "id": "EMP0446",
@@ -3266,7 +3266,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 상대/환경이 애매하게 굴면 누구나 흔들린다. 네가 과민한 게 아니다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 상대/환경이 애매하게 굴면 누구나 흔들린다. 네가 과민한 게 아니다."
   },
   {
     "id": "EMP0287",
@@ -3276,7 +3276,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 1,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 네가 느끼는 압박은 현실적인 신호다. 그래서 더더욱 데이터/기준을 세워야 한다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 네가 느끼는 압박은 현실적인 신호다. 그래서 더더욱 데이터/기준을 세워야 한다."
   },
   {
     "id": "EMP0348",
@@ -3286,7 +3286,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 1,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 지금 불안해도 정상이다. 다만 그 불안을 근거로 결론 내리지만 마."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 지금 불안해도 정상이다. 다만 그 불안을 근거로 결론 내리지만 마."
   },
   {
     "id": "EMP0436",
@@ -3296,7 +3296,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 1,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 이건 ‘자책’으로 풀릴 문제가 아니다. 전략을 바꾸면 된다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 이건 ‘자책’으로 풀릴 문제가 아니다. 전략을 바꾸면 된다."
   },
   {
     "id": "EMP0275",
@@ -3326,7 +3326,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 문제는 감정이 아니라, 감정이 의사결정을 납치하는 순간이다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 문제는 감정이 아니라, 감정이 의사결정을 납치하는 순간이다."
   },
   {
     "id": "EMP0428",
@@ -3336,7 +3336,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 이건 ‘자책’으로 풀릴 문제가 아니다. 전략을 바꾸면 된다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 이건 ‘자책’으로 풀릴 문제가 아니다. 전략을 바꾸면 된다."
   },
   {
     "id": "EMP0439",
@@ -3346,7 +3346,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 네가 느끼는 압박은 현실적인 신호다. 그래서 더더욱 데이터/기준을 세워야 한다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 네가 느끼는 압박은 현실적인 신호다. 그래서 더더욱 데이터/기준을 세워야 한다."
   },
   {
     "id": "EMP0429",
@@ -3356,7 +3356,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 3,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 네가 느끼는 압박은 현실적인 신호다. 그래서 더더욱 데이터/기준을 세워야 한다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 네가 느끼는 압박은 현실적인 신호다. 그래서 더더욱 데이터/기준을 세워야 한다."
   },
   {
     "id": "EMP0268",
@@ -3366,7 +3366,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "soft",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 지금은 속도를 늦추는 게 패배가 아니야. {zodiac} 기질은 페이스 조절이 곧 실력이지."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 지금은 속도를 늦추는 게 패배가 아니야. {zodiac} 기질은 페이스 조절이 곧 실력이지."
   },
   {
     "id": "EMP0370",
@@ -3376,7 +3376,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 이건 ‘자책’으로 풀릴 문제가 아니다. 전략을 바꾸면 된다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 이건 ‘자책’으로 풀릴 문제가 아니다. 전략을 바꾸면 된다."
   },
   {
     "id": "EMP0261",
@@ -3386,7 +3386,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 3,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 네가 느끼는 압박은 현실적인 신호다. 그래서 더더욱 데이터/기준을 세워야 한다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 네가 느끼는 압박은 현실적인 신호다. 그래서 더더욱 데이터/기준을 세워야 한다."
   },
   {
     "id": "EMP0254",
@@ -3406,7 +3406,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 1,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 현재 불안해도 정상이다. 다만 그 불안을 근거로 결론 내리지만 마."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 현재 불안해도 정상이다. 다만 그 불안을 근거로 결론 내리지만 마."
   },
   {
     "id": "EMP0252",
@@ -3416,7 +3416,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 문제는 감정이 아니라, 감정이 의사결정을 납치하는 순간이다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 문제는 감정이 아니라, 감정이 의사결정을 납치하는 순간이다."
   },
   {
     "id": "EMP0256",
@@ -3436,7 +3436,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 문제는 감정이 아니라, 감정이 의사결정을 납치하는 순간이다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 문제는 감정이 아니라, 감정이 의사결정을 납치하는 순간이다."
   },
   {
     "id": "EMP0283",
@@ -3446,7 +3446,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 상대/환경이 애매하게 굴면 누구나 흔들린다. 네가 과민한 게 아니다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 상대/환경이 애매하게 굴면 누구나 흔들린다. 네가 과민한 게 아니다."
   },
   {
     "id": "EMP0392",
@@ -3456,7 +3456,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 네가 느끼는 압박은 현실적인 신호다. 그래서 더더욱 데이터/기준을 세워야 한다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 네가 느끼는 압박은 현실적인 신호다. 그래서 더더욱 데이터/기준을 세워야 한다."
   },
   {
     "id": "EMP0401",
@@ -3466,7 +3466,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 지금 불안해도 정상이다. 다만 그 불안을 근거로 결론 내리지만 마."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 지금 불안해도 정상이다. 다만 그 불안을 근거로 결론 내리지만 마."
   },
   {
     "id": "EMP0424",
@@ -3476,7 +3476,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "soft",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 현재 {emotionWord}는 ‘문제’가 아니라 ‘정보’야. 네 마음이 뭘 지키고 싶은지 알려줘."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 현재 {emotionWord}는 ‘문제’가 아니라 ‘정보’야. 네 마음이 뭘 지키고 싶은지 알려줘."
   },
   {
     "id": "EMP0399",
@@ -3486,7 +3486,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 상대/환경이 애매하게 굴면 누구나 흔들린다. 네가 과민한 게 아니다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 상대/환경이 애매하게 굴면 누구나 흔들린다. 네가 과민한 게 아니다."
   },
   {
     "id": "EMP0423",
@@ -3516,7 +3516,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 1,
     "style": "soft",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 스스로를 몰아붙이지 마. {topicNoun}에서 흔들리는 건 정상이고, 오히려 감각이 살아있다는 뜻이야."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 스스로를 몰아붙이지 마. {topicNoun}에서 흔들리는 건 정상이고, 오히려 감각이 살아있다는 뜻이야."
   },
   {
     "id": "EMP0385",
@@ -3536,7 +3536,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 1,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 상대/환경이 애매하게 굴면 누구나 흔들린다. 네가 과민한 게 아니다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 상대/환경이 애매하게 굴면 누구나 흔들린다. 네가 과민한 게 아니다."
   },
   {
     "id": "EMP0445",
@@ -3556,7 +3556,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 상대/환경이 애매하게 굴면 누구나 흔들린다. 네가 과민한 게 아니다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 상대/환경이 애매하게 굴면 누구나 흔들린다. 네가 과민한 게 아니다."
   },
   {
     "id": "EMP0267",
@@ -3566,7 +3566,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 이건 ‘자책’으로 풀릴 문제가 아니다. 전략을 바꾸면 된다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 이건 ‘자책’으로 풀릴 문제가 아니다. 전략을 바꾸면 된다."
   },
   {
     "id": "EMP0352",
@@ -3576,7 +3576,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 요즘 불안해도 정상이다. 다만 그 불안을 근거로 결론 내리지만 마."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 요즘 불안해도 정상이다. 다만 그 불안을 근거로 결론 내리지만 마."
   },
   {
     "id": "EMP0382",
@@ -3586,7 +3586,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "soft",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 스스로를 몰아붙이지 마. {topicNoun}에서 흔들리는 건 정상이고, 오히려 감각이 살아있다는 뜻이야."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 스스로를 몰아붙이지 마. {topicNoun}에서 흔들리는 건 정상이고, 오히려 감각이 살아있다는 뜻이야."
   },
   {
     "id": "EMP0344",
@@ -3596,7 +3596,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 3,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 이건 ‘자책’으로 풀릴 문제가 아니다. 전략을 바꾸면 된다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 이건 ‘자책’으로 풀릴 문제가 아니다. 전략을 바꾸면 된다."
   },
   {
     "id": "EMP0410",
@@ -3606,7 +3606,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 3,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 지금 불안해도 정상이다. 다만 그 불안을 근거로 결론 내리지만 마."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 지금 불안해도 정상이다. 다만 그 불안을 근거로 결론 내리지만 마."
   },
   {
     "id": "EMP0342",
@@ -3616,7 +3616,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 상대/환경이 애매하게 굴면 누구나 흔들린다. 네가 과민한 게 아니다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 상대/환경이 애매하게 굴면 누구나 흔들린다. 네가 과민한 게 아니다."
   },
   {
     "id": "EMP0311",
@@ -3626,7 +3626,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 3,
     "style": "soft",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 현재은 속도를 늦추는 게 패배가 아니야. {zodiac} 기질은 페이스 조절이 곧 실력이지."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 지금은 속도를 늦추는 게 패배가 아니야. {zodiac} 기질은 페이스 조절이 곧 실력이지."
   },
   {
     "id": "EMP0335",
@@ -3636,7 +3636,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 3,
     "style": "soft",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 스스로를 몰아붙이지 마. {topicNoun}에서 흔들리는 건 정상이고, 오히려 감각이 살아있다는 뜻이야."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 스스로를 몰아붙이지 마. {topicNoun}에서 흔들리는 건 정상이고, 오히려 감각이 살아있다는 뜻이야."
   },
   {
     "id": "EMP0347",
@@ -3646,7 +3646,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 3,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 상대/환경이 애매하게 굴면 누구나 흔들린다. 네가 과민한 게 아니다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 상대/환경이 애매하게 굴면 누구나 흔들린다. 네가 과민한 게 아니다."
   },
   {
     "id": "EMP0358",
@@ -3656,7 +3656,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 3,
     "style": "soft",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 요즘은 속도를 늦추는 게 패배가 아니야. {zodiac} 기질은 페이스 조절이 곧 실력이지."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 요즘은 속도를 늦추는 게 패배가 아니야. {zodiac} 기질은 페이스 조절이 곧 실력이지."
   },
   {
     "id": "EMP0373",
@@ -3666,7 +3666,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 3,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 이건 ‘자책’으로 풀릴 문제가 아니다. 전략을 바꾸면 된다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 이건 ‘자책’으로 풀릴 문제가 아니다. 전략을 바꾸면 된다."
   },
   {
     "id": "EMP0279",
@@ -3686,7 +3686,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 1,
     "style": "soft",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 스스로를 몰아붙이지 마. {topicNoun}에서 흔들리는 건 정상이고, 오히려 감각이 살아있다는 뜻이야."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 스스로를 몰아붙이지 마. {topicNoun}에서 흔들리는 건 정상이고, 오히려 감각이 살아있다는 뜻이야."
   },
   {
     "id": "EMP0397",
@@ -3696,7 +3696,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "soft",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 지금은 속도를 늦추는 게 패배가 아니야. {zodiac} 기질은 페이스 조절이 곧 실력이지."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 지금은 속도를 늦추는 게 패배가 아니야. {zodiac} 기질은 페이스 조절이 곧 실력이지."
   },
   {
     "id": "EMP0403",
@@ -3706,7 +3706,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 네가 느끼는 압박은 현실적인 신호다. 그래서 더더욱 데이터/기준을 세워야 한다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 네가 느끼는 압박은 현실적인 신호다. 그래서 더더욱 데이터/기준을 세워야 한다."
   },
   {
     "id": "EMP0441",
@@ -3736,7 +3736,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 1,
     "style": "soft",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 스스로를 몰아붙이지 마. {topicNoun}에서 흔들리는 건 정상이고, 오히려 감각이 살아있다는 뜻이야."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 스스로를 몰아붙이지 마. {topicNoun}에서 흔들리는 건 정상이고, 오히려 감각이 살아있다는 뜻이야."
   },
   {
     "id": "EMP0255",
@@ -3766,7 +3766,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 상대/환경이 애매하게 굴면 누구나 흔들린다. 네가 과민한 게 아니다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 상대/환경이 애매하게 굴면 누구나 흔들린다. 네가 과민한 게 아니다."
   },
   {
     "id": "EMP0400",
@@ -3776,7 +3776,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 이건 ‘자책’으로 풀릴 문제가 아니다. 전략을 바꾸면 된다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 이건 ‘자책’으로 풀릴 문제가 아니다. 전략을 바꾸면 된다."
   },
   {
     "id": "EMP0430",
@@ -3786,7 +3786,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "soft",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 스스로를 몰아붙이지 마. {topicNoun}에서 흔들리는 건 정상이고, 오히려 감각이 살아있다는 뜻이야."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 스스로를 몰아붙이지 마. {topicNoun}에서 흔들리는 건 정상이고, 오히려 감각이 살아있다는 뜻이야."
   },
   {
     "id": "EMP0443",
@@ -3796,7 +3796,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "soft",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 스스로를 몰아붙이지 마. {topicNoun}에서 흔들리는 건 정상이고, 오히려 감각이 살아있다는 뜻이야."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 스스로를 몰아붙이지 마. {topicNoun}에서 흔들리는 건 정상이고, 오히려 감각이 살아있다는 뜻이야."
   },
   {
     "id": "EMP0306",
@@ -3806,7 +3806,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 1,
     "style": "soft",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 지금 {emotionWord}는 ‘문제’가 아니라 ‘정보’야. 네 마음이 뭘 지키고 싶은지 알려줘."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 지금 {emotionWord}는 ‘문제’가 아니라 ‘정보’야. 네 마음이 뭘 지키고 싶은지 알려줘."
   },
   {
     "id": "EMP0362",
@@ -3836,7 +3836,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 현재 불안해도 정상이다. 다만 그 불안을 근거로 결론 내리지만 마."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 현재 불안해도 정상이다. 다만 그 불안을 근거로 결론 내리지만 마."
   },
   {
     "id": "EMP0389",
@@ -3846,7 +3846,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 지금 불안해도 정상이다. 다만 그 불안을 근거로 결론 내리지만 마."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 지금 불안해도 정상이다. 다만 그 불안을 근거로 결론 내리지만 마."
   },
   {
     "id": "EMP0379",
@@ -3856,7 +3856,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "soft",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 지금 {emotionWord}는 ‘문제’가 아니라 ‘정보’야. 네 마음이 뭘 지키고 싶은지 알려줘."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 지금 {emotionWord}는 ‘문제’가 아니라 ‘정보’야. 네 마음이 뭘 지키고 싶은지 알려줘."
   },
   {
     "id": "EMP0432",
@@ -3866,7 +3866,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "soft",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 지금 {emotionWord}는 ‘문제’가 아니라 ‘정보’야. 네 마음이 뭘 지키고 싶은지 알려줘."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 지금 {emotionWord}는 ‘문제’가 아니라 ‘정보’야. 네 마음이 뭘 지키고 싶은지 알려줘."
   },
   {
     "id": "EMP0442",
@@ -3876,7 +3876,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 문제는 감정이 아니라, 감정이 의사결정을 납치하는 순간이다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 문제는 감정이 아니라, 감정이 의사결정을 납치하는 순간이다."
   },
   {
     "id": "EMP0415",
@@ -3886,7 +3886,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 3,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 네가 느끼는 압박은 현실적인 신호다. 그래서 더더욱 데이터/기준을 세워야 한다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 네가 느끼는 압박은 현실적인 신호다. 그래서 더더욱 데이터/기준을 세워야 한다."
   },
   {
     "id": "EMP0434",
@@ -3906,7 +3906,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "soft",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 지금 {emotionWord}는 ‘문제’가 아니라 ‘정보’야. 네 마음이 뭘 지키고 싶은지 알려줘."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 지금 {emotionWord}는 ‘문제’가 아니라 ‘정보’야. 네 마음이 뭘 지키고 싶은지 알려줘."
   },
   {
     "id": "EMP0324",
@@ -3916,7 +3916,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 상대/환경이 애매하게 굴면 누구나 흔들린다. 네가 과민한 게 아니다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 상대/환경이 애매하게 굴면 누구나 흔들린다. 네가 과민한 게 아니다."
   },
   {
     "id": "EMP0386",
@@ -3936,7 +3936,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 네가 느끼는 압박은 현실적인 신호다. 그래서 더더욱 데이터/기준을 세워야 한다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 네가 느끼는 압박은 현실적인 신호다. 그래서 더더욱 데이터/기준을 세워야 한다."
   },
   {
     "id": "EMP0417",
@@ -3946,7 +3946,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 네가 느끼는 압박은 현실적인 신호다. 그래서 더더욱 데이터/기준을 세워야 한다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 네가 느끼는 압박은 현실적인 신호다. 그래서 더더욱 데이터/기준을 세워야 한다."
   },
   {
     "id": "EMP0450",
@@ -3986,7 +3986,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 상대/환경이 애매하게 굴면 누구나 흔들린다. 네가 과민한 게 아니다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 상대/환경이 애매하게 굴면 누구나 흔들린다. 네가 과민한 게 아니다."
   },
   {
     "id": "EMP0301",
@@ -3996,7 +3996,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 지금 불안해도 정상이다. 다만 그 불안을 근거로 결론 내리지만 마."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 지금 불안해도 정상이다. 다만 그 불안을 근거로 결론 내리지만 마."
   },
   {
     "id": "EMP0351",
@@ -4006,7 +4006,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 상대/환경이 애매하게 굴면 누구나 흔들린다. 네가 과민한 게 아니다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 상대/환경이 애매하게 굴면 누구나 흔들린다. 네가 과민한 게 아니다."
   },
   {
     "id": "EMP0367",
@@ -4016,7 +4016,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 상대/환경이 애매하게 굴면 누구나 흔들린다. 네가 과민한 게 아니다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 상대/환경이 애매하게 굴면 누구나 흔들린다. 네가 과민한 게 아니다."
   },
   {
     "id": "EMP0378",
@@ -4026,7 +4026,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 상대/환경이 애매하게 굴면 누구나 흔들린다. 네가 과민한 게 아니다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 상대/환경이 애매하게 굴면 누구나 흔들린다. 네가 과민한 게 아니다."
   },
   {
     "id": "EMP0387",
@@ -4046,7 +4046,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 3,
     "style": "soft",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 스스로를 몰아붙이지 마. {topicNoun}에서 흔들리는 건 정상이고, 오히려 감각이 살아있다는 뜻이야."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 스스로를 몰아붙이지 마. {topicNoun}에서 흔들리는 건 정상이고, 오히려 감각이 살아있다는 뜻이야."
   },
   {
     "id": "EMP0323",
@@ -4066,7 +4066,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 이건 ‘자책’으로 풀릴 문제가 아니다. 전략을 바꾸면 된다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 이건 ‘자책’으로 풀릴 문제가 아니다. 전략을 바꾸면 된다."
   },
   {
     "id": "EMP0411",
@@ -4076,7 +4076,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "soft",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 스스로를 몰아붙이지 마. {topicNoun}에서 흔들리는 건 정상이고, 오히려 감각이 살아있다는 뜻이야."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 스스로를 몰아붙이지 마. {topicNoun}에서 흔들리는 건 정상이고, 오히려 감각이 살아있다는 뜻이야."
   },
   {
     "id": "EMP0419",
@@ -4086,7 +4086,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "soft",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 지금은 속도를 늦추는 게 패배가 아니야. {zodiac} 기질은 페이스 조절이 곧 실력이지."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 지금은 속도를 늦추는 게 패배가 아니야. {zodiac} 기질은 페이스 조절이 곧 실력이지."
   },
   {
     "id": "EMP0438",
@@ -4096,7 +4096,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "soft",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 스스로를 몰아붙이지 마. {topicNoun}에서 흔들리는 건 정상이고, 오히려 감각이 살아있다는 뜻이야."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 스스로를 몰아붙이지 마. {topicNoun}에서 흔들리는 건 정상이고, 오히려 감각이 살아있다는 뜻이야."
   },
   {
     "id": "EMP0339",
@@ -4106,7 +4106,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 1,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 이건 ‘자책’으로 풀릴 문제가 아니다. 전략을 바꾸면 된다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 이건 ‘자책’으로 풀릴 문제가 아니다. 전략을 바꾸면 된다."
   },
   {
     "id": "EMP0345",
@@ -4116,7 +4116,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 1,
     "style": "soft",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 지금은 속도를 늦추는 게 패배가 아니야. {zodiac} 기질은 페이스 조절이 곧 실력이지."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 지금은 속도를 늦추는 게 패배가 아니야. {zodiac} 기질은 페이스 조절이 곧 실력이지."
   },
   {
     "id": "EMP0449",
@@ -4136,7 +4136,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 문제는 감정이 아니라, 감정이 의사결정을 납치하는 순간이다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 문제는 감정이 아니라, 감정이 의사결정을 납치하는 순간이다."
   },
   {
     "id": "EMP0416",
@@ -4146,7 +4146,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 네가 느끼는 압박은 현실적인 신호다. 그래서 더더욱 데이터/기준을 세워야 한다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 네가 느끼는 압박은 현실적인 신호다. 그래서 더더욱 데이터/기준을 세워야 한다."
   },
   {
     "id": "EMP0282",
@@ -4156,7 +4156,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 문제는 감정이 아니라, 감정이 의사결정을 납치하는 순간이다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 문제는 감정이 아니라, 감정이 의사결정을 납치하는 순간이다."
   },
   {
     "id": "EMP0314",
@@ -4186,7 +4186,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "soft",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 지금 {emotionWord}는 ‘문제’가 아니라 ‘정보’야. 네 마음이 뭘 지키고 싶은지 알려줘."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 지금 {emotionWord}는 ‘문제’가 아니라 ‘정보’야. 네 마음이 뭘 지키고 싶은지 알려줘."
   },
   {
     "id": "EMP0412",
@@ -4196,7 +4196,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "soft",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 지금은 속도를 늦추는 게 패배가 아니야. {zodiac} 기질은 페이스 조절이 곧 실력이지."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 지금은 속도를 늦추는 게 패배가 아니야. {zodiac} 기질은 페이스 조절이 곧 실력이지."
   },
   {
     "id": "EMP0390",
@@ -4216,7 +4216,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 3,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 문제는 감정이 아니라, 감정이 의사결정을 납치하는 순간이다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 문제는 감정이 아니라, 감정이 의사결정을 납치하는 순간이다."
   },
   {
     "id": "EMP0260",
@@ -4226,7 +4226,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "soft",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 지금은 속도를 늦추는 게 패배가 아니야. {zodiac} 기질은 페이스 조절이 곧 실력이지."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 지금은 속도를 늦추는 게 패배가 아니야. {zodiac} 기질은 페이스 조절이 곧 실력이지."
   },
   {
     "id": "EMP0363",
@@ -4246,7 +4246,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "soft",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 지금 {emotionWord}는 ‘문제’가 아니라 ‘정보’야. 네 마음이 뭘 지키고 싶은지 알려줘."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 지금 {emotionWord}는 ‘문제’가 아니라 ‘정보’야. 네 마음이 뭘 지키고 싶은지 알려줘."
   },
   {
     "id": "EMP0334",
@@ -4256,7 +4256,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 3,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 지금 불안해도 정상이다. 다만 그 불안을 근거로 결론 내리지만 마."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 지금 불안해도 정상이다. 다만 그 불안을 근거로 결론 내리지만 마."
   },
   {
     "id": "EMP0426",
@@ -4266,7 +4266,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 3,
     "style": "soft",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 지금은 속도를 늦추는 게 패배가 아니야. {zodiac} 기질은 페이스 조절이 곧 실력이지."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 지금은 속도를 늦추는 게 패배가 아니야. {zodiac} 기질은 페이스 조절이 곧 실력이지."
   },
   {
     "id": "EMP0273",
@@ -4276,7 +4276,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 1,
     "style": "soft",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 지금 {emotionWord}는 ‘문제’가 아니라 ‘정보’야. 네 마음이 뭘 지키고 싶은지 알려줘."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 지금 {emotionWord}는 ‘문제’가 아니라 ‘정보’야. 네 마음이 뭘 지키고 싶은지 알려줘."
   },
   {
     "id": "EMP0349",
@@ -4286,7 +4286,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 네가 느끼는 압박은 현실적인 신호다. 그래서 더더욱 데이터/기준을 세워야 한다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 네가 느끼는 압박은 현실적인 신호다. 그래서 더더욱 데이터/기준을 세워야 한다."
   },
   {
     "id": "EMP0404",
@@ -4296,7 +4296,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 문제는 감정이 아니라, 감정이 의사결정을 납치하는 순간이다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 문제는 감정이 아니라, 감정이 의사결정을 납치하는 순간이다."
   },
   {
     "id": "EMP0413",
@@ -4306,7 +4306,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 문제는 감정이 아니라, 감정이 의사결정을 납치하는 순간이다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 문제는 감정이 아니라, 감정이 의사결정을 납치하는 순간이다."
   },
   {
     "id": "EMP0276",
@@ -4316,7 +4316,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 이건 ‘자책’으로 풀릴 문제가 아니다. 전략을 바꾸면 된다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 이건 ‘자책’으로 풀릴 문제가 아니다. 전략을 바꾸면 된다."
   },
   {
     "id": "EMP0357",
@@ -4326,7 +4326,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "soft",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 지금 {emotionWord}는 ‘문제’가 아니라 ‘정보’야. 네 마음이 뭘 지키고 싶은지 알려줘."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 지금 {emotionWord}는 ‘문제’가 아니라 ‘정보’야. 네 마음이 뭘 지키고 싶은지 알려줘."
   },
   {
     "id": "EMP0278",
@@ -4336,7 +4336,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 3,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 지금 불안해도 정상이다. 다만 그 불안을 근거로 결론 내리지만 마."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 지금 불안해도 정상이다. 다만 그 불안을 근거로 결론 내리지만 마."
   },
   {
     "id": "EMP0312",
@@ -4346,7 +4346,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 3,
     "style": "soft",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 스스로를 몰아붙이지 마. {topicNoun}에서 흔들리는 건 정상이고, 오히려 감각이 살아있다는 뜻이야."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 스스로를 몰아붙이지 마. {topicNoun}에서 흔들리는 건 정상이고, 오히려 감각이 살아있다는 뜻이야."
   },
   {
     "id": "EMP0321",
@@ -4356,7 +4356,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 3,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 지금 불안해도 정상이다. 다만 그 불안을 근거로 결론 내리지만 마."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 지금 불안해도 정상이다. 다만 그 불안을 근거로 결론 내리지만 마."
   },
   {
     "id": "EMP0393",
@@ -4366,7 +4366,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 3,
     "style": "soft",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 스스로를 몰아붙이지 마. {topicNoun}에서 흔들리는 건 정상이고, 오히려 감각이 살아있다는 뜻이야."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 스스로를 몰아붙이지 마. {topicNoun}에서 흔들리는 건 정상이고, 오히려 감각이 살아있다는 뜻이야."
   },
   {
     "id": "EMP0253",
@@ -4376,7 +4376,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 1,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 상대/환경이 애매하게 굴면 누구나 흔들린다. 네가 과민한 게 아니다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 상대/환경이 애매하게 굴면 누구나 흔들린다. 네가 과민한 게 아니다."
   },
   {
     "id": "EMP0291",
@@ -4396,7 +4396,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 1,
     "style": "soft",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 요즘 {emotionWord}는 ‘문제’가 아니라 ‘정보’야. 네 마음이 뭘 지키고 싶은지 알려줘."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 요즘 {emotionWord}는 ‘문제’가 아니라 ‘정보’야. 네 마음이 뭘 지키고 싶은지 알려줘."
   },
   {
     "id": "EMP0262",
@@ -4406,7 +4406,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 네가 느끼는 압박은 현실적인 신호다. 그래서 더더욱 데이터/기준을 세워야 한다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 네가 느끼는 압박은 현실적인 신호다. 그래서 더더욱 데이터/기준을 세워야 한다."
   },
   {
     "id": "EMP0290",
@@ -4416,7 +4416,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 요즘 불안해도 정상이다. 다만 그 불안을 근거로 결론 내리지만 마."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 요즘 불안해도 정상이다. 다만 그 불안을 근거로 결론 내리지만 마."
   },
   {
     "id": "EMP0300",
@@ -4426,7 +4426,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 상대/환경이 애매하게 굴면 누구나 흔들린다. 네가 과민한 게 아니다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 상대/환경이 애매하게 굴면 누구나 흔들린다. 네가 과민한 게 아니다."
   },
   {
     "id": "EMP0308",
@@ -4436,7 +4436,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "soft",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 스스로를 몰아붙이지 마. {topicNoun}에서 흔들리는 건 정상이고, 오히려 감각이 살아있다는 뜻이야."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 스스로를 몰아붙이지 마. {topicNoun}에서 흔들리는 건 정상이고, 오히려 감각이 살아있다는 뜻이야."
   },
   {
     "id": "EMP0264",
@@ -4456,7 +4456,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 1,
     "style": "soft",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 스스로를 몰아붙이지 마. {topicNoun}에서 흔들리는 건 정상이고, 오히려 감각이 살아있다는 뜻이야."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 스스로를 몰아붙이지 마. {topicNoun}에서 흔들리는 건 정상이고, 오히려 감각이 살아있다는 뜻이야."
   },
   {
     "id": "EMP0448",
@@ -4466,7 +4466,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 1,
     "style": "soft",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 지금은 속도를 늦추는 게 패배가 아니야. {zodiac} 기질은 페이스 조절이 곧 실력이지."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 지금은 속도를 늦추는 게 패배가 아니야. {zodiac} 기질은 페이스 조절이 곧 실력이지."
   },
   {
     "id": "EMP0272",
@@ -4476,7 +4476,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "soft",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 지금 {emotionWord}는 ‘문제’가 아니라 ‘정보’야. 네 마음이 뭘 지키고 싶은지 알려줘."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 지금 {emotionWord}는 ‘문제’가 아니라 ‘정보’야. 네 마음이 뭘 지키고 싶은지 알려줘."
   },
   {
     "id": "EMP0318",
@@ -4486,7 +4486,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 상대/환경이 애매하게 굴면 누구나 흔들린다. 네가 과민한 게 아니다."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 상대/환경이 애매하게 굴면 누구나 흔들린다. 네가 과민한 게 아니다."
   },
   {
     "id": "EMP0333",
@@ -4496,7 +4496,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "reassurance",
     "intensity": 2,
     "style": "direct",
-    "text": "괜찮아. 그 반응은 과한 게 아니야. 그 반응, 과한 게 아니야. 지금 불안해도 정상이다. 다만 그 불안을 근거로 결론 내리지만 마."
+    "text": "괜찮아. 그 반응, 과한 게 아니야. 지금 불안해도 정상이다. 다만 그 불안을 근거로 결론 내리지만 마."
   },
   {
     "id": "EMP0377",
@@ -4716,7 +4716,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "clarity",
     "intensity": 2,
     "style": "soft",
-    "text": "포인트는 하나야: {card2}가 말하는 건 ‘관점 전환’이야. 현재은 {topicNoun}을 ‘잃지 않기’보다 ‘쌓기’로 보면 답이 달라져."
+    "text": "포인트는 하나야: {card2}가 말하는 건 ‘관점 전환’이야. 지금은 {topicNoun}을 ‘잃지 않기’보다 ‘쌓기’로 보면 답이 달라져."
   },
   {
     "id": "EMP0560",
@@ -5596,7 +5596,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "clarity",
     "intensity": 2,
     "style": "soft",
-    "text": "포인트는 하나야: {card2}가 말하는 건 ‘관점 전환’이야. 현재은 {topicNoun}을 ‘잃지 않기’보다 ‘쌓기’로 보면 답이 달라져."
+    "text": "포인트는 하나야: {card2}가 말하는 건 ‘관점 전환’이야. 지금은 {topicNoun}을 ‘잃지 않기’보다 ‘쌓기’로 보면 답이 달라져."
   },
   {
     "id": "EMP0495",
@@ -5686,7 +5686,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "clarity",
     "intensity": 3,
     "style": "soft",
-    "text": "포인트는 하나야: {card2}가 말하는 건 ‘관점 전환’이야. 현재은 {topicNoun}을 ‘잃지 않기’보다 ‘쌓기’로 보면 답이 달라져."
+    "text": "포인트는 하나야: {card2}가 말하는 건 ‘관점 전환’이야. 지금은 {topicNoun}을 ‘잃지 않기’보다 ‘쌓기’로 보면 답이 달라져."
   },
   {
     "id": "EMP0574",
@@ -6936,7 +6936,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "agency",
     "intensity": 2,
     "style": "direct",
-    "text": "현재은 ‘연락/결정/보류’ 중 하나를 고르는 게 아니라, 기간을 정해 보류하라(예: 72시간)."
+    "text": "지금은 ‘연락/결정/보류’ 중 하나를 고르는 게 아니라, 기간을 정해 보류하라(예: 72시간)."
   },
   {
     "id": "EMP0833",
@@ -7286,7 +7286,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "agency",
     "intensity": 1,
     "style": "direct",
-    "text": "현재은 ‘연락/결정/보류’ 중 하나를 고르는 게 아니라, 기간을 정해 보류하라(예: 72시간)."
+    "text": "지금은 ‘연락/결정/보류’ 중 하나를 고르는 게 아니라, 기간을 정해 보류하라(예: 72시간)."
   },
   {
     "id": "EMP0703",
@@ -8496,7 +8496,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "agency",
     "intensity": 2,
     "style": "direct",
-    "text": "현재은 ‘연락/결정/보류’ 중 하나를 고르는 게 아니라, 기간을 정해 보류하라(예: 72시간)."
+    "text": "지금은 ‘연락/결정/보류’ 중 하나를 고르는 게 아니라, 기간을 정해 보류하라(예: 72시간)."
   },
   {
     "id": "EMP0831",
@@ -9026,7 +9026,7 @@ export const EMPATHY_PARTS: EmpathyPart[] = [
     "need": "boundary",
     "intensity": 2,
     "style": "direct",
-    "text": "여기서 핵심은 경계야. 현재은 ‘다 해주기’가 아니라 ‘할 수 있는 만큼만’이다."
+    "text": "여기서 핵심은 경계야. 지금은 ‘다 해주기’가 아니라 ‘할 수 있는 만큼만’이다."
   },
   {
     "id": "EMP0869",

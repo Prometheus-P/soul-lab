@@ -93,8 +93,8 @@ describe('refineOutput', () => {
       const input = '서울(으)로 가세요';
       const result = refineTarotOutput(input);
 
-      // Space after particle is removed by the particle fixer
-      expect(result.text).toBe('서울로가세요');
+      // Single space after particle is preserved (only multiple spaces are collapsed)
+      expect(result.text).toBe('서울로 가세요');
     });
 
     it('fixes multiple particles in one text', () => {
@@ -119,7 +119,8 @@ describe('refineOutput', () => {
       const input = '좋은 기운이 옵니다.\n좋은 기운이 옵니다.\n행복하세요.';
       const result = refineTarotOutput(input);
 
-      expect(result.text).toBe('좋은 기운이 옵니다.\n행복하세요.');
+      // With paragraph formatting, sentences are joined with spaces
+      expect(result.text).toBe('좋은 기운이 옵니다. 행복하세요.');
       expect(result.meta.deduped_sentences).toBe(1);
     });
 
@@ -248,6 +249,51 @@ describe('refineOutput', () => {
 
       expect(result.text).toBe('짧은 문장');
       expect(result.text).not.toContain('…');
+    });
+  });
+
+  describe('formatParagraphs', () => {
+    it('joins regular sentences with spaces into paragraphs', () => {
+      const input = '첫 번째 문장.\n두 번째 문장.\n세 번째 문장.';
+      const result = refineTarotOutput(input);
+
+      // Sentences should be joined with spaces, not newlines
+      expect(result.text).toBe('첫 번째 문장. 두 번째 문장. 세 번째 문장.');
+    });
+
+    it('keeps section markers on separate lines with spacing', () => {
+      const input = '서론 문장.\n🌙 오늘의 운세\n운세 내용입니다.';
+      const result = refineTarotOutput(input);
+
+      // Section marker should be on its own line with blank line before
+      expect(result.text).toContain('서론 문장.');
+      expect(result.text).toContain('\n\n🌙 오늘의 운세');
+      expect(result.text).toContain('🌙 오늘의 운세\n운세 내용입니다.');
+    });
+
+    it('preserves multiple section markers', () => {
+      const input = '💰 재물운\n돈이 들어옵니다.\n💕 연애운\n사랑이 찾아옵니다.';
+      const result = refineTarotOutput(input);
+
+      expect(result.text).toContain('💰 재물운');
+      expect(result.text).toContain('💕 연애운');
+      expect(result.text).toContain('\n\n💕'); // blank line before second section
+    });
+
+    it('can be disabled via options', () => {
+      const input = '문장 하나.\n문장 둘.';
+      const result = refineTarotOutput(input, { formatParagraphs: false });
+
+      // Without formatting, sentences stay on separate lines
+      expect(result.text).toBe('문장 하나.\n문장 둘.');
+    });
+
+    it('creates paragraph breaks after transitional phrases', () => {
+      const input = '상황 설명. 그래서 결론은 이렇다.\n다음 내용.';
+      const result = refineTarotOutput(input);
+
+      // "그래서" triggers paragraph break
+      expect(result.text).toContain('그래서 결론은 이렇다.');
     });
   });
 

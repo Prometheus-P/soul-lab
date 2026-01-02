@@ -20,6 +20,7 @@ export type RefineOptions = {
   dedupe?: boolean;        // default true
   soften?: boolean;        // default true
   mergeEmotion?: boolean;  // default true
+  formatParagraphs?: boolean; // default true - groups sentences into readable paragraphs
   maxLen?: number;         // optional: hard cut (characters)
 };
 
@@ -40,6 +41,7 @@ const DEFAULTS: Required<Omit<RefineOptions, "name" | "maxLen">> = {
   dedupe: true,
   soften: true,
   mergeEmotion: true,
+  formatParagraphs: true,
 };
 
 // --- 1) Meta removal ---------------------------------------------------------
@@ -125,7 +127,9 @@ function fixParticleMarkers(text: string): { out: string; fixes: number } {
     });
   }
 
-  out = out.replace(/\s+([이가를은는와과]|으로|로)/g, "$1");
+  // Only collapse multiple spaces before particles, not single spaces
+  // (prevents "감정이 과열" → "감정이과열")
+  out = out.replace(/\s{2,}([이가를은는와과]|으로|로)/g, " $1");
   return { out, fixes };
 }
 
@@ -233,7 +237,8 @@ const SOFTEN_MAP: Array<{ re: RegExp; to: string }> = [
   { re: /무조건/g, to: "가능하면" },
   { re: /반드시/g, to: "대체로" },
   { re: /절대/g, to: "웬만하면" },
-  { re: /결론\s*내리지만\s*마/g, to: "그 불안만으로 결론을 내리진 말자" },
+  { re: /그\s*불안을?\s*근거로\s*결론\s*내리지만\s*마/g, to: "그 불안만으로 결론을 내리진 말자" },
+  { re: /결론\s*내리지만\s*마/g, to: "결론을 내리진 말자" },
 ];
 
 function softenWording(text: string): { out: string; hits: number } {
@@ -265,6 +270,59 @@ function mergeEmotionBlock(text: string): { out: string; merged: number } {
     );
   }
   return { out, merged };
+}
+
+// --- 6) Paragraph formatting -------------------------------------------------
+const SECTION_MARKERS = /^(🌙|☀️|⭐|😑|💰|🏦|✨|🔮|💕|💼|🎯|📌|💡|⚠️|•|\*|-|#{1,3}\s)/;
+
+function formatParagraphs(lines: string[]): string {
+  const result: string[] = [];
+  let currentParagraph: string[] = [];
+
+  const flushParagraph = () => {
+    if (currentParagraph.length > 0) {
+      // Join sentences with space, not newline
+      result.push(currentParagraph.join(" "));
+      currentParagraph = [];
+    }
+  };
+
+  for (const line of lines) {
+    const trimmed = line.trim();
+
+    // Empty line = paragraph break
+    if (!trimmed) {
+      flushParagraph();
+      continue;
+    }
+
+    // Section marker = new section with blank line before
+    if (SECTION_MARKERS.test(trimmed)) {
+      flushParagraph();
+      if (result.length > 0 && result[result.length - 1] !== "") {
+        result.push(""); // Add blank line before section
+      }
+      result.push(trimmed);
+      continue;
+    }
+
+    // Regular sentence - add to current paragraph
+    currentParagraph.push(trimmed);
+
+    // Natural paragraph break after certain endings (3+ sentences or transitional phrases)
+    if (currentParagraph.length >= 4 ||
+        /[.!?]$/.test(trimmed) && /(그래서|따라서|결론적으로|정리하면|핵심은|포인트는)/.test(trimmed)) {
+      flushParagraph();
+    }
+  }
+
+  flushParagraph();
+
+  // Clean up: ensure proper spacing between paragraphs
+  return result
+    .join("\n")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
 }
 
 // --- Public API --------------------------------------------------------------
@@ -307,8 +365,14 @@ export function refineTarotOutput(text: string, options: RefineOptions = {}): Re
   if (opt.dedupe) {
     const sentences = splitSentences(out);
     const r = dedupeSentences(sentences);
-    out = r.out.join("\n").replace(/\n{3,}/g, "\n\n").trim();
     meta.deduped_sentences += r.removed;
+
+    // Apply paragraph formatting or simple join
+    if (opt.formatParagraphs) {
+      out = formatParagraphs(r.out);
+    } else {
+      out = r.out.join("\n").replace(/\n{3,}/g, "\n\n").trim();
+    }
   }
 
   if (typeof opt.maxLen === "number" && opt.maxLen > 0 && out.length > opt.maxLen) {
