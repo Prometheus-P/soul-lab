@@ -1,7 +1,12 @@
 import React, { useMemo } from 'react';
 import type { BirthInfo, CalendarType } from '../lib/storage';
-import { FormSelect, FormSegmentedControl, FormCheckbox } from './form';
-import type { FormSelectOption, SegmentOption } from './form';
+import {
+  FormSelect,
+  FormSegmentedControl,
+  FormCheckbox,
+  type FormSelectOption,
+  type SegmentOption,
+} from './form';
 
 interface BirthDatePickerProps {
   value: BirthInfo;
@@ -26,7 +31,12 @@ const calendarOptions: SegmentOption[] = [
 const yearOptions: FormSelectOption[] = years.map((y) => ({ value: String(y), label: `${y}년` }));
 const monthOptions: FormSelectOption[] = months.map((m) => ({ value: String(m), label: `${m}월` }));
 
-export default function BirthDatePicker({ value, onChange, error, errorMessage }: BirthDatePickerProps) {
+export default function BirthDatePicker({
+  value,
+  onChange,
+  error,
+  errorMessage,
+}: BirthDatePickerProps) {
   const parsed = useMemo(() => {
     const yyyymmdd = value.yyyymmdd || '';
     if (yyyymmdd.length === 8) {
@@ -49,7 +59,7 @@ export default function BirthDatePicker({ value, onChange, error, errorMessage }
 
   const dayOptions: FormSelectOption[] = useMemo(
     () => days.map((d) => ({ value: String(d), label: `${d}일` })),
-    [days]
+    [days],
   );
 
   const handleDateChange = (field: 'year' | 'month' | 'day', val: string) => {
@@ -109,7 +119,9 @@ export default function BirthDatePicker({ value, onChange, error, errorMessage }
           aria-label="양력/음력 선택"
           size="sm"
         />
-        <div className={`birthdate-picker__leap-month ${value.calendar === 'lunar' ? 'birthdate-picker__leap-month--visible' : ''}`}>
+        <div
+          className={`birthdate-picker__leap-month ${value.calendar === 'lunar' ? 'birthdate-picker__leap-month--visible' : ''}`}
+        >
           {value.calendar === 'lunar' && (
             <FormCheckbox
               label="윤달"

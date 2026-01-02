@@ -26,9 +26,11 @@
     "test:server": "vitest run --config server/vitest.config.ts",
     "test:all": "vitest run && vitest run --config server/vitest.config.ts",
     "test:e2e": "playwright test",
-    "test:e2e:ui": "playwright test --ui"
+    "test:e2e:ui": "playwright test --ui",
+    "prepare": "husky"
   },
   "dependencies": {
+    "@sentry/react": "^10.32.1",
     "korean-lunar-calendar": "^0.3.6",
     "ogl": "^1.0.11",
     "react": "^18.3.1",
@@ -57,7 +59,9 @@
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.16",
     "globals": "^16.5.0",
+    "husky": "^9.1.7",
     "jsdom": "^27.4.0",
+    "lint-staged": "^16.2.7",
     "prettier": "^3.4.2",
     "rollup-plugin-visualizer": "^6.0.5",
     "tsx": "^4.19.2",
@@ -73,5 +77,14 @@
       "undici": ">=5.29.0",
       "esbuild": ">=0.25.0"
     }
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,css}": [
+      "prettier --write"
+    ]
   }
 }

@@ -20,11 +20,9 @@ import Balatro from './components/Balatro';
 import { ToastProvider } from './components/Toast';
 import ErrorBoundary from './components/ErrorBoundary';
 
-import { captureAttributionFromUrl } from './lib/attribution';
+import { captureAttributionFromUrl, getAttribution } from './lib/attribution';
 import { updateStreak } from './lib/streak';
-import { getAttribution } from './lib/attribution';
 import { track } from './lib/analytics';
-
 
 /**
  * Prefetch next likely pages based on current route.
@@ -79,7 +77,14 @@ function Bootstrap() {
     captureAttributionFromUrl(loc.search, loc.pathname);
     const s = updateStreak();
     const at = getAttribution();
-    track('page_view', { path: loc.pathname, search: loc.search, entryType: at?.entryType, variant: at?.variant, referrerId: at?.referrerId, streak: s });
+    track('page_view', {
+      path: loc.pathname,
+      search: loc.search,
+      entryType: at?.entryType,
+      variant: at?.variant,
+      referrerId: at?.referrerId,
+      streak: s,
+    });
   }, [loc.key, loc.pathname, loc.search]);
 
   return (

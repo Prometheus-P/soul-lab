@@ -67,7 +67,8 @@ export default function ConsultPage() {
       {
         id: 'welcome',
         role: 'assistant',
-        content: '안녕하세요, 소울 랩의 AI 상담사입니다. ✨\n\n별자리, 타로, 사주를 융합한 신비로운 운명 상담을 제공합니다.\n\n무엇이든 물어보세요. 당신의 운명에 대해 깊이 있는 통찰을 드릴게요.',
+        content:
+          '안녕하세요, 소울 랩의 AI 상담사입니다. ✨\n\n별자리, 타로, 사주를 융합한 신비로운 운명 상담을 제공합니다.\n\n무엇이든 물어보세요. 당신의 운명에 대해 깊이 있는 통찰을 드릴게요.',
         timestamp: new Date(),
       },
     ]);
@@ -91,7 +92,7 @@ export default function ConsultPage() {
     abortControllerRef.current?.abort();
     abortControllerRef.current = new AbortController();
 
-    // 크레딧 확인
+    // 복채 확인
     const creditCheck = await checkCredits(userKey, CREDIT_ACTIONS.AI_CHAT);
     if (!creditCheck.hasEnough) {
       setShowInsufficientModal(true);
@@ -112,8 +113,12 @@ export default function ConsultPage() {
     track('consult_message_sent', { messageLength: content.length });
 
     try {
-      // 크레딧 차감
-      const useResult = await consumeCredits(userKey, CREDIT_ACTIONS.AI_CHAT, `AI 상담: ${content.slice(0, 30)}`);
+      // 복채 차감
+      const useResult = await consumeCredits(
+        userKey,
+        CREDIT_ACTIONS.AI_CHAT,
+        `AI 상담: ${content.slice(0, 30)}`,
+      );
       if (!useResult.success) {
         throw new Error(useResult.error || 'Failed to use credits');
       }
@@ -188,8 +193,8 @@ export default function ConsultPage() {
                 // 실시간으로 메시지 업데이트
                 setMessages((prev) =>
                   prev.map((msg) =>
-                    msg.id === assistantMessageId ? { ...msg, content: streamedContent } : msg
-                  )
+                    msg.id === assistantMessageId ? { ...msg, content: streamedContent } : msg,
+                  ),
                 );
               }
             } catch {
@@ -205,8 +210,8 @@ export default function ConsultPage() {
           prev.map((msg) =>
             msg.id === assistantMessageId
               ? { ...msg, content: '죄송합니다, 응답을 생성하지 못했습니다.' }
-              : msg
-          )
+              : msg,
+          ),
         );
       }
 
@@ -255,9 +260,7 @@ export default function ConsultPage() {
       <div className="consult-credit-bar">
         <div className="consult-credit-badge">
           <span className="consult-credit-badge__icon">💎</span>
-          <span className="small consult-credit-badge__text">
-            {credits} 크레딧
-          </span>
+          <span className="small consult-credit-badge__text">{credits} 복채</span>
         </div>
         <Button size="small" color="dark" variant="weak" onClick={() => navigate('/credits')}>
           충전하기
@@ -284,9 +287,15 @@ export default function ConsultPage() {
           >
             <div className="consult-loading-bubble">
               <div className="consult-loading-dots">
-                <span aria-hidden="true" className="consult-loading-dot">✨</span>
-                <span aria-hidden="true" className="consult-loading-dot">✨</span>
-                <span aria-hidden="true" className="consult-loading-dot">✨</span>
+                <span aria-hidden="true" className="consult-loading-dot">
+                  ✨
+                </span>
+                <span aria-hidden="true" className="consult-loading-dot">
+                  ✨
+                </span>
+                <span aria-hidden="true" className="consult-loading-dot">
+                  ✨
+                </span>
               </div>
             </div>
           </div>
@@ -298,9 +307,7 @@ export default function ConsultPage() {
       {/* Quick Prompts */}
       {messages.length <= 1 && (
         <div className="consult-quick-prompts">
-          <div className="small consult-quick-prompts__title">
-            빠른 질문
-          </div>
+          <div className="small consult-quick-prompts__title">빠른 질문</div>
           <div className="consult-quick-prompts__list">
             {QUICK_PROMPTS.map((prompt, idx) => (
               <button
@@ -319,7 +326,9 @@ export default function ConsultPage() {
       {/* Input */}
       <form onSubmit={handleSubmit} className="consult-input-form">
         <div className="consult-input-row">
-          <label htmlFor="chat-input" className="sr-only">운명 상담 질문 입력</label>
+          <label htmlFor="chat-input" className="sr-only">
+            운명 상담 질문 입력
+          </label>
           <input
             id="chat-input"
             type="text"
@@ -341,24 +350,25 @@ export default function ConsultPage() {
             전송
           </Button>
         </div>
-        <div className="small consult-input-hint">
-          메시지 1회당 1 크레딧이 소모됩니다
-        </div>
+        <div className="small consult-input-hint">메시지 1회당 1 복채이 소모됩니다</div>
       </form>
 
       {/* Back Button */}
       <div className="consult-back-button">
-        <Button size="medium" color="dark" variant="weak" display="full" onClick={() => navigate('/result')}>
+        <Button
+          size="medium"
+          color="dark"
+          variant="weak"
+          display="full"
+          onClick={() => navigate('/result')}
+        >
           운세로 돌아가기
         </Button>
       </div>
 
       {/* Insufficient Credits Modal - WCAG SC 2.4.3 Focus Order, SC 4.1.2 Name Role Value */}
       {showInsufficientModal && (
-        <div
-          className="consult-modal-overlay"
-          onClick={() => setShowInsufficientModal(false)}
-        >
+        <div className="consult-modal-overlay" onClick={() => setShowInsufficientModal(false)}>
           <div
             ref={modalRef}
             role="dialog"
@@ -368,14 +378,16 @@ export default function ConsultPage() {
             className="card consult-modal"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="consult-modal__icon" aria-hidden="true">💎</div>
+            <div className="consult-modal__icon" aria-hidden="true">
+              💎
+            </div>
             <h2 id="insufficient-credits-title" className="h2 consult-modal__title">
-              크레딧이 부족합니다
+              복채이 부족합니다
             </h2>
             <p id="insufficient-credits-desc" className="p consult-modal__desc">
-              AI 상담을 이용하려면 크레딧이 필요합니다.
+              AI 상담을 이용하려면 복채이 필요합니다.
               <br />
-              크레딧을 충전하시겠어요?
+              복채을 충전하시겠어요?
             </p>
             <div className="consult-modal__actions">
               <Button
@@ -388,7 +400,7 @@ export default function ConsultPage() {
                   navigate('/credits');
                 }}
               >
-                크레딧 충전하기
+                복채 충전하기
               </Button>
               <Button
                 size="large"
@@ -419,22 +431,22 @@ function MessageBubble({ message, isStreaming = false }: MessageBubbleProps) {
   if (isSystem) {
     return (
       <div className="message-bubble--system">
-        <span className="small message-bubble__system-content">
-          {message.content}
-        </span>
+        <span className="small message-bubble__system-content">{message.content}</span>
       </div>
     );
   }
 
   return (
-    <div className={`message-bubble ${isUser ? 'message-bubble--user' : 'message-bubble--assistant'}`}>
-      <div className={`message-bubble__content ${isUser ? 'message-bubble__content--user' : 'message-bubble__content--assistant'}`}>
+    <div
+      className={`message-bubble ${isUser ? 'message-bubble--user' : 'message-bubble--assistant'}`}
+    >
+      <div
+        className={`message-bubble__content ${isUser ? 'message-bubble__content--user' : 'message-bubble__content--assistant'}`}
+      >
         {!isUser && (
           <div className="message-bubble__header">
             <span className="message-bubble__icon">🔮</span>
-            <span className="small message-bubble__name">
-              AI 상담사
-            </span>
+            <span className="small message-bubble__name">AI 상담사</span>
           </div>
         )}
         <p className="p message-bubble__text">
@@ -442,7 +454,9 @@ function MessageBubble({ message, isStreaming = false }: MessageBubbleProps) {
           {isStreaming && <span className="message-bubble__cursor" />}
         </p>
         {!isStreaming && (
-          <div className={`small message-bubble__timestamp ${isUser ? 'message-bubble__timestamp--user' : 'message-bubble__timestamp--assistant'}`}>
+          <div
+            className={`small message-bubble__timestamp ${isUser ? 'message-bubble__timestamp--user' : 'message-bubble__timestamp--assistant'}`}
+          >
             {message.timestamp.toLocaleTimeString('ko-KR', { hour: '2-digit', minute: '2-digit' })}
           </div>
         )}

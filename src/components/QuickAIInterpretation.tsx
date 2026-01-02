@@ -38,7 +38,7 @@ export default function QuickAIInterpretation({ fortuneData }: QuickAIInterpreta
   const handleGetInterpretation = useCallback(async () => {
     track('quick_ai_interpretation_click');
 
-    // 크레딧 확인
+    // 복채 확인
     const creditCheck = await checkCredits(userKey, CREDIT_ACTIONS.AI_CHAT);
     if (!creditCheck.hasEnough) {
       setShowCreditsModal(true);
@@ -49,7 +49,7 @@ export default function QuickAIInterpretation({ fortuneData }: QuickAIInterpreta
     setError(null);
 
     try {
-      // 크레딧 차감
+      // 복채 차감
       const useResult = await consumeCredits(userKey, CREDIT_ACTIONS.AI_CHAT, 'AI 운세 해석');
       if (!useResult.success) {
         throw new Error(useResult.error || 'Failed to use credits');
@@ -101,7 +101,9 @@ ${fortuneData.caution ? `- 주의사항: ${fortuneData.caution}` : ''}
     return (
       <div className="card" style={{ marginTop: 12 }}>
         <div className="row" style={{ marginBottom: 12 }}>
-          <h2 className="h2 glow-text"><span aria-hidden="true">🔮</span> AI 루나의 해석</h2>
+          <h2 className="h2 glow-text">
+            <span aria-hidden="true">🔮</span> AI 루나의 해석
+          </h2>
         </div>
         <p
           className="p"
@@ -138,9 +140,11 @@ ${fortuneData.caution ? `- 주의사항: ${fortuneData.caution}` : ''}
         }}
       >
         <div className="row" style={{ marginBottom: 8 }}>
-          <h2 className="h2 glow-text"><span aria-hidden="true">🔮</span> AI 운세 해석</h2>
+          <h2 className="h2 glow-text">
+            <span aria-hidden="true">🔮</span> AI 운세 해석
+          </h2>
           <span className="small" style={{ color: 'rgba(255, 215, 0, 0.8)' }}>
-            1 크레딧
+            1 복채
           </span>
         </div>
         <div className="small" style={{ color: 'rgba(255, 255, 255, 0.7)', marginBottom: 12 }}>
@@ -181,7 +185,7 @@ ${fortuneData.caution ? `- 주의사항: ${fortuneData.caution}` : ''}
         </Button>
       </div>
 
-      {/* 크레딧 부족 모달 - WCAG SC 2.4.3 Focus Order, SC 4.1.2 Name Role Value */}
+      {/* 복채 부족 모달 - WCAG SC 2.4.3 Focus Order, SC 4.1.2 Name Role Value */}
       {showCreditsModal && (
         <div
           style={{
@@ -213,12 +217,18 @@ ${fortuneData.caution ? `- 주의사항: ${fortuneData.caution}` : ''}
             }}
             onClick={(e) => e.stopPropagation()}
           >
-            <div style={{ fontSize: 48, marginBottom: 16 }} aria-hidden="true">💎</div>
+            <div style={{ fontSize: 48, marginBottom: 16 }} aria-hidden="true">
+              💎
+            </div>
             <h2 id="credits-modal-title" className="h2" style={{ marginBottom: 8 }}>
-              크레딧이 부족합니다
+              복채이 부족합니다
             </h2>
-            <p id="credits-modal-desc" className="p" style={{ color: 'rgba(255,255,255,0.7)', marginBottom: 20 }}>
-              AI 해석을 받으려면 1 크레딧이 필요합니다.
+            <p
+              id="credits-modal-desc"
+              className="p"
+              style={{ color: 'rgba(255,255,255,0.7)', marginBottom: 20 }}
+            >
+              AI 해석을 받으려면 1 복채이 필요합니다.
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
               <Button
@@ -231,7 +241,7 @@ ${fortuneData.caution ? `- 주의사항: ${fortuneData.caution}` : ''}
                   navigate('/credits');
                 }}
               >
-                크레딧 충전하기
+                복채 충전하기
               </Button>
               <Button
                 size="large"

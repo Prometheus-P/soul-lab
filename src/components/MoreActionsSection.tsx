@@ -6,14 +6,19 @@
  */
 import React from 'react';
 import { Button } from '@toss/tds-mobile';
-import { QuickLinksBar, QuickLinkAIConsult, QuickLinkTarot, QuickLinkCredits } from './QuickLinksBar';
+import {
+  QuickLinksBar,
+  QuickLinkAIConsult,
+  QuickLinkTarot,
+  QuickLinkCredits,
+} from './QuickLinksBar';
 
 interface MoreActionsSectionProps {
   /** 친구 궁합/초대 클릭 핸들러 */
   onChemistry: () => void;
   /** 공유하기 클릭 핸들러 */
   onShare: () => void;
-  /** 크레딧 퀵링크 표시 여부 (Unlocked에서만) */
+  /** 복채 퀵링크 표시 여부 (Unlocked에서만) */
   showCredits?: boolean;
   /** 친구 버튼 라벨 (Unlocked: "친구 궁합", Locked: "친구 초대") */
   chemistryLabel?: string;

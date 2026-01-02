@@ -1,4 +1,9 @@
 import 'dotenv/config';
+import { initSentry } from './lib/sentry.js';
+
+// Sentry 초기화 (가장 먼저 실행)
+initSentry();
+
 import Fastify from 'fastify';
 import cors from '@fastify/cors';
 import helmet from '@fastify/helmet';
@@ -60,7 +65,9 @@ const limiter = createRateLimiter();
 // CORS configuration - use whitelist in production
 const corsOrigin = (() => {
   if (config.CORS_ORIGINS) {
-    const origins = config.CORS_ORIGINS.split(',').map((o) => o.trim()).filter(Boolean);
+    const origins = config.CORS_ORIGINS.split(',')
+      .map((o) => o.trim())
+      .filter(Boolean);
     return origins.length > 0 ? origins : true;
   }
   // Development: allow all origins
@@ -75,7 +82,15 @@ await app.register(cors, {
   origin: corsOrigin,
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization', 'X-Correlation-Id', 'X-User-Key', 'X-Timestamp', 'X-Signature', 'X-Session-Token'],
+  allowedHeaders: [
+    'Content-Type',
+    'Authorization',
+    'X-Correlation-Id',
+    'X-User-Key',
+    'X-Timestamp',
+    'X-Signature',
+    'X-Session-Token',
+  ],
 });
 
 // Security headers (helmet)
@@ -188,15 +203,37 @@ app.post('/api/invites', async (req, reply) => {
 
   const { ip, ua } = meta(req);
 
-  const ipRate = await limiter.allow(rateKey('invite_ip', ip), INVITE_LIMIT_PER_IP, INVITE_WINDOW_MS);
+  const ipRate = await limiter.allow(
+    rateKey('invite_ip', ip),
+    INVITE_LIMIT_PER_IP,
+    INVITE_WINDOW_MS,
+  );
   if (!ipRate.ok) {
-    logger.log({ ts: Date.now(), type: 'invite_create_rate_limited', ip, ua, inviterKey, resetAt: ipRate.resetAt });
+    logger.log({
+      ts: Date.now(),
+      type: 'invite_create_rate_limited',
+      ip,
+      ua,
+      inviterKey,
+      resetAt: ipRate.resetAt,
+    });
     return reply.code(429).send({ error: 'rate_limited', resetAt: ipRate.resetAt });
   }
 
-  const userRate = await limiter.allow(rateKey('invite_user', inviterKey), INVITE_LIMIT_PER_USER, INVITE_WINDOW_MS);
+  const userRate = await limiter.allow(
+    rateKey('invite_user', inviterKey),
+    INVITE_LIMIT_PER_USER,
+    INVITE_WINDOW_MS,
+  );
   if (!userRate.ok) {
-    logger.log({ ts: Date.now(), type: 'invite_create_rate_limited', ip, ua, inviterKey, resetAt: userRate.resetAt });
+    logger.log({
+      ts: Date.now(),
+      type: 'invite_create_rate_limited',
+      ip,
+      ua,
+      inviterKey,
+      resetAt: userRate.resetAt,
+    });
     return reply.code(429).send({ error: 'rate_limited', resetAt: userRate.resetAt });
   }
 
@@ -236,7 +273,15 @@ app.post('/api/invites/:id/join', async (req, reply) => {
   const out = await inviteStore.joinInvite(id, userKey);
 
   if (!out.rec) {
-    logger.log({ ts: Date.now(), type: 'invite_join_not_found', ip, ua, inviteId: id, userKey, status: out.status });
+    logger.log({
+      ts: Date.now(),
+      type: 'invite_join_not_found',
+      ip,
+      ua,
+      inviteId: id,
+      userKey,
+      status: out.status,
+    });
     return reply.code(404).send({ error: out.status === 'expired' ? 'expired' : 'not_found' });
   }
 
@@ -285,7 +330,15 @@ app.post('/api/invites/:id/reissue', async (req, reply) => {
 
   const out = await inviteStore.reissueInvite(id, userKey, INVITE_TTL_MS);
   if (!out.ok) {
-    logger.log({ ts: Date.now(), type: 'invite_reissue_failed', ip, ua, inviteId: id, userKey, reason: out.reason });
+    logger.log({
+      ts: Date.now(),
+      type: 'invite_reissue_failed',
+      ip,
+      ua,
+      inviteId: id,
+      userKey,
+      reason: out.reason,
+    });
     if (out.reason === 'forbidden') return reply.code(403).send({ error: 'forbidden' });
     if (out.reason === 'expired') return reply.code(404).send({ error: 'expired' });
     return reply.code(404).send({ error: 'not_found' });
@@ -317,8 +370,16 @@ app.post('/api/rewards/earn', async (req, reply) => {
 
   const { ip, ua } = meta(req);
 
-  const ipRate = await limiter.allow(rateKey('reward_ip', ip), REWARD_LIMIT_PER_IP, REWARD_WINDOW_MS);
-  const userRate = await limiter.allow(rateKey('reward_user', userKey), REWARD_LIMIT_PER_USER, REWARD_WINDOW_MS);
+  const ipRate = await limiter.allow(
+    rateKey('reward_ip', ip),
+    REWARD_LIMIT_PER_IP,
+    REWARD_WINDOW_MS,
+  );
+  const userRate = await limiter.allow(
+    rateKey('reward_user', userKey),
+    REWARD_LIMIT_PER_USER,
+    REWARD_WINDOW_MS,
+  );
   if (!ipRate.ok || !userRate.ok) {
     logger.log({ ts: Date.now(), type: 'reward_rate_limited', ip, ua, userKey, dateKey, scope });
     return reply.code(429).send({ error: 'rate_limited' });
@@ -384,17 +445,20 @@ async function gracefulShutdown(signal: string) {
 process.on('SIGTERM', () => gracefulShutdown('SIGTERM'));
 process.on('SIGINT', () => gracefulShutdown('SIGINT'));
 
-app.listen({ port: PORT, host: '0.0.0.0' }).then(() => {
-  pinoLogger.info({ port: PORT, dataDir: DATA_DIR, env: config.NODE_ENV }, 'server_started');
+app
+  .listen({ port: PORT, host: '0.0.0.0' })
+  .then(() => {
+    pinoLogger.info({ port: PORT, dataDir: DATA_DIR, env: config.NODE_ENV }, 'server_started');
 
-  // Security warning for development mode
-  if (config.NODE_ENV === 'development') {
-    pinoLogger.warn(
-      'Running in DEVELOPMENT mode - auth signature verification is relaxed. ' +
-      'Do NOT use in production!'
-    );
-  }
-}).catch((err) => {
-  pinoLogger.fatal({ err }, 'server_startup_failed');
-  process.exit(1);
-});
+    // Security warning for development mode
+    if (config.NODE_ENV === 'development') {
+      pinoLogger.warn(
+        'Running in DEVELOPMENT mode - auth signature verification is relaxed. ' +
+          'Do NOT use in production!',
+      );
+    }
+  })
+  .catch((err) => {
+    pinoLogger.fatal({ err }, 'server_startup_failed');
+    process.exit(1);
+  });

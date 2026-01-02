@@ -1,7 +1,7 @@
 /**
- * Credit Store - 크레딧 관리 시스템
+ * Credit Store - 복채 관리 시스템
  *
- * 인앱결제로 구매한 크레딧을 관리하고, AI 상담 시 차감
+ * 인앱결제로 구매한 복채을 관리하고, AI 상담 시 차감
  *
  * Security: Uses mutex for thread-safe operations and atomic writes
  * to prevent race conditions and data corruption.
@@ -73,7 +73,7 @@ export interface CreditProduct {
   nameKorean: string;
   credits: number;
   price: number; // KRW
-  bonus?: number; // 보너스 크레딧
+  bonus?: number; // 보너스 복채
 }
 
 export const CREDIT_PRODUCTS: CreditProduct[] = [
@@ -189,10 +189,10 @@ export const STREAK_REWARDS: StreakRewardTier[] = [
   { days: 30, credits: 20, name: '30일 연속 방문' },
 ];
 
-// 3일마다 보너스 크레딧
+// 3일마다 보너스 복채
 export const STREAK_DAILY_BONUS = {
   interval: 3, // 3일마다
-  credits: 1,  // +1 크레딧
+  credits: 1, // +1 복채
 };
 
 export interface StreakRewardRecord {
@@ -282,32 +282,26 @@ export class CreditStore {
       const needsMigration = metadata.version < CREDIT_SCHEMA_VERSION;
 
       // Load with encrypted storage support (handles both encrypted and plaintext files)
-      const balancesData = readEncryptedJson<Record<string, CreditBalance>>(
-        this.balancesFile,
-        {}
-      );
+      const balancesData = readEncryptedJson<Record<string, CreditBalance>>(this.balancesFile, {});
       this.balances = new Map(Object.entries(balancesData));
 
-      this.transactions = readEncryptedJson<CreditTransaction[]>(
-        this.transactionsFile,
-        []
-      );
+      this.transactions = readEncryptedJson<CreditTransaction[]>(this.transactionsFile, []);
 
       const purchasesData = readEncryptedJson<Record<string, PurchaseRecord>>(
         this.purchasesFile,
-        {}
+        {},
       );
       this.purchases = new Map(Object.entries(purchasesData));
 
       const referralsData = readEncryptedJson<Record<string, ReferralRecord>>(
         this.referralsFile,
-        {}
+        {},
       );
       this.referrals = new Map(Object.entries(referralsData));
 
       const streakData = readEncryptedJson<Record<string, StreakRewardRecord>>(
         this.streakRewardsFile,
-        {}
+        {},
       );
       this.streakRewards = new Map(Object.entries(streakData));
 
@@ -357,7 +351,7 @@ export class CreditStore {
             toVersion: this.schemaVersion,
             migrationsApplied: result.migrationsApplied,
           },
-          'credit_store_migrated'
+          'credit_store_migrated',
         );
       }
     } catch (err) {
@@ -374,26 +368,14 @@ export class CreditStore {
 
       // Use encrypted storage for sensitive financial data
       // Automatically encrypts if DATA_ENCRYPTION_KEY is configured
-      writeEncryptedJson(
-        this.balancesFile,
-        Object.fromEntries(this.balances)
-      );
+      writeEncryptedJson(this.balancesFile, Object.fromEntries(this.balances));
       writeEncryptedJson(
         this.transactionsFile,
-        this.transactions.slice(-10000) // 최근 10000건만 유지
+        this.transactions.slice(-10000), // 최근 10000건만 유지
       );
-      writeEncryptedJson(
-        this.purchasesFile,
-        Object.fromEntries(this.purchases)
-      );
-      writeEncryptedJson(
-        this.referralsFile,
-        Object.fromEntries(this.referrals)
-      );
-      writeEncryptedJson(
-        this.streakRewardsFile,
-        Object.fromEntries(this.streakRewards)
-      );
+      writeEncryptedJson(this.purchasesFile, Object.fromEntries(this.purchases));
+      writeEncryptedJson(this.referralsFile, Object.fromEntries(this.referrals));
+      writeEncryptedJson(this.streakRewardsFile, Object.fromEntries(this.streakRewards));
     } catch (e) {
       console.error('CreditStore save error:', e);
     }
@@ -411,7 +393,7 @@ export class CreditStore {
   // ----------------------------------------------------------
 
   /**
-   * 사용자 크레딧 잔액 조회
+   * 사용자 복채 잔액 조회
    */
   getBalance(userKey: string): CreditBalance {
     const existing = this.balances.get(userKey);
@@ -430,7 +412,7 @@ export class CreditStore {
   }
 
   /**
-   * 크레딧이 충분한지 확인
+   * 복채이 충분한지 확인
    */
   hasEnoughCredits(userKey: string, amount: number): boolean {
     const balance = this.getBalance(userKey);
@@ -442,7 +424,7 @@ export class CreditStore {
   // ----------------------------------------------------------
 
   /**
-   * 크레딧 추가 (구매, 보너스 등)
+   * 복채 추가 (구매, 보너스 등)
    */
   addCredits(
     userKey: string,
@@ -450,7 +432,7 @@ export class CreditStore {
     type: 'purchase' | 'bonus' | 'refund',
     description: string,
     orderId?: string,
-    sku?: string
+    sku?: string,
   ): CreditTransaction {
     const balance = this.getBalance(userKey);
     balance.credits += amount;
@@ -479,13 +461,13 @@ export class CreditStore {
   }
 
   /**
-   * 크레딧 사용 (차감) - 동기 버전 (내부용)
+   * 복채 사용 (차감) - 동기 버전 (내부용)
    * @deprecated Use useCreditsAsync for thread-safe operations
    */
   useCredits(
     userKey: string,
     amount: number,
-    description: string
+    description: string,
   ): { success: boolean; transaction?: CreditTransaction; error?: string } {
     const balance = this.getBalance(userKey);
 
@@ -518,13 +500,13 @@ export class CreditStore {
   }
 
   /**
-   * 크레딧 사용 (차감) - 비동기 버전 (뮤텍스 적용)
+   * 복채 사용 (차감) - 비동기 버전 (뮤텍스 적용)
    * Thread-safe credit usage with mutex locking
    */
   async useCreditsAsync(
     userKey: string,
     amount: number,
-    description: string
+    description: string,
   ): Promise<{ success: boolean; transaction?: CreditTransaction; error?: string }> {
     return mutex.withLock(this.getMutexKey(userKey), () => {
       return this.useCredits(userKey, amount, description);
@@ -538,13 +520,8 @@ export class CreditStore {
   /**
    * 구매 기록 생성 (결제 시작)
    */
-  createPurchase(
-    orderId: string,
-    userKey: string,
-    sku: string,
-    amount: number
-  ): PurchaseRecord {
-    const product = CREDIT_PRODUCTS.find(p => p.sku === sku);
+  createPurchase(orderId: string, userKey: string, sku: string, amount: number): PurchaseRecord {
+    const product = CREDIT_PRODUCTS.find((p) => p.sku === sku);
     const credits = product ? product.credits + (product.bonus || 0) : 0;
 
     const purchase: PurchaseRecord = {
@@ -586,10 +563,10 @@ export class CreditStore {
       return { success: false, error: 'already_refunded' };
     }
 
-    // 크레딧 지급
-    const product = CREDIT_PRODUCTS.find(p => p.sku === purchase.sku);
+    // 복채 지급
+    const product = CREDIT_PRODUCTS.find((p) => p.sku === purchase.sku);
     const productName = product?.nameKorean || purchase.sku;
-    const description = `${productName} 구매 (+${purchase.credits} 크레딧)`;
+    const description = `${productName} 구매 (+${purchase.credits} 복채)`;
 
     const transaction = this.addCredits(
       purchase.userKey,
@@ -597,7 +574,7 @@ export class CreditStore {
       'purchase',
       description,
       orderId,
-      purchase.sku
+      purchase.sku,
     );
 
     // 구매 상태 업데이트
@@ -607,6 +584,27 @@ export class CreditStore {
     this.save();
 
     return { success: true, purchase, transaction };
+  }
+
+  /**
+   * 구매 완료 처리 - 비동기 버전 (뮤텍스 적용)
+   * Thread-safe purchase completion with mutex locking
+   */
+  async completePurchaseAsync(orderId: string): Promise<{
+    success: boolean;
+    purchase?: PurchaseRecord;
+    transaction?: CreditTransaction;
+    error?: string;
+  }> {
+    // Get userKey from purchase first (outside lock for read-only access)
+    const purchase = this.purchases.get(orderId);
+    if (!purchase) {
+      return { success: false, error: 'purchase_not_found' };
+    }
+
+    return mutex.withLock(this.getMutexKey(purchase.userKey), () => {
+      return this.completePurchase(orderId);
+    });
   }
 
   /**
@@ -621,7 +619,7 @@ export class CreditStore {
    */
   getUserPurchases(userKey: string): PurchaseRecord[] {
     return Array.from(this.purchases.values())
-      .filter(p => p.userKey === userKey)
+      .filter((p) => p.userKey === userKey)
       .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
   }
 
@@ -629,8 +627,9 @@ export class CreditStore {
    * 미완료 구매 조회 (복원용)
    */
   getPendingPurchases(userKey: string): PurchaseRecord[] {
-    return Array.from(this.purchases.values())
-      .filter(p => p.userKey === userKey && p.status === 'pending');
+    return Array.from(this.purchases.values()).filter(
+      (p) => p.userKey === userKey && p.status === 'pending',
+    );
   }
 
   // ----------------------------------------------------------
@@ -642,7 +641,7 @@ export class CreditStore {
    */
   getTransactionHistory(userKey: string, limit: number = 50): CreditTransaction[] {
     return this.transactions
-      .filter(t => t.userKey === userKey)
+      .filter((t) => t.userKey === userKey)
       .slice(-limit)
       .reverse();
   }
@@ -653,14 +652,14 @@ export class CreditStore {
 
   /**
    * 레퍼럴 보상 청구
-   * - 초대자와 피초대자 모두 크레딧 보상
+   * - 초대자와 피초대자 모두 복채 보상
    * - 같은 쌍은 하루에 한 번만 보상
    */
   claimReferralReward(
     inviterKey: string,
     inviteeKey: string,
     dateKey: string,
-    claimerKey: string
+    claimerKey: string,
   ): {
     success: boolean;
     credits?: number;
@@ -702,15 +701,13 @@ export class CreditStore {
       return { success: true, credits: 0, alreadyClaimed: true };
     }
 
-    // 보상 크레딧 결정
-    const credits = isInviter
-      ? REFERRAL_REWARDS.inviterCredits
-      : REFERRAL_REWARDS.inviteeCredits;
+    // 보상 복채 결정
+    const credits = isInviter ? REFERRAL_REWARDS.inviterCredits : REFERRAL_REWARDS.inviteeCredits;
 
-    // 크레딧 지급
+    // 복채 지급
     const description = isInviter
-      ? `친구 초대 보상 (+${credits} 크레딧)`
-      : `초대 수락 보상 (+${credits} 크레딧)`;
+      ? `친구 초대 보상 (+${credits} 복채)`
+      : `초대 수락 보상 (+${credits} 복채)`;
 
     const transaction = this.addCredits(claimerKey, credits, 'bonus', description);
 
@@ -727,12 +724,33 @@ export class CreditStore {
   }
 
   /**
+   * 레퍼럴 보상 청구 - 비동기 버전 (뮤텍스 적용)
+   * Thread-safe referral reward claiming with mutex locking
+   */
+  async claimReferralRewardAsync(
+    inviterKey: string,
+    inviteeKey: string,
+    dateKey: string,
+    claimerKey: string,
+  ): Promise<{
+    success: boolean;
+    credits?: number;
+    alreadyClaimed?: boolean;
+    error?: string;
+    transaction?: CreditTransaction;
+  }> {
+    return mutex.withLock(this.getMutexKey(claimerKey), () => {
+      return this.claimReferralReward(inviterKey, inviteeKey, dateKey, claimerKey);
+    });
+  }
+
+  /**
    * 레퍼럴 보상 상태 조회
    */
   getReferralStatus(
     inviterKey: string,
     inviteeKey: string,
-    dateKey: string
+    dateKey: string,
   ): ReferralRecord | null {
     const referralId = `ref_${inviterKey}_${inviteeKey}_${dateKey}`;
     return this.referrals.get(referralId) || null;
@@ -773,7 +791,7 @@ export class CreditStore {
   claimStreakReward(
     userKey: string,
     dateKey: string,
-    streak: number
+    streak: number,
   ): {
     success: boolean;
     rewards: Array<{ type: 'milestone' | 'daily_bonus'; credits: number; name: string }>;
@@ -790,7 +808,7 @@ export class CreditStore {
     }
 
     // 마일스톤 보상 확인
-    const milestone = STREAK_REWARDS.find(r => r.days === streak);
+    const milestone = STREAK_REWARDS.find((r) => r.days === streak);
     if (milestone) {
       rewards.push({
         type: 'milestone',
@@ -804,7 +822,7 @@ export class CreditStore {
         userKey,
         milestone.credits,
         'bonus',
-        `${milestone.name} 보상 (+${milestone.credits} 크레딧)`
+        `${milestone.name} 보상 (+${milestone.credits} 복채)`,
       );
     }
 
@@ -824,7 +842,7 @@ export class CreditStore {
           userKey,
           STREAK_DAILY_BONUS.credits,
           'bonus',
-          `${streak}일 연속 방문 보너스 (+${STREAK_DAILY_BONUS.credits} 크레딧)`
+          `${streak}일 연속 방문 보너스 (+${STREAK_DAILY_BONUS.credits} 복채)`,
         );
       }
     }
@@ -848,11 +866,30 @@ export class CreditStore {
   }
 
   /**
+   * 스트릭 보상 청구 - 비동기 버전 (뮤텍스 적용)
+   * Thread-safe streak reward claiming with mutex locking
+   */
+  async claimStreakRewardAsync(
+    userKey: string,
+    dateKey: string,
+    streak: number,
+  ): Promise<{
+    success: boolean;
+    rewards: Array<{ type: 'milestone' | 'daily_bonus'; credits: number; name: string }>;
+    totalCredits: number;
+    alreadyClaimed: boolean;
+  }> {
+    return mutex.withLock(this.getMutexKey(userKey), () => {
+      return this.claimStreakReward(userKey, dateKey, streak);
+    });
+  }
+
+  /**
    * 스트릭 보상 히스토리 조회
    */
   getStreakRewardHistory(userKey: string, limit: number = 30): StreakRewardRecord[] {
     return Array.from(this.streakRewards.values())
-      .filter(r => r.userKey === userKey)
+      .filter((r) => r.userKey === userKey)
       .sort((a, b) => b.dateKey.localeCompare(a.dateKey))
       .slice(0, limit);
   }
@@ -907,11 +944,11 @@ export class CreditStore {
  * SKU로 상품 정보 조회
  */
 export function getProductBySku(sku: string): CreditProduct | undefined {
-  return CREDIT_PRODUCTS.find(p => p.sku === sku);
+  return CREDIT_PRODUCTS.find((p) => p.sku === sku);
 }
 
 /**
- * 액션별 크레딧 비용 조회
+ * 액션별 복채 비용 조회
  */
 export function getCreditCost(action: string): number {
   return CREDIT_COSTS[action]?.cost || 0;

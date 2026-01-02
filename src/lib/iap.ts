@@ -84,7 +84,7 @@ async function getIAPModule(): Promise<IAPModule | null> {
 // ============================================================
 
 /**
- * 크레딧 상품 목록 조회
+ * 복채 상품 목록 조회
  */
 export async function getProducts(): Promise<CreditProduct[]> {
   try {
@@ -101,14 +101,17 @@ export async function getProducts(): Promise<CreditProduct[]> {
 }
 
 /**
- * 크레딧 잔액 조회
+ * 복채 잔액 조회
  */
 export async function getBalance(userKey: string): Promise<CreditBalance | null> {
   try {
     const authHeaders = await getAuthHeaders(userKey);
-    const res = await fetch(`${API_BASE}/api/credits/balance?userKey=${encodeURIComponent(userKey)}`, {
-      headers: authHeaders,
-    });
+    const res = await fetch(
+      `${API_BASE}/api/credits/balance?userKey=${encodeURIComponent(userKey)}`,
+      {
+        headers: authHeaders,
+      },
+    );
     if (!res.ok) {
       throw new Error(`HTTP ${res.status}: ${res.statusText}`);
     }
@@ -121,12 +124,12 @@ export async function getBalance(userKey: string): Promise<CreditBalance | null>
 }
 
 /**
- * 크레딧 사용 (차감)
+ * 복채 사용 (차감)
  */
 export async function consumeCredits(
   userKey: string,
   action: string,
-  description?: string
+  description?: string,
 ): Promise<{ success: boolean; remainingCredits?: number; error?: string }> {
   try {
     const authHeaders = await getAuthHeaders(userKey);
@@ -149,11 +152,11 @@ export async function consumeCredits(
 }
 
 /**
- * 크레딧 충분 여부 확인
+ * 복채 충분 여부 확인
  */
 export async function checkCredits(
   userKey: string,
-  action: string
+  action: string,
 ): Promise<{ hasEnough: boolean; cost: number; currentBalance: number; shortfall: number }> {
   try {
     const authHeaders = await getAuthHeaders(userKey);
@@ -196,7 +199,7 @@ async function notifyPurchaseStart(
   userKey: string,
   orderId: string,
   sku: string,
-  amount: number
+  amount: number,
 ): Promise<boolean> {
   try {
     const authHeaders = await getAuthHeaders(userKey);
@@ -213,7 +216,7 @@ async function notifyPurchaseStart(
 }
 
 /**
- * 서버에 구매 완료 알림 (크레딧 지급)
+ * 서버에 구매 완료 알림 (복채 지급)
  */
 async function notifyPurchaseComplete(orderId: string): Promise<{
   success: boolean;
@@ -248,7 +251,7 @@ async function notifyPurchaseComplete(orderId: string): Promise<{
  */
 export async function purchaseCredits(
   userKey: string,
-  product: CreditProduct
+  product: CreditProduct,
 ): Promise<PurchaseResult> {
   const orderId = generateOrderId();
 
@@ -312,9 +315,9 @@ export async function purchaseCredits(
     const confirmed = window.confirm(
       `[개발 모드] 결제를 시뮬레이션합니다.\n\n` +
         `상품: ${product.nameKorean}\n` +
-        `크레딧: ${product.totalCredits}\n` +
+        `복채: ${product.totalCredits}\n` +
         `가격: ${product.priceFormatted}\n\n` +
-        `결제를 진행하시겠습니까?`
+        `결제를 진행하시겠습니까?`,
     );
 
     if (!confirmed) {
@@ -373,7 +376,9 @@ export async function restorePendingPurchases(userKey: string): Promise<number> 
   } else {
     // IAP 없으면 서버에서 pending 조회
     try {
-      const res = await fetch(`${API_BASE}/api/credits/pending?userKey=${encodeURIComponent(userKey)}`);
+      const res = await fetch(
+        `${API_BASE}/api/credits/pending?userKey=${encodeURIComponent(userKey)}`,
+      );
       const data = await res.json();
 
       if (!data.pending?.length) {
@@ -400,10 +405,12 @@ export async function restorePendingPurchases(userKey: string): Promise<number> 
 /**
  * 완료된 구매 내역 조회
  */
-export async function getCompletedPurchases(): Promise<Array<{
-  orderId: string;
-  sku: string;
-}>> {
+export async function getCompletedPurchases(): Promise<
+  Array<{
+    orderId: string;
+    sku: string;
+  }>
+> {
   const iap = await getIAPModule();
 
   if (iap) {
@@ -479,7 +486,7 @@ export async function claimReferralReward(
   inviterKey: string,
   inviteeKey: string,
   dateKey: string,
-  claimerKey: string
+  claimerKey: string,
 ): Promise<ReferralClaimResult> {
   try {
     const authHeaders = await getAuthHeaders(claimerKey);
@@ -514,7 +521,7 @@ export async function getReferralStats(userKey: string): Promise<ReferralStats |
     const authHeaders = await getAuthHeaders(userKey);
     const res = await fetch(
       `${API_BASE}/api/credits/referral/stats?userKey=${encodeURIComponent(userKey)}`,
-      { headers: authHeaders }
+      { headers: authHeaders },
     );
     const data = await res.json();
     return data.stats || null;
@@ -582,7 +589,7 @@ export async function getStreakRewardConfig(): Promise<StreakRewardConfig | null
 export async function claimStreakReward(
   userKey: string,
   dateKey: string,
-  streak: number
+  streak: number,
 ): Promise<StreakClaimResult> {
   try {
     const authHeaders = await getAuthHeaders(userKey);
@@ -613,13 +620,10 @@ export async function claimStreakReward(
 /**
  * 오늘 스트릭 보상 수령 여부 확인
  */
-export async function hasClaimedStreakToday(
-  userKey: string,
-  dateKey: string
-): Promise<boolean> {
+export async function hasClaimedStreakToday(userKey: string, dateKey: string): Promise<boolean> {
   try {
     const res = await fetch(
-      `${API_BASE}/api/credits/streak/status?userKey=${encodeURIComponent(userKey)}&dateKey=${encodeURIComponent(dateKey)}`
+      `${API_BASE}/api/credits/streak/status?userKey=${encodeURIComponent(userKey)}&dateKey=${encodeURIComponent(dateKey)}`,
     );
     const data = await res.json();
     return data.claimed || false;
@@ -637,7 +641,7 @@ export async function getStreakRewardStats(userKey: string): Promise<StreakRewar
     const authHeaders = await getAuthHeaders(userKey);
     const res = await fetch(
       `${API_BASE}/api/credits/streak/stats?userKey=${encodeURIComponent(userKey)}`,
-      { headers: authHeaders }
+      { headers: authHeaders },
     );
     const data = await res.json();
     return data.stats || null;

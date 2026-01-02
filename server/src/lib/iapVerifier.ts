@@ -34,11 +34,11 @@ export interface PurchaseVerificationRequest {
 /**
  * Verify payment with Toss Payments API
  *
- * In production, this calls the Toss Payments Confirm API.
- * For development without Toss credentials, it returns a mock success.
+ * Security: Mock verification ONLY allowed in test environment.
+ * Development and production ALWAYS require real Toss credentials.
  */
 export async function verifyTossPayment(
-  request: PurchaseVerificationRequest
+  request: PurchaseVerificationRequest,
 ): Promise<PaymentVerificationResult> {
   const config = getConfig();
 
@@ -46,12 +46,9 @@ export async function verifyTossPayment(
   const tossSecretKey = process.env.TOSS_PAYMENTS_SECRET_KEY;
 
   if (!tossSecretKey) {
-    // Development mode: skip verification but log warning
-    if (config.NODE_ENV === 'development') {
-      logger.warn(
-        { orderId: request.orderId },
-        'iap_verification_skipped_dev_mode'
-      );
+    // Test environment: allow mock verification for unit tests only
+    if (config.NODE_ENV === 'test') {
+      logger.debug({ orderId: request.orderId }, 'iap_verification_mocked_test_env');
       return {
         verified: true,
         paymentData: {
@@ -63,8 +60,9 @@ export async function verifyTossPayment(
       };
     }
 
-    // Production without secret key: reject
-    logger.error('iap_verification_failed_no_secret_key');
+    // Development and production without secret key: reject
+    // Security: Never skip verification outside of test environment
+    logger.error({ env: config.NODE_ENV }, 'iap_verification_failed_no_secret_key');
     return {
       verified: false,
       error: 'payment_verification_not_configured',
@@ -75,40 +73,39 @@ export async function verifyTossPayment(
     // Call Toss Payments Confirm API
     const authHeader = Buffer.from(`${tossSecretKey}:`).toString('base64');
 
-    const response = await fetch(
-      'https://api.tosspayments.com/v1/payments/confirm',
-      {
-        method: 'POST',
-        headers: {
-          Authorization: `Basic ${authHeader}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          orderId: request.orderId,
-          paymentKey: request.paymentKey,
-          amount: request.amount,
-        }),
-      }
-    );
+    const response = await fetch('https://api.tosspayments.com/v1/payments/confirm', {
+      method: 'POST',
+      headers: {
+        Authorization: `Basic ${authHeader}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        orderId: request.orderId,
+        paymentKey: request.paymentKey,
+        amount: request.amount,
+      }),
+    });
 
     if (!response.ok) {
-      const errorData = await response.json().catch(() => ({})) as Record<string, unknown>;
+      const errorData = (await response.json().catch(() => ({}))) as Record<string, unknown>;
       logger.warn(
         {
           orderId: request.orderId,
           status: response.status,
           error: errorData,
         },
-        'iap_verification_api_error'
+        'iap_verification_api_error',
       );
 
       return {
         verified: false,
-        error: (typeof errorData.code === 'string' ? errorData.code : null) || 'payment_verification_failed',
+        error:
+          (typeof errorData.code === 'string' ? errorData.code : null) ||
+          'payment_verification_failed',
       };
     }
 
-    const paymentData = await response.json() as {
+    const paymentData = (await response.json()) as {
       orderId: string;
       status: string;
       totalAmount: number;
@@ -119,7 +116,7 @@ export async function verifyTossPayment(
     if (paymentData.status !== 'DONE') {
       logger.warn(
         { orderId: request.orderId, status: paymentData.status },
-        'iap_verification_invalid_status'
+        'iap_verification_invalid_status',
       );
       return {
         verified: false,
@@ -135,7 +132,7 @@ export async function verifyTossPayment(
           expected: request.amount,
           actual: paymentData.totalAmount,
         },
-        'iap_verification_amount_mismatch'
+        'iap_verification_amount_mismatch',
       );
       return {
         verified: false,
@@ -143,10 +140,7 @@ export async function verifyTossPayment(
       };
     }
 
-    logger.info(
-      { orderId: request.orderId, amount: request.amount },
-      'iap_verification_success'
-    );
+    logger.info({ orderId: request.orderId, amount: request.amount }, 'iap_verification_success');
 
     return {
       verified: true,
@@ -158,10 +152,7 @@ export async function verifyTossPayment(
       },
     };
   } catch (error) {
-    logger.error(
-      { orderId: request.orderId, error },
-      'iap_verification_exception'
-    );
+    logger.error({ orderId: request.orderId, error }, 'iap_verification_exception');
     return {
       verified: false,
       error: 'payment_verification_error',

@@ -1,5 +1,6 @@
 import React, { Component, ReactNode } from 'react';
 import { Button } from '@toss/tds-mobile';
+import { Sentry } from '../lib/sentry';
 
 interface Props {
   children: ReactNode;
@@ -23,6 +24,13 @@ export default class ErrorBoundary extends Component<Props, State> {
 
   componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
     console.error('[ErrorBoundary] Caught error:', error, errorInfo);
+
+    // Sentry에 에러 캡처
+    Sentry.captureException(error, {
+      extra: {
+        componentStack: errorInfo.componentStack,
+      },
+    });
   }
 
   handleReset = () => {
@@ -58,7 +66,8 @@ export default class ErrorBoundary extends Component<Props, State> {
               width: 80,
               height: 80,
               borderRadius: '50%',
-              background: 'linear-gradient(135deg, rgba(147, 112, 219, 0.3), rgba(75, 0, 130, 0.5))',
+              background:
+                'linear-gradient(135deg, rgba(147, 112, 219, 0.3), rgba(75, 0, 130, 0.5))',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -95,11 +104,31 @@ export default class ErrorBoundary extends Component<Props, State> {
             문제가 계속되면 앱을 새로고침 해주세요.
           </p>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 12, width: '100%', maxWidth: 280 }}>
-            <Button size="large" color="primary" variant="fill" display="full" onClick={this.handleRetry}>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 12,
+              width: '100%',
+              maxWidth: 280,
+            }}
+          >
+            <Button
+              size="large"
+              color="primary"
+              variant="fill"
+              display="full"
+              onClick={this.handleRetry}
+            >
               다시 시도하기
             </Button>
-            <Button size="large" color="dark" variant="weak" display="full" onClick={this.handleReset}>
+            <Button
+              size="large"
+              color="dark"
+              variant="weak"
+              display="full"
+              onClick={this.handleReset}
+            >
               처음으로 돌아가기
             </Button>
           </div>

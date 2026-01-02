@@ -84,17 +84,17 @@
 
 ### 1.2 기술 스택
 
-| 레이어 | 기술 | 버전 |
-|--------|------|------|
-| **Frontend** | React + TypeScript | 19.1 + 5.8 |
-| **Build** | Vite | 6.3 |
-| **Backend** | Fastify | 5.6 |
-| **Runtime** | Node.js | 20 LTS |
-| **Cache** | Redis | 7.x |
-| **AI** | OpenAI / Anthropic | GPT-4o, Claude 3.5 |
-| **Hosting (FE)** | Cloudflare Pages | - |
-| **Hosting (BE)** | Railway | - |
-| **CI/CD** | GitHub Actions | - |
+| 레이어           | 기술               | 버전               |
+| ---------------- | ------------------ | ------------------ |
+| **Frontend**     | React + TypeScript | 19.1 + 5.8         |
+| **Build**        | Vite               | 6.3                |
+| **Backend**      | Fastify            | 5.6                |
+| **Runtime**      | Node.js            | 20 LTS             |
+| **Cache**        | Redis              | 7.x                |
+| **AI**           | OpenAI / Anthropic | GPT-4o, Claude 3.5 |
+| **Hosting (FE)** | Cloudflare Pages   | -                  |
+| **Hosting (BE)** | Railway            | -                  |
+| **CI/CD**        | GitHub Actions     | -                  |
 
 ---
 
@@ -198,16 +198,16 @@ src/
 
 ### 2.3 코드 스플리팅 전략
 
-| 청크 | 내용 | 크기 (gzip) |
-|------|------|-------------|
-| `vendor-react` | React, Router | ~50KB |
-| `vendor-lunar` | korean-lunar-calendar | ~4KB |
-| `fortune-data` | 운세 템플릿 | ~80KB |
-| `tarot-data` | 타로 카드 데이터 | ~9KB |
-| `empathy-data` | 공감 파트 | ~9KB |
-| `core-utils` | 시드, 분석, 귀속 | ~2KB |
-| `reward-utils` | 보상, 스트릭 | ~2KB |
-| 페이지 청크 (9개) | Lazy-loaded pages | 각 2-15KB |
+| 청크              | 내용                  | 크기 (gzip) |
+| ----------------- | --------------------- | ----------- |
+| `vendor-react`    | React, Router         | ~50KB       |
+| `vendor-lunar`    | korean-lunar-calendar | ~4KB        |
+| `fortune-data`    | 운세 템플릿           | ~80KB       |
+| `tarot-data`      | 타로 카드 데이터      | ~9KB        |
+| `empathy-data`    | 공감 파트             | ~9KB        |
+| `core-utils`      | 시드, 분석, 귀속      | ~2KB        |
+| `reward-utils`    | 보상, 스트릭          | ~2KB        |
+| 페이지 청크 (9개) | Lazy-loaded pages     | 각 2-15KB   |
 
 **총 번들 크기**: ~231KB → **76KB gzip** (67% 압축률)
 
@@ -225,7 +225,7 @@ src/
 │
 ├── /credits
 │   ├── GET  /balance          # 잔액 조회
-│   ├── POST /use              # 크레딧 사용
+│   ├── POST /use              # 복채 사용
 │   ├── POST /purchase/start   # IAP 시작
 │   ├── POST /purchase/complete # IAP 완료
 │   ├── GET  /transactions     # 거래 내역
@@ -285,26 +285,26 @@ src/
 └─────────────────────────────────────────────────────────────┘
 ```
 
-### 3.3 크레딧 시스템
+### 3.3 복채 시스템
 
 **상품 구성**:
 
-| 상품 | 크레딧 | 가격 | 보너스 |
-|------|--------|------|--------|
-| credit_10 | 10 | 1,000원 | - |
-| credit_50 | 55 | 4,500원 | +5 |
-| credit_150 | 170 | 12,000원 | +20 |
-| credit_500 | 600 | 35,000원 | +100 |
+| 상품       | 복채 | 가격     | 보너스 |
+| ---------- | ---- | -------- | ------ |
+| credit_10  | 10   | 1,000원  | -      |
+| credit_50  | 55   | 4,500원  | +5     |
+| credit_150 | 170  | 12,000원 | +20    |
+| credit_500 | 600  | 35,000원 | +100   |
 
-**크레딧 비용**:
+**복채 비용**:
 
-| 기능 | 비용 |
-|------|------|
-| 오늘의 운세 | 1 |
-| AI 채팅 | 1 |
-| 타로 해석 | 2 |
-| 궁합 분석 | 3 |
-| 상세 리포트 | 5 |
+| 기능        | 비용 |
+| ----------- | ---- |
+| 오늘의 운세 | 1    |
+| AI 채팅     | 1    |
+| 타로 해석   | 2    |
+| 궁합 분석   | 3    |
+| 상세 리포트 | 5    |
 
 **데이터 저장**:
 
@@ -321,11 +321,11 @@ server/data/
 
 **모델 티어**:
 
-| 티어 | 모델 | 용도 | 비용 |
-|------|------|------|------|
-| mini | GPT-4o-mini | 기본 운세 | $0.15/1M |
-| standard | Claude 3.5 | AI 상담 | $3/1M |
-| premium | GPT-4o | 심층 해석 | $5/1M |
+| 티어     | 모델        | 용도      | 비용     |
+| -------- | ----------- | --------- | -------- |
+| mini     | GPT-4o-mini | 기본 운세 | $0.15/1M |
+| standard | Claude 3.5  | AI 상담   | $3/1M    |
+| premium  | GPT-4o      | 심층 해석 | $5/1M    |
 
 **페르소나**: Luna (신비로운 점술사, 20년 경력)
 
@@ -352,7 +352,7 @@ Landing → Agreement → Loading → Result → Detail
 Chemistry (궁합)              Tarot (타로)
    │                              │
    ▼                              ▼
-Credits (크레딧) ←────────── Consult (AI 상담)
+Credits (복채) ←────────── Consult (AI 상담)
 ```
 
 ### 4.2 운세 생성 흐름
@@ -435,14 +435,14 @@ Input: userKey + birthDate + targetDate
 
 ```yaml
 # .github/workflows/ci.yml
-Jobs:
-  install → lint ─┬─ test
-                  ├─ a11y (WCAG 2.2)
-                  ├─ security audit
-                  └─ build
+Jobs: install → lint ─┬─ test
+  ├─ a11y (WCAG 2.2)
+  ├─ security audit
+  └─ build
 ```
 
 **품질 게이트**:
+
 - ESLint (react-hooks, react-refresh)
 - Vitest (frontend + backend)
 - vitest-axe (접근성)
@@ -455,18 +455,18 @@ Jobs:
 
 ### 6.1 인증/인가
 
-| 메커니즘 | 용도 | 보호 수준 |
-|----------|------|----------|
-| JWT 세션 토큰 | 프론트엔드 API 호출 | ★★★☆☆ |
-| HMAC 서명 | 서버-서버 통신 | ★★★★☆ |
-| Rate Limiting | DoS 방지 | ★★★★☆ |
+| 메커니즘      | 용도                | 보호 수준 |
+| ------------- | ------------------- | --------- |
+| JWT 세션 토큰 | 프론트엔드 API 호출 | ★★★☆☆     |
+| HMAC 서명     | 서버-서버 통신      | ★★★★☆     |
+| Rate Limiting | DoS 방지            | ★★★★☆     |
 
 ### 6.2 Rate Limiting
 
 | 엔드포인트 | IP 제한 | 사용자 제한 |
-|------------|---------|-------------|
-| /invites | 40/시간 | 20/시간 |
-| /rewards | 60/10분 | 20/10분 |
+| ---------- | ------- | ----------- |
+| /invites   | 40/시간 | 20/시간     |
+| /rewards   | 60/10분 | 20/10분     |
 
 ### 6.3 데이터 보호
 
@@ -481,32 +481,35 @@ Jobs:
 
 ### 7.1 점수표
 
-| 영역 | 점수 | 등급 | 상태 |
-|------|------|------|------|
-| 코드 스플리팅 | 9/10 | A | 우수 |
-| 상태 관리 | 7/10 | B+ | 분산됨 |
-| API 설계 | 8/10 | A- | 표준화됨 |
-| 인증 | 8/10 | A- | 이중 인증 |
-| 테스팅 | 6/10 | B- | 커버리지 부족 |
-| 접근성 | 9/10 | A | WCAG AA |
-| 문서화 | 9/10 | A | 상세함 |
-| CI/CD | 7/10 | B+ | 백엔드 수동 |
-| 모니터링 | 2/10 | D | 미구축 |
-| **전체** | **7.6/10** | **B+** | - |
+| 영역          | 점수       | 등급   | 상태          |
+| ------------- | ---------- | ------ | ------------- |
+| 코드 스플리팅 | 9/10       | A      | 우수          |
+| 상태 관리     | 7/10       | B+     | 분산됨        |
+| API 설계      | 8/10       | A-     | 표준화됨      |
+| 인증          | 8/10       | A-     | 이중 인증     |
+| 테스팅        | 6/10       | B-     | 커버리지 부족 |
+| 접근성        | 9/10       | A      | WCAG AA       |
+| 문서화        | 9/10       | A      | 상세함        |
+| CI/CD         | 7/10       | B+     | 백엔드 수동   |
+| 모니터링      | 2/10       | D      | 미구축        |
+| **전체**      | **7.6/10** | **B+** | -             |
 
 ### 7.2 개선 로드맵
 
 **즉시 (P0)**:
+
 1. 백엔드 자동 배포
 2. 분산 락 구현
 3. IAP 검증 강화
 
 **1-2주 (P1)**:
+
 1. lib/ 도메인 분리
 2. 테스트 커버리지 임계값
 3. Pre-commit hooks
 
 **2-4주 (P2)**:
+
 1. 모니터링 시스템
 2. Staging 환경
 3. 운영 문서
@@ -518,6 +521,7 @@ Jobs:
 ### A. 환경 변수
 
 **Frontend** (.env):
+
 ```
 VITE_API_BASE=https://soul-lab-server.railway.app
 VITE_REWARDED_AD_GROUP_ID=xxx
@@ -525,6 +529,7 @@ VITE_CONTACTS_MODULE_ID=xxx
 ```
 
 **Backend** (Railway):
+
 ```
 NODE_ENV=production
 PORT=8787

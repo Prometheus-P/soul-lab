@@ -15,7 +15,9 @@ import { claimStreakReward, StreakReward } from '../lib/iap';
 import { todayKey } from '../lib/seed';
 
 export default function LandingPage() {
-  useEffect(() => { track('landing_view'); }, []);
+  useEffect(() => {
+    track('landing_view');
+  }, []);
 
   const nav = useNavigate();
   const loc = useLocation();
@@ -33,12 +35,12 @@ export default function LandingPage() {
   const graceUsed = wasGraceUsed();
   const attr = getAttribution();
 
-  // 스트릭 크레딧 보상 상태
+  // 스트릭 복채 보상 상태
   const [streakCreditRewards, setStreakCreditRewards] = useState<StreakReward[]>([]);
   const [showCreditReward, setShowCreditReward] = useState(false);
   const creditRewardTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // 스트릭 크레딧 보상 청구
+  // 스트릭 복채 보상 청구
   const claimStreakCredits = useCallback(async () => {
     if (!myKey || myKey === 'anon' || streak < 1) return;
 
@@ -83,7 +85,9 @@ export default function LandingPage() {
 
   const [showModal, setShowModal] = useState(!!referrerInfo);
 
-  React.useEffect(() => { if (referrerInfo) track('entry_chemistry'); }, [referrerInfo]);
+  React.useEffect(() => {
+    if (referrerInfo) track('entry_chemistry');
+  }, [referrerInfo]);
 
   const onStart = () => {
     track('cta_start', { hasReferrer: !!referrerInfo });
@@ -118,7 +122,7 @@ export default function LandingPage() {
         />
       )}
 
-      {/* 스트릭 크레딧 보상 알림 */}
+      {/* 스트릭 복채 보상 알림 */}
       {showCreditReward && streakCreditRewards.length > 0 && (
         <div
           style={{
@@ -138,12 +142,10 @@ export default function LandingPage() {
           onClick={() => setShowCreditReward(false)}
         >
           <div style={{ fontSize: 28, marginBottom: 4 }}>🎉</div>
-          <div style={{ fontWeight: 700, color: '#1a1a2e', fontSize: 16 }}>
-            스트릭 보상 획득!
-          </div>
+          <div style={{ fontWeight: 700, color: '#1a1a2e', fontSize: 16 }}>스트릭 보상 획득!</div>
           {streakCreditRewards.map((r, i) => (
             <div key={i} style={{ color: '#333', fontSize: 14, marginTop: 4 }}>
-              {r.name}: <strong>+{r.credits} 크레딧</strong>
+              {r.name}: <strong>+{r.credits} 복채</strong>
             </div>
           ))}
         </div>
@@ -159,15 +161,29 @@ export default function LandingPage() {
       <Header title="SOUL LAB" subtitle="오늘, 당신의 운명이 속삭입니다" />
 
       {referrerInfo && !showModal ? (
-        <div className="card" style={{ marginBottom: 12, border: '1px solid rgba(147, 112, 219, 0.4)' }}>
-          <Badge size="small" color="blue" variant="weak" style={{ background: 'rgba(147, 112, 219, 0.25)' }}>
+        <div
+          className="card"
+          style={{ marginBottom: 12, border: '1px solid rgba(147, 112, 219, 0.4)' }}
+        >
+          <Badge
+            size="small"
+            color="blue"
+            variant="weak"
+            style={{ background: 'rgba(147, 112, 219, 0.25)' }}
+          >
             ✨ 인연의 실이 연결되었습니다
           </Badge>
           <div className="small" style={{ marginTop: 8 }}>
             둘의 기운이 만나면 운명이 드러납니다.
           </div>
           <div style={{ height: 10 }} />
-          <Button size="large" color="primary" variant="fill" display="full" onClick={onGoToChemistry}>
+          <Button
+            size="large"
+            color="primary"
+            variant="fill"
+            display="full"
+            onClick={onGoToChemistry}
+          >
             운명의 인연 확인하기
           </Button>
         </div>
@@ -205,7 +221,8 @@ export default function LandingPage() {
             style={{
               marginTop: 8,
               padding: '8px 12px',
-              background: 'linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(147, 112, 219, 0.2))',
+              background:
+                'linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(147, 112, 219, 0.2))',
               borderRadius: 8,
               color: '#ffd700',
               animation: 'milestone-glow 2s ease-in-out infinite',
@@ -222,7 +239,8 @@ export default function LandingPage() {
             style={{
               marginTop: 8,
               padding: '8px 12px',
-              background: 'linear-gradient(135deg, rgba(255, 215, 0, 0.25), rgba(147, 112, 219, 0.15))',
+              background:
+                'linear-gradient(135deg, rgba(255, 215, 0, 0.25), rgba(147, 112, 219, 0.15))',
               borderRadius: 8,
               color: '#ffd700',
               border: '1px solid rgba(255, 215, 0, 0.3)',

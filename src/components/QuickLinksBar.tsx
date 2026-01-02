@@ -57,9 +57,11 @@ export function QuickLinkTarot() {
 }
 
 export function QuickLinkCredits() {
-  return <QuickLink icon="💎" label="크레딧" to="/credits" trackEvent="quick_link_credits" />;
+  return <QuickLink icon="💎" label="복채" to="/credits" trackEvent="quick_link_credits" />;
 }
 
 export function QuickLinkLeaderboard() {
-  return <QuickLink icon="🏆" label="리더보드" to="/leaderboard" trackEvent="quick_link_leaderboard" />;
+  return (
+    <QuickLink icon="🏆" label="리더보드" to="/leaderboard" trackEvent="quick_link_leaderboard" />
+  );
 }

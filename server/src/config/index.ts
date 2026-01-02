@@ -42,6 +42,9 @@ const envSchema = z.object({
   // Web URLs (for OG tags and sharing)
   WEB_BASE_URL: z.string().url().optional(), // e.g., https://soul-lab.vercel.app
   OG_BASE_URL: z.string().url().optional(), // e.g., https://cdn.soul-lab.com (for OG images)
+
+  // Monitoring
+  SENTRY_DSN: z.string().optional(), // Sentry DSN for error tracking
 });
 
 export type Config = z.infer<typeof envSchema>;

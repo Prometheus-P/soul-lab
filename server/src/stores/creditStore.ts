@@ -106,7 +106,7 @@ export class RedisCreditStore implements ICreditStore {
     type: 'purchase' | 'bonus' | 'refund',
     description: string,
     orderId?: string,
-    sku?: string
+    sku?: string,
   ): Promise<CreditTransaction> {
     const lockKey = `credit:add:${userKey}`;
 
@@ -139,7 +139,11 @@ export class RedisCreditStore implements ICreditStore {
     });
   }
 
-  async useCredits(userKey: string, amount: number, description: string): Promise<UseCreditsResult> {
+  async useCredits(
+    userKey: string,
+    amount: number,
+    description: string,
+  ): Promise<UseCreditsResult> {
     const lockKey = `credit:use:${userKey}`;
 
     return await withLock(lockKey, async () => {
@@ -220,7 +224,7 @@ export class RedisCreditStore implements ICreditStore {
     orderId: string,
     userKey: string,
     sku: string,
-    amount: number
+    amount: number,
   ): Promise<PurchaseRecord> {
     const redis = getRedis();
     const product = CREDIT_PRODUCTS.find((p) => p.sku === sku);
@@ -272,7 +276,7 @@ export class RedisCreditStore implements ICreditStore {
       // Add credits
       const product = CREDIT_PRODUCTS.find((p) => p.sku === purchase.sku);
       const productName = product?.nameKorean || purchase.sku;
-      const description = `${productName} 구매 (+${purchase.credits} 크레딧)`;
+      const description = `${productName} 구매 (+${purchase.credits} 복채)`;
 
       const transaction = await this.addCredits(
         purchase.userKey,
@@ -280,7 +284,7 @@ export class RedisCreditStore implements ICreditStore {
         'purchase',
         description,
         orderId,
-        purchase.sku
+        purchase.sku,
       );
 
       // Update purchase status
@@ -333,7 +337,7 @@ export class RedisCreditStore implements ICreditStore {
     inviterKey: string,
     inviteeKey: string,
     dateKey: string,
-    claimerKey: string
+    claimerKey: string,
   ): Promise<ClaimReferralResult> {
     // Validation
     if (inviterKey === inviteeKey) {
@@ -377,14 +381,12 @@ export class RedisCreditStore implements ICreditStore {
       }
 
       // Determine reward
-      const credits = isInviter
-        ? REFERRAL_REWARDS.inviterCredits
-        : REFERRAL_REWARDS.inviteeCredits;
+      const credits = isInviter ? REFERRAL_REWARDS.inviterCredits : REFERRAL_REWARDS.inviteeCredits;
 
       // Add credits
       const description = isInviter
-        ? `친구 초대 보상 (+${credits} 크레딧)`
-        : `초대 수락 보상 (+${credits} 크레딧)`;
+        ? `친구 초대 보상 (+${credits} 복채)`
+        : `초대 수락 보상 (+${credits} 복채)`;
 
       const transaction = await this.addCredits(claimerKey, credits, 'bonus', description);
 
@@ -404,7 +406,7 @@ export class RedisCreditStore implements ICreditStore {
   async getReferralStatus(
     inviterKey: string,
     inviteeKey: string,
-    dateKey: string
+    dateKey: string,
   ): Promise<ReferralRecord | null> {
     const redis = getRedis();
     const referralId = `ref_${inviterKey}_${inviteeKey}_${dateKey}`;
@@ -415,7 +417,9 @@ export class RedisCreditStore implements ICreditStore {
     return JSON.parse(data) as ReferralRecord;
   }
 
-  async getReferralStats(userKey: string): Promise<{ totalInvited: number; totalCreditsEarned: number }> {
+  async getReferralStats(
+    userKey: string,
+  ): Promise<{ totalInvited: number; totalCreditsEarned: number }> {
     const redis = getRedis();
     const pattern = `${PREFIX.REFERRAL}ref_${userKey}_*`;
 
@@ -456,7 +460,7 @@ export class RedisCreditStore implements ICreditStore {
   async claimStreakReward(
     userKey: string,
     dateKey: string,
-    streak: number
+    streak: number,
   ): Promise<ClaimStreakResult> {
     const lockKey = `streak:claim:${userKey}:${dateKey}`;
 
@@ -471,7 +475,8 @@ export class RedisCreditStore implements ICreditStore {
         return { success: true, rewards: [], totalCredits: 0, alreadyClaimed: true };
       }
 
-      const rewards: Array<{ type: 'milestone' | 'daily_bonus'; credits: number; name: string }> = [];
+      const rewards: Array<{ type: 'milestone' | 'daily_bonus'; credits: number; name: string }> =
+        [];
       let totalCredits = 0;
 
       // Check milestone reward
@@ -488,7 +493,7 @@ export class RedisCreditStore implements ICreditStore {
           userKey,
           milestone.credits,
           'bonus',
-          `${milestone.name} 보상 (+${milestone.credits} 크레딧)`
+          `${milestone.name} 보상 (+${milestone.credits} 복채)`,
         );
       }
 
@@ -509,7 +514,7 @@ export class RedisCreditStore implements ICreditStore {
           userKey,
           STREAK_DAILY_BONUS.credits,
           'bonus',
-          `${streak}일 연속 방문 보너스 (+${STREAK_DAILY_BONUS.credits} 크레딧)`
+          `${streak}일 연속 방문 보너스 (+${STREAK_DAILY_BONUS.credits} 복채)`,
         );
       }
 

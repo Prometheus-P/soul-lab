@@ -1,7 +1,7 @@
 /**
  * Credits API Routes
  *
- * 크레딧 관리 및 인앱결제 연동 API
+ * 복채 관리 및 인앱결제 연동 API
  * Security: IAP server-side verification required for purchase completion
  */
 
@@ -17,11 +17,7 @@ import {
   getReferralRewards,
   getStreakRewardConfig,
 } from '../credits/store.js';
-import {
-  verifyTossPayment,
-  markPaymentProcessed,
-  isPaymentProcessed,
-} from '../lib/iapVerifier.js';
+import { verifyTossPayment, markPaymentProcessed, isPaymentProcessed } from '../lib/iapVerifier.js';
 import { logger } from '../lib/logger.js';
 import {
   validate,
@@ -102,10 +98,7 @@ let creditStore: CreditStore;
 // Route Registration
 // ============================================================
 
-export async function creditRoutes(
-  app: FastifyInstance,
-  opts: { dataDir: string }
-): Promise<void> {
+export async function creditRoutes(app: FastifyInstance, opts: { dataDir: string }): Promise<void> {
   // Initialize credit store
   creditStore = new CreditStore(opts.dataDir);
 
@@ -115,12 +108,12 @@ export async function creditRoutes(
 
   /**
    * GET /api/credits/products
-   * 크레딧 상품 목록 조회
+   * 복채 상품 목록 조회
    */
   app.get('/api/credits/products', async () => {
     return {
       success: true,
-      products: getAllProducts().map(p => ({
+      products: getAllProducts().map((p) => ({
         ...p,
         totalCredits: p.credits + (p.bonus || 0),
         priceFormatted: `₩${p.price.toLocaleString()}`,
@@ -130,7 +123,7 @@ export async function creditRoutes(
 
   /**
    * GET /api/credits/costs
-   * 크레딧 사용 비용 조회
+   * 복채 사용 비용 조회
    */
   app.get('/api/credits/costs', async () => {
     return {
@@ -145,7 +138,7 @@ export async function creditRoutes(
 
   /**
    * GET /api/credits/balance?userKey=xxx
-   * 크레딧 잔액 조회
+   * 복채 잔액 조회
    */
   app.get('/api/credits/balance', async (req: FastifyRequest, reply: FastifyReply) => {
     const validation = validate(BalanceRequestSchema, req.query);
@@ -169,7 +162,7 @@ export async function creditRoutes(
 
   /**
    * POST /api/credits/check
-   * 크레딧 충분 여부 확인
+   * 복채 충분 여부 확인
    */
   app.post('/api/credits/check', async (req: FastifyRequest, reply: FastifyReply) => {
     const validation = validate(UseCreditsRequestSchema, req.body);
@@ -197,7 +190,7 @@ export async function creditRoutes(
 
   /**
    * POST /api/credits/use
-   * 크레딧 사용 (차감)
+   * 복채 사용 (차감)
    */
   app.post('/api/credits/use', async (req: FastifyRequest, reply: FastifyReply) => {
     const validation = validate(UseCreditsRequestSchema, req.body);
@@ -217,7 +210,7 @@ export async function creditRoutes(
     if (!result.success) {
       return reply.code(402).send({
         error: result.error,
-        message: '크레딧이 부족합니다.',
+        message: '복채이 부족합니다.',
         required: costInfo.cost,
         current: creditStore.getBalance(userKey).credits,
       });
@@ -260,12 +253,7 @@ export async function creditRoutes(
       });
     }
 
-    const purchase = creditStore.createPurchase(
-      orderId,
-      userKey,
-      sku,
-      amount || product.price
-    );
+    const purchase = creditStore.createPurchase(orderId, userKey, sku, amount || product.price);
 
     return {
       success: true,
@@ -316,10 +304,7 @@ export async function creditRoutes(
     });
 
     if (!verification.verified) {
-      logger.warn(
-        { orderId, error: verification.error },
-        'iap_verification_failed'
-      );
+      logger.warn({ orderId, error: verification.error }, 'iap_verification_failed');
       return reply.code(402).send({
         error: 'payment_verification_failed',
         detail: verification.error,
@@ -329,8 +314,8 @@ export async function creditRoutes(
     // 4. 결제 처리 완료 마킹 (중복 방지, 파일 영속화)
     markPaymentProcessed(paymentKey, orderId);
 
-    // 5. 크레딧 지급
-    const result = creditStore.completePurchase(orderId);
+    // 5. 복채 지급 (mutex-protected)
+    const result = await creditStore.completePurchaseAsync(orderId);
 
     if (!result.success) {
       const statusCode = result.error === 'purchase_not_found' ? 404 : 409;
@@ -339,7 +324,7 @@ export async function creditRoutes(
 
     logger.info(
       { orderId, credits: purchase.credits, userKey: purchase.userKey },
-      'iap_credits_granted'
+      'iap_credits_granted',
     );
 
     return {
@@ -412,7 +397,7 @@ export async function creditRoutes(
 
   /**
    * GET /api/credits/transactions?userKey=xxx&limit=50
-   * 크레딧 사용 내역 조회
+   * 복채 사용 내역 조회
    */
   app.get('/api/credits/transactions', async (req: FastifyRequest, reply: FastifyReply) => {
     const validation = validate(TransactionHistoryRequestSchema, req.query);
@@ -466,19 +451,20 @@ export async function creditRoutes(
       });
     }
 
-    const result = creditStore.claimReferralReward(
+    const result = await creditStore.claimReferralRewardAsync(
       inviterKey,
       inviteeKey,
       dateKey,
-      claimerKey
+      claimerKey,
     );
 
     if (!result.success) {
       return reply.code(400).send({
         error: result.error,
-        message: result.error === 'same_user'
-          ? '자기 자신을 초대할 수 없습니다.'
-          : '보상을 받을 권한이 없습니다.',
+        message:
+          result.error === 'same_user'
+            ? '자기 자신을 초대할 수 없습니다.'
+            : '보상을 받을 권한이 없습니다.',
       });
     }
 
@@ -502,11 +488,7 @@ export async function creditRoutes(
     }
 
     const { inviterKey, inviteeKey, dateKey } = validation.data;
-    const status = creditStore.getReferralStatus(
-      inviterKey,
-      inviteeKey,
-      dateKey
-    );
+    const status = creditStore.getReferralStatus(inviterKey, inviteeKey, dateKey);
 
     return {
       success: true,
@@ -559,7 +541,7 @@ export async function creditRoutes(
     }
 
     const { userKey, dateKey, streak } = validation.data;
-    const result = creditStore.claimStreakReward(userKey, dateKey, streak);
+    const result = await creditStore.claimStreakRewardAsync(userKey, dateKey, streak);
 
     return {
       success: true,

@@ -5,6 +5,7 @@
 ### 1. 배포 환경 구축
 
 #### Backend (Railway)
+
 ```bash
 # 1. Railway CLI 설치 (이미 설치되어 있다면 스킵)
 npm install -g @railway/cli
@@ -28,6 +29,7 @@ railway up
 ```
 
 #### Frontend (Vercel)
+
 ```bash
 # 1. Vercel CLI
 npm i -g vercel
@@ -56,6 +58,7 @@ npx tsx server/scripts/seed-demo-data.ts
 ```
 
 **Railway 서버에 데이터 업로드:**
+
 ```bash
 # Railway shell 접속
 railway shell
@@ -68,20 +71,21 @@ scp -r server/data/* user@server:/app/data/
 
 ### 3. 환경변수 체크리스트
 
-| 변수 | 위치 | 필수 | 설명 |
-|------|------|------|------|
-| `OPENAI_API_KEY` | Railway | O | GPT API 키 |
-| `ANTHROPIC_API_KEY` | Railway | - | Claude API 키 (택1) |
-| `ADMIN_PASSWORD` | Railway | O | 관리자 비밀번호 (8자+) |
-| `NODE_ENV` | Railway | O | `production` |
-| `DATA_DIR` | Railway | O | `/app/data` |
-| `VITE_API_BASE` | Vercel | O | Railway 서버 URL |
+| 변수                | 위치    | 필수 | 설명                   |
+| ------------------- | ------- | ---- | ---------------------- |
+| `OPENAI_API_KEY`    | Railway | O    | GPT API 키             |
+| `ANTHROPIC_API_KEY` | Railway | -    | Claude API 키 (택1)    |
+| `ADMIN_PASSWORD`    | Railway | O    | 관리자 비밀번호 (8자+) |
+| `NODE_ENV`          | Railway | O    | `production`           |
+| `DATA_DIR`          | Railway | O    | `/app/data`            |
+| `VITE_API_BASE`     | Vercel  | O    | Railway 서버 URL       |
 
 ---
 
 ### 4. 시연 시나리오
 
 #### 시나리오 A: 사용자 플로우 (5분)
+
 1. **랜딩** → "오늘의 운세 보기" 클릭
 2. **약관 동의** → 생년월일 입력
 3. **로딩** → 운세 분석 애니메이션
@@ -90,16 +94,19 @@ scp -r server/data/* user@server:/app/data/
 6. **상세 보기** → 6가지 카테고리 운세
 
 #### 시나리오 B: 바이럴 메커닉 (3분)
+
 1. **초대 링크 생성** → 복사
 2. **다른 기기에서 접속** → 케미스트리 매칭
 3. **둘 다 상세 운세 잠금 해제** 확인
 
 #### 시나리오 C: 수익화 (2분)
-1. **크레딧 페이지** → 상품 확인
-2. **AI 상담** → 크레딧 사용
+
+1. **복채 페이지** → 상품 확인
+2. **AI 상담** → 복채 사용
 3. **(선택) 결제 흐름** 시연
 
 #### 시나리오 D: Admin 대시보드 (3분)
+
 1. `/admin` 접속 → 비밀번호 입력
 2. **KPI 확인** → DAU, 매출, 사용자 수
 3. **차트** → 성장 추세 설명
@@ -122,10 +129,12 @@ scp -r server/data/* user@server:/app/data/
 ### 6. 백업 플랜
 
 **인터넷 끊길 경우:**
+
 - 로컬 개발 서버 사용 (`pnpm dev`)
 - 녹화된 데모 영상 준비
 
 **API 오류 시:**
+
 - AI 응답 mock 데이터 준비
 - 에러 메시지 사용자 친화적 확인
 
@@ -152,18 +161,19 @@ pnpm dev:web     # 프론트엔드 (localhost:5173)
 
 ## 중요 URL
 
-| 서비스 | URL |
-|--------|-----|
-| Production Frontend | `https://soul-lab.vercel.app` (예상) |
-| Production API | `https://soul-lab-server.railway.app` (예상) |
-| Admin Dashboard | `/admin` |
-| Health Check | `/health` |
+| 서비스              | URL                                          |
+| ------------------- | -------------------------------------------- |
+| Production Frontend | `https://soul-lab.vercel.app` (예상)         |
+| Production API      | `https://soul-lab-server.railway.app` (예상) |
+| Admin Dashboard     | `/admin`                                     |
+| Health Check        | `/health`                                    |
 
 ---
 
 ## 연락처
 
 문제 발생 시 확인:
+
 - Railway Status: https://status.railway.app
 - Vercel Status: https://vercel.com/status
 - OpenAI Status: https://status.openai.com
