@@ -1198,3 +1198,604 @@ templates:
       moneyDetail: "하나를 마무리해야 다음 기회가 열립니다."
       loveDetail: "완성된 사랑보다 완성해가는 사랑이 아름답습니다."
       conditionDetail: "한 가지 목표를 이루면 성취감이 에너지를 줍니다."
+
+  # T101-T150: 계절, 음악, 공간, 원소, 감정 테마
+  - id: T101
+    open:
+      oneLiner: "봄바람이 당신의 등을 밀어줍니다. 움직일 때입니다."
+      summary: "시작의 에너지가 절정입니다. 씨앗을 뿌리세요."
+    locked:
+      luckyTime: "10:00~10:30 (새싹의 시간)"
+      helper: "새로운 시작을 두려워하지 않는 도전자"
+      caution: "과거에 머무르면 새 기운을 놓칩니다."
+      moneyDetail: "작은 투자가 봄처럼 자랍니다."
+      loveDetail: "첫 만남의 설렘을 기억하면 관계가 새로워집니다."
+      conditionDetail: "바깥 공기를 마시면 폐가 깨어납니다."
+
+  - id: T102
+    open:
+      oneLiner: "여름의 태양처럼 당신의 존재가 빛납니다."
+      summary: "열정의 기운이 최고조입니다. 드러내세요."
+    locked:
+      luckyTime: "13:00~13:30 (한낮의 절정)"
+      helper: "에너지가 넘치는 활동적인 사람"
+      caution: "과열되면 지쳐버립니다. 쉼의 순간도 필요합니다."
+      moneyDetail: "열정을 보여주는 곳에 재물이 따릅니다."
+      loveDetail: "뜨거운 마음을 숨기지 마세요. 전해집니다."
+      conditionDetail: "땀을 흘리면 몸에 쌓인 탁한 기운이 빠집니다."
+
+  - id: T103
+    open:
+      oneLiner: "가을 낙엽이 전하는 메시지가 있습니다. 비우세요."
+      summary: "정리의 에너지가 흐릅니다. 무거운 것을 내려놓을 때입니다."
+    locked:
+      luckyTime: "16:00~16:30 (석양의 시간)"
+      helper: "삶의 지혜를 터득한 연장자"
+      caution: "집착하면 새 것을 받을 공간이 없습니다."
+      moneyDetail: "불필요한 지출을 정리하면 여유가 생깁니다."
+      loveDetail: "기대를 내려놓으면 진심이 보입니다."
+      conditionDetail: "깊은 호흡이 마음의 낙엽을 쓸어냅니다."
+
+  - id: T104
+    open:
+      oneLiner: "겨울의 고요함 속에 지혜가 익어갑니다."
+      summary: "내면을 들여다볼 시간입니다. 서두르지 마세요."
+    locked:
+      luckyTime: "21:00~21:30 (명상의 시간)"
+      helper: "말보다 경청을 잘하는 조용한 사람"
+      caution: "외부의 소음에 휘둘리면 내면의 소리를 놓칩니다."
+      moneyDetail: "조용히 준비하는 자가 봄에 수확합니다."
+      loveDetail: "함께 있되 각자의 공간을 존중하면 깊어집니다."
+      conditionDetail: "따뜻한 차 한 잔이 몸과 마음을 녹입니다."
+
+  - id: T105
+    open:
+      oneLiner: "피아노 건반처럼 높낮이가 있어야 음악입니다."
+      summary: "기복의 날입니다. 모든 순간이 멜로디의 일부입니다."
+    locked:
+      luckyTime: "19:00~19:30 (하모니의 시간)"
+      helper: "감정의 기복을 잘 다루는 예술적 감각의 소유자"
+      caution: "저음만 계속되면 음악이 되지 않습니다."
+      moneyDetail: "리듬감 있는 지출과 저축이 조화를 이룹니다."
+      loveDetail: "다름이 화음을 만듭니다. 불협화음을 두려워 마세요."
+      conditionDetail: "좋아하는 음악이 스트레스를 50% 줄입니다."
+
+  - id: T106
+    open:
+      oneLiner: "드럼 비트처럼 심장이 두근거리는 일을 찾으세요."
+      summary: "흥분의 에너지가 필요한 날입니다. 박동을 느끼세요."
+    locked:
+      luckyTime: "17:00~17:30 (심장의 시간)"
+      helper: "열정적이고 행동력 있는 추진력의 소유자"
+      caution: "박자를 놓치면 혼란이 옵니다. 일정한 리듬을 유지하세요."
+      moneyDetail: "규칙적인 저축이 리듬감 있는 재정을 만듭니다."
+      loveDetail: "설렘이 없다면 새로운 시도가 필요합니다."
+      conditionDetail: "걷기나 달리기가 심장을 건강하게 합니다."
+
+  - id: T107
+    open:
+      oneLiner: "바이올린 선율처럼 섬세한 감정이 흐릅니다."
+      summary: "감수성이 예민해지는 날입니다. 그 섬세함을 활용하세요."
+    locked:
+      luckyTime: "20:00~20:30 (감성의 시간)"
+      helper: "섬세한 감수성을 가진 예술가 기질의 사람"
+      caution: "과도한 예민함은 상처로 이어집니다. 필터가 필요합니다."
+      moneyDetail: "디테일을 놓치지 않으면 숨은 기회가 보입니다."
+      loveDetail: "작은 변화도 알아채면 상대가 감동합니다."
+      conditionDetail: "섬세한 손끝 마사지가 긴장을 풀어줍니다."
+
+  - id: T108
+    open:
+      oneLiner: "넓은 들판에서 당신의 목소리를 내세요."
+      summary: "표현의 에너지가 활성화됩니다. 숨기지 마세요."
+    locked:
+      luckyTime: "11:00~11:30 (외침의 시간)"
+      helper: "솔직하고 거리낌 없이 표현하는 사람"
+      caution: "말하지 않으면 아무도 모릅니다."
+      moneyDetail: "자신을 알리는 곳에 기회가 옵니다."
+      loveDetail: "숨긴 마음은 전해지지 않습니다."
+      conditionDetail: "목 스트레칭이 막힌 에너지를 풀어줍니다."
+
+  - id: T109
+    open:
+      oneLiner: "바닷가의 조개처럼 기다리면 보석이 생깁니다."
+      summary: "인내의 에너지가 빛나는 날입니다. 기다림의 가치를 믿으세요."
+    locked:
+      luckyTime: "15:30~16:00 (성숙의 시간)"
+      helper: "조급하지 않고 여유 있는 기다림을 아는 사람"
+      caution: "성급함은 진주를 깨뜨립니다."
+      moneyDetail: "장기 투자의 가치가 빛나는 때입니다."
+      loveDetail: "기다려주는 마음이 신뢰를 쌓습니다."
+      conditionDetail: "천천히 씹어 먹으면 소화가 잘 됩니다."
+
+  - id: T110
+    open:
+      oneLiner: "산꼭대기의 공기처럼 맑은 판단을 하세요."
+      summary: "명료함의 에너지가 강합니다. 흐린 것들을 걷어내세요."
+    locked:
+      luckyTime: "07:00~07:30 (청명의 시간)"
+      helper: "논리적이고 명확한 사고방식의 소유자"
+      caution: "감정에 치우치면 시야가 흐려집니다."
+      moneyDetail: "숫자를 명확히 파악하면 손해를 피합니다."
+      loveDetail: "솔직한 대화가 오해를 풀어줍니다."
+      conditionDetail: "맑은 물을 마시면 머리가 맑아집니다."
+
+  - id: T111
+    open:
+      oneLiner: "111의 시작 에너지가 삼중으로 당신을 축복합니다."
+      summary: "새로운 문이 세 개 열리는 날입니다. 어디로 갈지 선택하세요."
+    locked:
+      luckyTime: "11:11 전후 10분 (천사의 시간)"
+      helper: "직관력이 뛰어난 영적 감각의 소유자"
+      caution: "모든 문을 열려고 하면 힘이 분산됩니다."
+      moneyDetail: "첫 번째 직감을 믿으면 좋은 선택이 됩니다."
+      loveDetail: "우연의 일치 속에 운명이 숨어 있습니다."
+      conditionDetail: "숫자 1처럼 척추를 곧게 세우세요."
+
+  - id: T112
+    open:
+      oneLiner: "나무뿌리처럼 깊이 내리면 흔들리지 않습니다."
+      summary: "근본의 에너지가 필요한 날입니다. 기초를 점검하세요."
+    locked:
+      luckyTime: "08:00~08:30 (뿌리의 시간)"
+      helper: "기본에 충실하고 원칙을 지키는 사람"
+      caution: "기반 없이 높이 오르면 무너집니다."
+      moneyDetail: "기초 자산을 튼튼히 하면 미래가 안정됩니다."
+      loveDetail: "서로의 가치관을 확인하면 관계가 단단해집니다."
+      conditionDetail: "발바닥을 지압하면 전신의 에너지가 순환합니다."
+
+  - id: T113
+    open:
+      oneLiner: "강물처럼 흐르는 대로 맡기세요."
+      summary: "유연함의 에너지가 작동합니다. 저항하지 마세요."
+    locked:
+      luckyTime: "14:00~14:30 (흐름의 시간)"
+      helper: "상황에 맞게 유연하게 대처하는 사람"
+      caution: "억지로 막으면 역류합니다."
+      moneyDetail: "자연스러운 흐름을 따르면 기회가 옵니다."
+      loveDetail: "있는 그대로 받아들이면 평화가 옵니다."
+      conditionDetail: "물을 자주 마시면 몸의 흐름이 좋아집니다."
+
+  - id: T114
+    open:
+      oneLiner: "금(金)의 기운이 당신을 단단하게 합니다."
+      summary: "결단력이 필요한 날입니다. 흔들림 없이 선택하세요."
+    locked:
+      luckyTime: "16:30~17:00 (금속의 시간)"
+      helper: "결단력 있고 소신 있는 리더형 인물"
+      caution: "우유부단하면 기회가 녹슬어버립니다."
+      moneyDetail: "명확한 결정이 재물의 흐름을 만듭니다."
+      loveDetail: "확실한 표현이 관계를 정립합니다."
+      conditionDetail: "등을 곧게 펴면 결단의 에너지가 흐릅니다."
+
+  - id: T115
+    open:
+      oneLiner: "목(木)의 기운이 성장을 촉진합니다."
+      summary: "발전의 에너지가 강한 날입니다. 위로 뻗어나가세요."
+    locked:
+      luckyTime: "06:00~06:30 (나무의 시간)"
+      helper: "성장 마인드셋을 가진 긍정적인 사람"
+      caution: "자라지 않으면 시들어버립니다."
+      moneyDetail: "배움에 투자하면 미래의 수익이 됩니다."
+      loveDetail: "함께 성장하는 관계가 오래갑니다."
+      conditionDetail: "스트레칭으로 근육을 위로 뻗으세요."
+
+  - id: T116
+    open:
+      oneLiner: "수(水)의 기운이 지혜를 깨웁니다."
+      summary: "통찰의 에너지가 열리는 날입니다. 깊이 생각하세요."
+    locked:
+      luckyTime: "22:00~22:30 (물의 시간)"
+      helper: "생각이 깊고 통찰력 있는 현자 타입"
+      caution: "얕은 판단은 실수로 이어집니다."
+      moneyDetail: "시장의 흐름을 읽으면 기회가 보입니다."
+      loveDetail: "상대의 깊은 마음을 이해하려 노력하세요."
+      conditionDetail: "따뜻한 물로 목욕하면 피로가 풀립니다."
+
+  - id: T117
+    open:
+      oneLiner: "화(火)의 기운이 열정을 불태웁니다."
+      summary: "추진력의 에너지가 폭발하는 날입니다. 행동하세요."
+    locked:
+      luckyTime: "12:30~13:00 (불의 시간)"
+      helper: "열정적이고 추진력 있는 행동파"
+      caution: "불이 너무 세면 태워버립니다. 조절하세요."
+      moneyDetail: "적극적인 행동이 수익을 만듭니다."
+      loveDetail: "뜨거운 마음을 전달하면 상대도 뜨거워집니다."
+      conditionDetail: "가벼운 운동으로 몸에 열을 내세요."
+
+  - id: T118
+    open:
+      oneLiner: "토(土)의 기운이 안정을 선물합니다."
+      summary: "중심을 잡아야 할 날입니다. 흔들리지 마세요."
+    locked:
+      luckyTime: "15:00~15:30 (대지의 시간)"
+      helper: "안정적이고 신뢰감을 주는 사람"
+      caution: "중심을 잃으면 모든 것이 흔들립니다."
+      moneyDetail: "안정적인 자산이 마음의 평화를 줍니다."
+      loveDetail: "꾸준함이 신뢰를 쌓습니다."
+      conditionDetail: "맨발로 땅을 밟으면 접지 효과가 있습니다."
+
+  - id: T119
+    open:
+      oneLiner: "새벽 이슬처럼 순수한 마음이 필요합니다."
+      summary: "정화의 에너지가 흐릅니다. 마음을 씻어내세요."
+    locked:
+      luckyTime: "05:00~05:30 (이슬의 시간)"
+      helper: "순수하고 맑은 에너지를 가진 사람"
+      caution: "복잡한 생각은 오늘 내려놓으세요."
+      moneyDetail: "깨끗한 거래가 좋은 인연을 부릅니다."
+      loveDetail: "솔직한 마음이 상대를 감동시킵니다."
+      conditionDetail: "아침 세안이 하루의 에너지를 정화합니다."
+
+  - id: T120
+    open:
+      oneLiner: "저녁노을처럼 마무리가 아름다운 날입니다."
+      summary: "완성의 에너지가 빛납니다. 마무리에 집중하세요."
+    locked:
+      luckyTime: "18:00~18:30 (노을의 시간)"
+      helper: "마무리를 잘하는 꼼꼼한 사람"
+      caution: "끝이 좋아야 모든 것이 좋습니다."
+      moneyDetail: "미완의 청구서를 정리하면 마음이 편해집니다."
+      loveDetail: "하루 끝에 감사의 말을 전하세요."
+      conditionDetail: "저녁 스트레칭이 하루의 피로를 풀어줍니다."
+
+  - id: T121
+    open:
+      oneLiner: "안개 속에서도 방향을 잃지 마세요."
+      summary: "불확실성의 날입니다. 내면의 나침반을 믿으세요."
+    locked:
+      luckyTime: "07:30~08:00 (안개의 시간)"
+      helper: "혼란 속에서도 중심을 잃지 않는 사람"
+      caution: "남의 말에 휘둘리면 길을 잃습니다."
+      moneyDetail: "불확실할 때는 큰 결정을 미루세요."
+      loveDetail: "직감이 이끄는 대로 따라가 보세요."
+      conditionDetail: "명상이 내면의 시야를 맑게 합니다."
+
+  - id: T122
+    open:
+      oneLiner: "폭풍 후의 고요함처럼 평화가 옵니다."
+      summary: "회복의 에너지가 흐릅니다. 이제 괜찮아질 거예요."
+    locked:
+      luckyTime: "16:00~16:30 (회복의 시간)"
+      helper: "어려운 시기를 극복한 경험이 있는 사람"
+      caution: "과거에 집착하면 평화가 멀어집니다."
+      moneyDetail: "손실 후의 회복 기회가 옵니다."
+      loveDetail: "다툼 후 화해의 타이밍입니다."
+      conditionDetail: "충분한 수면이 몸과 마음을 회복시킵니다."
+
+  - id: T123
+    open:
+      oneLiner: "등대처럼 누군가에게 빛이 되어주세요."
+      summary: "인도의 에너지가 흐릅니다. 도움의 손길을 내미세요."
+    locked:
+      luckyTime: "20:30~21:00 (빛의 시간)"
+      helper: "멘토 역할을 하거나 조언을 잘하는 사람"
+      caution: "자신을 태우며 빛내지 마세요. 지속가능해야 합니다."
+      moneyDetail: "나눔이 더 큰 복으로 돌아옵니다."
+      loveDetail: "상대의 길을 밝혀주면 감사가 돌아옵니다."
+      conditionDetail: "다른 사람을 도우면 본인의 기분도 좋아집니다."
+
+  - id: T124
+    open:
+      oneLiner: "거울에 비친 당신을 칭찬하세요."
+      summary: "자기 사랑의 에너지가 필요한 날입니다."
+    locked:
+      luckyTime: "09:00~09:30 (자아의 시간)"
+      helper: "자기 자신을 사랑하는 방법을 아는 사람"
+      caution: "자기 비하는 에너지를 빼앗아갑니다."
+      moneyDetail: "자신에게 투자하면 가치가 올라갑니다."
+      loveDetail: "자신을 사랑해야 타인도 사랑할 수 있습니다."
+      conditionDetail: "좋은 음식으로 자신을 대접하세요."
+
+  - id: T125
+    open:
+      oneLiner: "그림자도 빛이 있어야 존재합니다."
+      summary: "이면을 보는 날입니다. 숨겨진 의미를 찾으세요."
+    locked:
+      luckyTime: "13:30~14:00 (그림자의 시간)"
+      helper: "통찰력이 있어 숨은 것을 잘 보는 사람"
+      caution: "어둠만 보면 빛을 놓칩니다."
+      moneyDetail: "숨어있는 비용이나 수익을 확인하세요."
+      loveDetail: "말하지 않은 마음도 읽어보세요."
+      conditionDetail: "햇빛을 쬐면 비타민D가 충전됩니다."
+
+  - id: T126
+    open:
+      oneLiner: "꿀벌처럼 부지런함이 결실을 맺습니다."
+      summary: "근면의 에너지가 빛나는 날입니다. 열심히 하세요."
+    locked:
+      luckyTime: "10:30~11:00 (수확의 시간)"
+      helper: "성실하고 꾸준한 노력파"
+      caution: "게으름은 기회를 날려버립니다."
+      moneyDetail: "땀 흘린 만큼 보상이 옵니다."
+      loveDetail: "꾸준한 관심이 사랑을 키웁니다."
+      conditionDetail: "활동적인 하루가 숙면을 부릅니다."
+
+  - id: T127
+    open:
+      oneLiner: "나비처럼 변화를 두려워하지 마세요."
+      summary: "변신의 에너지가 흐릅니다. 새로운 모습을 받아들이세요."
+    locked:
+      luckyTime: "14:30~15:00 (변화의 시간)"
+      helper: "변화를 즐기고 적응력이 뛰어난 사람"
+      caution: "고치에 머무르면 날 수 없습니다."
+      moneyDetail: "새로운 분야에 기회가 있습니다."
+      loveDetail: "관계도 진화할 때가 됐습니다."
+      conditionDetail: "새로운 운동이 몸에 자극을 줍니다."
+
+  - id: T128
+    open:
+      oneLiner: "거북이처럼 느려도 꾸준히 가면 이깁니다."
+      summary: "인내의 에너지가 승리합니다. 조급해하지 마세요."
+    locked:
+      luckyTime: "17:30~18:00 (끈기의 시간)"
+      helper: "포기하지 않는 끈기 있는 사람"
+      caution: "빠른 결과에 집착하면 오히려 느려집니다."
+      moneyDetail: "복리의 힘을 믿으세요. 시간이 답입니다."
+      loveDetail: "천천히 다가가면 마음이 열립니다."
+      conditionDetail: "느린 호흡이 마음을 가라앉힙니다."
+
+  - id: T129
+    open:
+      oneLiner: "독수리처럼 높이 날아 전체를 보세요."
+      summary: "거시적 관점이 필요한 날입니다. 숲을 보세요."
+    locked:
+      luckyTime: "11:30~12:00 (조망의 시간)"
+      helper: "큰 그림을 보는 전략적 사고의 소유자"
+      caution: "나무만 보면 숲을 놓칩니다."
+      moneyDetail: "장기적 관점에서 결정하세요."
+      loveDetail: "사소한 것에 얽매이지 마세요."
+      conditionDetail: "높은 곳에서 경치를 보면 마음이 넓어집니다."
+
+  - id: T130
+    open:
+      oneLiner: "개미처럼 작은 것도 소중히 모으세요."
+      summary: "축적의 에너지가 활성화됩니다. 티끌을 모으세요."
+    locked:
+      luckyTime: "08:30~09:00 (저축의 시간)"
+      helper: "절약 정신이 투철한 알뜰한 사람"
+      caution: "작다고 무시하면 큰 것도 놓칩니다."
+      moneyDetail: "잔돈도 모으면 목돈이 됩니다."
+      loveDetail: "작은 배려가 큰 사랑이 됩니다."
+      conditionDetail: "매일 5분 운동이 건강을 쌓습니다."
+
+  - id: T131
+    open:
+      oneLiner: "사자처럼 당당하게 자신을 표현하세요."
+      summary: "자신감의 에너지가 넘칩니다. 움츠리지 마세요."
+    locked:
+      luckyTime: "12:00~12:30 (용맹의 시간)"
+      helper: "카리스마 있고 자신감 넘치는 리더"
+      caution: "지나친 자만은 오만이 됩니다."
+      moneyDetail: "협상에서 자신감이 유리한 조건을 만듭니다."
+      loveDetail: "당당함이 매력이 됩니다."
+      conditionDetail: "가슴을 펴고 걸으면 자세가 좋아집니다."
+
+  - id: T132
+    open:
+      oneLiner: "올빼미처럼 밤의 지혜가 열립니다."
+      summary: "야간의 에너지가 특별합니다. 밤에 통찰이 옵니다."
+    locked:
+      luckyTime: "23:00~23:30 (지혜의 밤)"
+      helper: "밤 시간을 활용하는 야행성 사람"
+      caution: "낮에 해야 할 일을 밤으로 미루지는 마세요."
+      moneyDetail: "조용한 시간에 재정 계획을 세우세요."
+      loveDetail: "밤의 대화가 더 깊어집니다."
+      conditionDetail: "단, 수면 시간은 확보하세요."
+
+  - id: T133
+    open:
+      oneLiner: "연꽃처럼 진흙 속에서도 피어나세요."
+      summary: "역경 극복의 에너지가 강합니다. 환경을 탓하지 마세요."
+    locked:
+      luckyTime: "06:30~07:00 (피어남의 시간)"
+      helper: "어려운 환경을 극복한 불굴의 정신 소유자"
+      caution: "핑계를 대면 성장이 멈춥니다."
+      moneyDetail: "불리한 상황에서도 기회는 있습니다."
+      loveDetail: "어려울 때 함께하면 사랑이 깊어집니다."
+      conditionDetail: "매일 조금씩 나아지면 됩니다."
+
+  - id: T134
+    open:
+      oneLiner: "해바라기처럼 밝은 쪽을 바라보세요."
+      summary: "긍정의 에너지가 필요한 날입니다. 빛을 향해 고개를 드세요."
+    locked:
+      luckyTime: "10:00~10:30 (희망의 시간)"
+      helper: "밝고 긍정적인 에너지를 가진 사람"
+      caution: "어두운 면만 보면 에너지가 빠집니다."
+      moneyDetail: "긍정적 마인드가 기회를 끌어당깁니다."
+      loveDetail: "웃는 얼굴이 마음의 문을 엽니다."
+      conditionDetail: "아침 햇살이 세로토닌을 높입니다."
+
+  - id: T135
+    open:
+      oneLiner: "대나무처럼 휘어져도 꺾이지 마세요."
+      summary: "탄력성의 에너지가 강합니다. 유연하게 버티세요."
+    locked:
+      luckyTime: "13:00~13:30 (탄력의 시간)"
+      helper: "위기에서도 꺾이지 않는 회복탄력성이 높은 사람"
+      caution: "경직되면 부러집니다. 유연함을 유지하세요."
+      moneyDetail: "위기를 기회로 바꾸는 시야가 필요합니다."
+      loveDetail: "다투어도 관계가 꺾이지 않는 힘을 믿으세요."
+      conditionDetail: "요가나 스트레칭이 몸의 유연성을 높입니다."
+
+  - id: T136
+    open:
+      oneLiner: "씨앗 하나가 숲이 됩니다. 작게 시작하세요."
+      summary: "씨앗의 에너지가 강합니다. 첫 발을 내딛으세요."
+    locked:
+      luckyTime: "09:30~10:00 (파종의 시간)"
+      helper: "작은 것부터 시작하는 실천력의 소유자"
+      caution: "완벽한 타이밍은 없습니다. 지금 시작하세요."
+      moneyDetail: "소액부터 시작해도 됩니다."
+      loveDetail: "작은 관심에서 사랑이 시작됩니다."
+      conditionDetail: "첫 걸음이 가장 중요합니다."
+
+  - id: T137
+    open:
+      oneLiner: "북극성처럼 변치 않는 것을 찾으세요."
+      summary: "불변의 에너지가 빛납니다. 핵심 가치를 지키세요."
+    locked:
+      luckyTime: "21:30~22:00 (항성의 시간)"
+      helper: "흔들리지 않는 신념을 가진 사람"
+      caution: "유행에 휩쓸리면 정체성을 잃습니다."
+      moneyDetail: "원칙 있는 투자가 장기적으로 이깁니다."
+      loveDetail: "변하지 않는 마음이 신뢰를 만듭니다."
+      conditionDetail: "꾸준한 루틴이 건강의 기반입니다."
+
+  - id: T138
+    open:
+      oneLiner: "조약돌처럼 파도에 깎여 빛나게 됩니다."
+      summary: "다듬어지는 에너지가 흐릅니다. 시련을 성장으로 바꾸세요."
+    locked:
+      luckyTime: "14:00~14:30 (연마의 시간)"
+      helper: "어려움을 성장의 기회로 삼는 사람"
+      caution: "고통 없이 성장 없습니다. 피하지 마세요."
+      moneyDetail: "실패의 경험이 성공의 자산이 됩니다."
+      loveDetail: "갈등을 통해 서로를 더 알게 됩니다."
+      conditionDetail: "근육통은 성장의 신호입니다."
+
+  - id: T139
+    open:
+      oneLiner: "기쁨은 나누면 배가 됩니다."
+      summary: "나눔의 에너지가 활성화됩니다. 함께 기뻐하세요."
+    locked:
+      luckyTime: "18:30~19:00 (축제의 시간)"
+      helper: "기쁨을 함께 나누기 좋아하는 사람"
+      caution: "혼자만의 기쁨은 오래가지 않습니다."
+      moneyDetail: "베풂이 더 큰 축복으로 돌아옵니다."
+      loveDetail: "좋은 일을 가장 먼저 공유하세요."
+      conditionDetail: "웃으면 엔도르핀이 분비됩니다."
+
+  - id: T140
+    open:
+      oneLiner: "슬픔은 나누면 반이 됩니다."
+      summary: "공감의 에너지가 필요합니다. 혼자 짊어지지 마세요."
+    locked:
+      luckyTime: "20:00~20:30 (위로의 시간)"
+      helper: "공감 능력이 뛰어나고 들어주는 사람"
+      caution: "혼자 감당하면 마음이 무거워집니다."
+      moneyDetail: "고민을 상담하면 해결책이 보입니다."
+      loveDetail: "약한 모습을 보여도 괜찮습니다."
+      conditionDetail: "울어도 됩니다. 눈물은 치유의 시작입니다."
+
+  - id: T141
+    open:
+      oneLiner: "모래시계처럼 시간은 공평하게 흐릅니다."
+      summary: "시간 관리의 에너지가 빛납니다. 현명하게 쓰세요."
+    locked:
+      luckyTime: "15:00~15:30 (시간의 문)"
+      helper: "시간 관리를 잘하는 효율적인 사람"
+      caution: "시간을 낭비하면 되돌릴 수 없습니다."
+      moneyDetail: "시간은 돈입니다. 투자처럼 쓰세요."
+      loveDetail: "함께하는 시간의 질이 중요합니다."
+      conditionDetail: "규칙적인 생활이 건강을 지킵니다."
+
+  - id: T142
+    open:
+      oneLiner: "촛불처럼 작아도 어둠을 밝힐 수 있습니다."
+      summary: "영향력의 에너지가 작동합니다. 당신의 역할을 과소평가하지 마세요."
+    locked:
+      luckyTime: "19:30~20:00 (점화의 시간)"
+      helper: "작지만 의미 있는 일을 하는 사람"
+      caution: "스스로를 작게 보면 빛도 작아집니다."
+      moneyDetail: "작은 기부도 큰 변화를 만듭니다."
+      loveDetail: "작은 말 한마디가 마음을 밝힙니다."
+      conditionDetail: "작은 습관의 변화가 큰 건강을 만듭니다."
+
+  - id: T143
+    open:
+      oneLiner: "풍선처럼 가벼워지면 높이 날 수 있습니다."
+      summary: "해방의 에너지가 흐릅니다. 무거운 짐을 내려놓으세요."
+    locked:
+      luckyTime: "11:00~11:30 (상승의 시간)"
+      helper: "걱정을 덜어주고 가볍게 해주는 사람"
+      caution: "불필요한 걱정이 날개를 묶습니다."
+      moneyDetail: "빚을 줄이면 마음이 가벼워집니다."
+      loveDetail: "과거의 상처를 놓아주세요."
+      conditionDetail: "어깨의 힘을 빼면 긴장이 풀립니다."
+
+  - id: T144
+    open:
+      oneLiner: "144의 균형 에너지가 조화를 부릅니다."
+      summary: "12×12의 완전한 조화가 이루어지는 날입니다."
+    locked:
+      luckyTime: "12:12 전후 10분 (완전수의 시간)"
+      helper: "균형감 있고 조화로운 성격의 사람"
+      caution: "어느 한쪽으로 치우치면 불균형이 옵니다."
+      moneyDetail: "수입과 지출의 균형을 맞추세요."
+      loveDetail: "주고받음의 균형이 관계를 지속시킵니다."
+      conditionDetail: "좌우 균형 운동이 몸을 바르게 합니다."
+
+  - id: T145
+    open:
+      oneLiner: "우물 안 개구리를 벗어날 때입니다."
+      summary: "시야 확장의 에너지가 강합니다. 밖으로 나가세요."
+    locked:
+      luckyTime: "10:30~11:00 (탐험의 시간)"
+      helper: "새로운 세계를 경험한 여행자 기질의 사람"
+      caution: "익숙한 것에만 머무르면 성장이 멈춥니다."
+      moneyDetail: "새로운 시장에 기회가 있습니다."
+      loveDetail: "새로운 만남의 장소로 가세요."
+      conditionDetail: "새로운 음식이 미각을 깨웁니다."
+
+  - id: T146
+    open:
+      oneLiner: "밀물처럼 때가 오면 모든 것이 채워집니다."
+      summary: "충만의 에너지가 다가옵니다. 준비하고 기다리세요."
+    locked:
+      luckyTime: "17:00~17:30 (밀물의 시간)"
+      helper: "때를 기다릴 줄 아는 지혜로운 사람"
+      caution: "억지로 채우려 하면 넘쳐버립니다."
+      moneyDetail: "기회의 파도가 오고 있습니다."
+      loveDetail: "인연이 찾아올 때가 가까워집니다."
+      conditionDetail: "영양분을 충분히 섭취하세요."
+
+  - id: T147
+    open:
+      oneLiner: "썰물처럼 빠질 것은 빠져야 합니다."
+      summary: "비움의 에너지가 작동합니다. 정리할 때입니다."
+    locked:
+      luckyTime: "05:30~06:00 (썰물의 시간)"
+      helper: "미니멀리즘을 실천하는 정리의 달인"
+      caution: "붙들고 있으면 새 것이 들어올 공간이 없습니다."
+      moneyDetail: "불필요한 구독을 해지하세요."
+      loveDetail: "정리해야 할 관계도 있습니다."
+      conditionDetail: "해독 음료가 몸을 정화합니다."
+
+  - id: T148
+    open:
+      oneLiner: "무지개는 비 온 뒤에 뜹니다."
+      summary: "희망의 에너지가 밝아옵니다. 힘든 시기가 지나가고 있습니다."
+    locked:
+      luckyTime: "16:30~17:00 (무지개의 시간)"
+      helper: "어둠 뒤에 빛이 있음을 아는 낙천적인 사람"
+      caution: "비를 피하면 무지개도 못 봅니다."
+      moneyDetail: "어려운 시기를 버티면 보상이 옵니다."
+      loveDetail: "다툼 뒤에 더 깊은 이해가 옵니다."
+      conditionDetail: "힘든 운동 뒤에 성취감이 옵니다."
+
+  - id: T149
+    open:
+      oneLiner: "돌다리도 두드려 보고 건너세요."
+      summary: "신중함의 에너지가 빛납니다. 확인하고 결정하세요."
+    locked:
+      luckyTime: "09:00~09:30 (점검의 시간)"
+      helper: "꼼꼼하고 신중한 성격의 사람"
+      caution: "성급한 결정은 후회를 부릅니다."
+      moneyDetail: "계약서를 꼼꼼히 읽으세요."
+      loveDetail: "확인 없이 오해하지 마세요."
+      conditionDetail: "건강검진을 미루지 마세요."
+
+  - id: T150
+    open:
+      oneLiner: "150의 성장 에너지가 절반의 여정을 축복합니다."
+      summary: "중간 지점의 에너지입니다. 지나온 길을 돌아보세요."
+    locked:
+      luckyTime: "15:00~15:30 (회고의 시간)"
+      helper: "성찰과 반성을 통해 성장하는 사람"
+      caution: "달려오느라 놓친 것들을 점검하세요."
+      moneyDetail: "중간 정산으로 흐름을 파악하세요."
+      loveDetail: "함께한 시간의 의미를 나누세요."
+      conditionDetail: "중간 휴식이 마라톤을 완주하게 합니다."
