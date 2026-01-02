@@ -8443,3 +8443,605 @@ templates:
       moneyDetail: "56%의 목표를 달성했습니다."
       loveDetail: "함께 온 길을 돌아보세요."
       conditionDetail: "지금까지 잘 해왔습니다. 계속하세요."
+
+  # T701-T750: 의지/결심, 지혜/통찰, 창조/생산, 보호/안전, 자유/해방
+
+  - id: T701
+    open:
+      oneLiner: "강철 같은 의지가 길을 엽니다."
+      summary: "흔들림 없는 마음이 산도 옮깁니다."
+    locked:
+      luckyTime: "07:00~07:30 (결의의 시간)"
+      helper: "의지를 북돋아줄 멘토"
+      caution: "고집과 의지를 구분하세요."
+      moneyDetail: "포기하지 않으면 기회가 옵니다."
+      loveDetail: "사랑을 지키려는 의지가 필요합니다."
+      conditionDetail: "정신력이 몸을 이끕니다."
+
+  - id: T702
+    open:
+      oneLiner: "결심이 행동을 낳습니다."
+      summary: "마음먹는 순간 이미 절반은 성공입니다."
+    locked:
+      luckyTime: "08:00~08:30 (결심의 시간)"
+      helper: "함께 결심할 동료"
+      caution: "결심만 하고 행동하지 않으면 의미가 없습니다."
+      moneyDetail: "투자 결정을 미루지 마세요."
+      loveDetail: "사랑을 고백할 때입니다."
+      conditionDetail: "건강 목표를 세우세요."
+
+  - id: T703
+    open:
+      oneLiner: "끈기가 재능을 이깁니다."
+      summary: "포기하지 않는 자가 결국 이깁니다."
+    locked:
+      luckyTime: "14:00~14:30 (인내의 시간)"
+      helper: "끝까지 함께할 파트너"
+      caution: "잘못된 방향의 끈기는 시간 낭비입니다."
+      moneyDetail: "장기 목표를 향해 꾸준히 가세요."
+      loveDetail: "관계도 끈기가 필요합니다."
+      conditionDetail: "꾸준한 운동이 결과를 만듭니다."
+
+  - id: T704
+    open:
+      oneLiner: "집념이 불가능을 가능으로 바꿉니다."
+      summary: "한 가지에 몰입하면 길이 열립니다."
+    locked:
+      luckyTime: "10:00~10:30 (집중의 시간)"
+      helper: "몰입을 도와줄 환경"
+      caution: "집착과 집념은 다릅니다."
+      moneyDetail: "핵심 사업에 집중하세요."
+      loveDetail: "상대방에게 집중하세요."
+      conditionDetail: "하나의 운동에 전념해보세요."
+
+  - id: T705
+    open:
+      oneLiner: "각오가 새로워집니다."
+      summary: "다시 시작하는 마음으로 임하세요."
+    locked:
+      luckyTime: "06:00~06:30 (새벽의 시간)"
+      helper: "새 시작을 응원하는 사람"
+      caution: "각오만으로는 부족합니다. 계획도 세우세요."
+      moneyDetail: "재정 계획을 새롭게 세우세요."
+      loveDetail: "관계를 새로운 마음으로 시작하세요."
+      conditionDetail: "오늘부터 다시 시작하세요."
+
+  - id: T706
+    open:
+      oneLiner: "깨달음이 눈을 뜨게 합니다."
+      summary: "보이지 않던 것이 보이기 시작합니다."
+    locked:
+      luckyTime: "05:00~05:30 (각성의 시간)"
+      helper: "진실을 말해줄 스승"
+      caution: "깨달음에 취해 행동을 미루지 마세요."
+      moneyDetail: "시장의 본질을 파악하세요."
+      loveDetail: "상대방의 진심을 알게 됩니다."
+      conditionDetail: "몸의 신호를 깨달으세요."
+
+  - id: T707
+    open:
+      oneLiner: "통찰이 복잡함을 단순하게 만듭니다."
+      summary: "본질을 꿰뚫으면 답이 보입니다."
+    locked:
+      luckyTime: "16:00~16:30 (통찰의 시간)"
+      helper: "예리한 분석가"
+      caution: "통찰이 독선이 되지 않게 하세요."
+      moneyDetail: "트렌드의 본질을 파악하세요."
+      loveDetail: "관계의 핵심 문제를 찾으세요."
+      conditionDetail: "증상의 근본 원인을 찾으세요."
+
+  - id: T708
+    open:
+      oneLiner: "직관이 이성보다 앞서갑니다."
+      summary: "설명할 수 없지만 아는 것이 있습니다."
+    locked:
+      luckyTime: "11:00~11:30 (직감의 시간)"
+      helper: "감을 믿는 동료"
+      caution: "직관과 충동을 구분하세요."
+      moneyDetail: "느낌이 좋은 투자를 고려하세요."
+      loveDetail: "첫인상을 기억하세요."
+      conditionDetail: "몸이 보내는 신호를 믿으세요."
+
+  - id: T709
+    open:
+      oneLiner: "현명함이 위기를 기회로 바꿉니다."
+      summary: "지혜로운 판단이 필요한 때입니다."
+    locked:
+      luckyTime: "15:00~15:30 (지혜의 시간)"
+      helper: "현명한 조언자"
+      caution: "지나친 계산이 기회를 놓칩니다."
+      moneyDetail: "현명한 선택이 자산을 지킵니다."
+      loveDetail: "감정보다 지혜롭게 판단하세요."
+      conditionDetail: "건강한 선택을 하세요."
+
+  - id: T710
+    open:
+      oneLiner: "선견지명이 미래를 준비합니다."
+      summary: "앞을 내다보는 눈이 열립니다."
+    locked:
+      luckyTime: "09:00~09:30 (예견의 시간)"
+      helper: "미래를 읽는 전문가"
+      caution: "예측에 너무 의존하지 마세요."
+      moneyDetail: "미래 트렌드에 투자하세요."
+      loveDetail: "관계의 미래를 그려보세요."
+      conditionDetail: "예방이 치료보다 낫습니다."
+
+  - id: T711
+    open:
+      oneLiner: "창조의 에너지가 솟아납니다."
+      summary: "무에서 유를 만드는 힘이 있습니다."
+    locked:
+      luckyTime: "10:00~10:30 (창작의 시간)"
+      helper: "영감을 주는 예술가"
+      caution: "창조를 위해서는 기초도 필요합니다."
+      moneyDetail: "새로운 수입원을 만드세요."
+      loveDetail: "관계에 새로움을 더하세요."
+      conditionDetail: "창의적 활동이 스트레스를 줄입니다."
+
+  - id: T712
+    open:
+      oneLiner: "아이디어가 샘솟습니다."
+      summary: "머릿속이 번뜩이는 생각으로 가득합니다."
+    locked:
+      luckyTime: "11:00~11:30 (발상의 시간)"
+      helper: "브레인스토밍 파트너"
+      caution: "아이디어를 실행으로 옮기세요."
+      moneyDetail: "아이디어가 사업이 됩니다."
+      loveDetail: "데이트 아이디어를 내세요."
+      conditionDetail: "새로운 건강법을 시도하세요."
+
+  - id: T713
+    open:
+      oneLiner: "생산성이 높아집니다."
+      summary: "효율적으로 많은 것을 이룹니다."
+    locked:
+      luckyTime: "09:00~09:30 (생산의 시간)"
+      helper: "업무 효율 전문가"
+      caution: "생산성에 집착하면 번아웃이 옵니다."
+      moneyDetail: "생산적인 시간을 늘리세요."
+      loveDetail: "함께 무언가를 만들어보세요."
+      conditionDetail: "에너지 관리가 중요합니다."
+
+  - id: T714
+    open:
+      oneLiner: "결과물이 축적됩니다."
+      summary: "꾸준한 노력이 가시적 성과로 나타납니다."
+    locked:
+      luckyTime: "17:00~17:30 (수확의 시간)"
+      helper: "성과를 인정해줄 상사"
+      caution: "양보다 질을 생각하세요."
+      moneyDetail: "저축이 쌓입니다."
+      loveDetail: "함께한 시간이 결실을 맺습니다."
+      conditionDetail: "운동 효과가 나타납니다."
+
+  - id: T715
+    open:
+      oneLiner: "탄생의 기운이 감돕니다."
+      summary: "새로운 것이 세상에 나올 때입니다."
+    locked:
+      luckyTime: "06:00~06:30 (탄생의 시간)"
+      helper: "새 시작을 축하할 사람"
+      caution: "탄생에는 고통이 따릅니다."
+      moneyDetail: "새 사업을 시작할 때입니다."
+      loveDetail: "새로운 관계가 시작됩니다."
+      conditionDetail: "새로운 습관이 태어납니다."
+
+  - id: T716
+    open:
+      oneLiner: "보호막이 당신을 감쌉니다."
+      summary: "안전한 울타리 안에서 평화를 느끼세요."
+    locked:
+      luckyTime: "20:00~20:30 (안식의 시간)"
+      helper: "지켜줄 든든한 사람"
+      caution: "보호가 과보호가 되지 않게 하세요."
+      moneyDetail: "자산을 안전하게 보호하세요."
+      loveDetail: "사랑하는 사람을 지키세요."
+      conditionDetail: "면역력을 높이세요."
+
+  - id: T717
+    open:
+      oneLiner: "방어가 공격보다 현명합니다."
+      summary: "지키는 것이 얻는 것보다 중요할 때입니다."
+    locked:
+      luckyTime: "19:00~19:30 (방어의 시간)"
+      helper: "위험을 감지하는 조언자"
+      caution: "방어만 하면 기회를 놓칩니다."
+      moneyDetail: "손실 방지에 집중하세요."
+      loveDetail: "관계를 지키는 데 힘쓰세요."
+      conditionDetail: "질병 예방에 신경 쓰세요."
+
+  - id: T718
+    open:
+      oneLiner: "안전이 최우선입니다."
+      summary: "위험을 피하고 안전한 길을 선택하세요."
+    locked:
+      luckyTime: "21:00~21:30 (안전의 시간)"
+      helper: "안전을 챙기는 세심한 사람"
+      caution: "안전만 추구하면 성장이 없습니다."
+      moneyDetail: "안전 자산 비중을 늘리세요."
+      loveDetail: "안전한 관계가 좋은 관계입니다."
+      conditionDetail: "사고 예방에 주의하세요."
+
+  - id: T719
+    open:
+      oneLiner: "피난처가 마련됩니다."
+      summary: "쉴 곳이 있다는 것이 큰 힘입니다."
+    locked:
+      luckyTime: "22:00~22:30 (은신의 시간)"
+      helper: "피난처가 되어줄 친구"
+      caution: "도피처에 너무 오래 머물지 마세요."
+      moneyDetail: "비상 자금을 마련하세요."
+      loveDetail: "서로에게 안식처가 되세요."
+      conditionDetail: "심신의 회복 공간이 필요합니다."
+
+  - id: T720
+    open:
+      oneLiner: "수호의 힘이 작동합니다."
+      summary: "보이지 않는 보호가 당신과 함께합니다."
+    locked:
+      luckyTime: "23:00~23:30 (수호의 시간)"
+      helper: "당신을 지켜보는 멘토"
+      caution: "수호에 의존하지 말고 스스로도 노력하세요."
+      moneyDetail: "보험을 점검하세요."
+      loveDetail: "사랑하는 사람의 수호자가 되세요."
+      conditionDetail: "건강 검진을 받으세요."
+
+  - id: T721
+    open:
+      oneLiner: "자유의 바람이 불어옵니다."
+      summary: "구속에서 벗어나 날개를 펼 때입니다."
+    locked:
+      luckyTime: "08:00~08:30 (해방의 시간)"
+      helper: "자유로운 영혼의 친구"
+      caution: "자유에는 책임이 따릅니다."
+      moneyDetail: "재정적 자유를 향해 가세요."
+      loveDetail: "구속하지 않는 사랑을 하세요."
+      conditionDetail: "스트레스에서 해방되세요."
+
+  - id: T722
+    open:
+      oneLiner: "족쇄가 풀립니다."
+      summary: "묶여있던 것이 풀리는 해방감을 느낍니다."
+    locked:
+      luckyTime: "07:00~07:30 (풀림의 시간)"
+      helper: "억눌림을 풀어줄 상담자"
+      caution: "급격한 해방은 혼란을 줍니다."
+      moneyDetail: "빚을 청산하세요."
+      loveDetail: "과거의 상처에서 벗어나세요."
+      conditionDetail: "긴장된 근육을 풀어주세요."
+
+  - id: T723
+    open:
+      oneLiner: "독립이 성숙의 증거입니다."
+      summary: "스스로 서는 힘이 생겼습니다."
+    locked:
+      luckyTime: "09:00~09:30 (독립의 시간)"
+      helper: "독립을 응원하는 가족"
+      caution: "고립과 독립은 다릅니다."
+      moneyDetail: "경제적 독립을 이루세요."
+      loveDetail: "건강한 독립이 건강한 관계입니다."
+      conditionDetail: "스스로 건강을 관리하세요."
+
+  - id: T724
+    open:
+      oneLiner: "해탈의 경지에 가까워집니다."
+      summary: "집착을 내려놓으면 마음이 가벼워집니다."
+    locked:
+      luckyTime: "05:00~05:30 (해탈의 시간)"
+      helper: "깨달음을 준 스승"
+      caution: "무관심과 해탈을 구분하세요."
+      moneyDetail: "돈에 대한 집착을 줄이세요."
+      loveDetail: "소유하려 하지 마세요."
+      conditionDetail: "마음의 짐을 내려놓으세요."
+
+  - id: T725
+    open:
+      oneLiner: "구원의 손길이 다가옵니다."
+      summary: "어둠 속에서 빛이 비칩니다."
+    locked:
+      luckyTime: "06:00~06:30 (구원의 시간)"
+      helper: "도움의 손길을 내미는 사람"
+      caution: "스스로의 노력도 필요합니다."
+      moneyDetail: "위기에서 기회가 옵니다."
+      loveDetail: "사랑이 구원입니다."
+      conditionDetail: "치유의 길이 열립니다."
+
+  - id: T726
+    open:
+      oneLiner: "강인함이 시련을 견딥니다."
+      summary: "부러지지 않는 힘이 있습니다."
+    locked:
+      luckyTime: "14:00~14:30 (강인의 시간)"
+      helper: "강한 정신력을 가진 멘토"
+      caution: "강함만 추구하면 부서집니다."
+      moneyDetail: "경기 변동에 흔들리지 마세요."
+      loveDetail: "어려움에도 흔들리지 않는 사랑을 하세요."
+      conditionDetail: "체력을 기르세요."
+
+  - id: T727
+    open:
+      oneLiner: "담대함이 두려움을 물리칩니다."
+      summary: "겁내지 않으면 이길 수 있습니다."
+    locked:
+      luckyTime: "10:00~10:30 (담대의 시간)"
+      helper: "용기를 주는 동료"
+      caution: "무모함과 담대함은 다릅니다."
+      moneyDetail: "과감한 결정이 필요합니다."
+      loveDetail: "먼저 고백하세요."
+      conditionDetail: "두려움이 스트레스입니다. 극복하세요."
+
+  - id: T728
+    open:
+      oneLiner: "불굴의 정신이 빛납니다."
+      summary: "쓰러져도 다시 일어납니다."
+    locked:
+      luckyTime: "13:00~13:30 (불굴의 시간)"
+      helper: "함께 일어설 동지"
+      caution: "때로는 멈추는 것도 용기입니다."
+      moneyDetail: "실패해도 다시 도전하세요."
+      loveDetail: "관계가 어려워도 포기하지 마세요."
+      conditionDetail: "재활을 포기하지 마세요."
+
+  - id: T729
+    open:
+      oneLiner: "결단이 운명을 바꿉니다."
+      summary: "결정의 순간이 왔습니다."
+    locked:
+      luckyTime: "15:00~15:30 (결단의 시간)"
+      helper: "결정을 도와줄 조언자"
+      caution: "성급한 결단은 후회를 부릅니다."
+      moneyDetail: "중요한 투자 결정을 내리세요."
+      loveDetail: "관계의 방향을 결정하세요."
+      conditionDetail: "건강을 위한 결단을 내리세요."
+
+  - id: T730
+    open:
+      oneLiner: "투지가 불태워집니다."
+      summary: "지지 않겠다는 마음이 승리를 부릅니다."
+    locked:
+      luckyTime: "16:00~16:30 (투지의 시간)"
+      helper: "함께 싸울 동료"
+      caution: "투지가 분노가 되지 않게 하세요."
+      moneyDetail: "경쟁에서 이기세요."
+      loveDetail: "사랑을 쟁취하세요."
+      conditionDetail: "질병과 싸워 이기세요."
+
+  - id: T731
+    open:
+      oneLiner: "안목이 진가를 알아봅니다."
+      summary: "가치 있는 것을 구별하는 눈이 있습니다."
+    locked:
+      luckyTime: "11:00~11:30 (감정의 시간)"
+      helper: "안목 있는 전문가"
+      caution: "외면에 속지 마세요."
+      moneyDetail: "가치주를 알아보세요."
+      loveDetail: "진정한 사람을 알아보세요."
+      conditionDetail: "좋은 음식을 구별하세요."
+
+  - id: T732
+    open:
+      oneLiner: "명철함이 길을 밝힙니다."
+      summary: "맑은 정신이 올바른 판단을 이끕니다."
+    locked:
+      luckyTime: "08:00~08:30 (명철의 시간)"
+      helper: "명석한 두뇌의 조언자"
+      caution: "너무 분석적이면 감정을 놓칩니다."
+      moneyDetail: "명확한 분석이 수익을 냅니다."
+      loveDetail: "감정과 이성의 균형을 맞추세요."
+      conditionDetail: "맑은 정신을 유지하세요."
+
+  - id: T733
+    open:
+      oneLiner: "혜안이 미래를 내다봅니다."
+      summary: "남들이 보지 못하는 것을 봅니다."
+    locked:
+      luckyTime: "17:00~17:30 (혜안의 시간)"
+      helper: "선견지명을 가진 멘토"
+      caution: "예측이 항상 맞지는 않습니다."
+      moneyDetail: "미래 가치를 선점하세요."
+      loveDetail: "관계의 미래를 예견하세요."
+      conditionDetail: "건강 위험을 미리 대비하세요."
+
+  - id: T734
+    open:
+      oneLiner: "분별력이 옳고 그름을 가립니다."
+      summary: "현명한 선택을 할 수 있습니다."
+    locked:
+      luckyTime: "12:00~12:30 (분별의 시간)"
+      helper: "공정한 판단자"
+      caution: "판단이 편견이 되지 않게 하세요."
+      moneyDetail: "현명한 소비를 하세요."
+      loveDetail: "좋은 사람을 분별하세요."
+      conditionDetail: "건강에 좋은 것을 선택하세요."
+
+  - id: T735
+    open:
+      oneLiner: "영감이 창작을 이끕니다."
+      summary: "뮤즈가 당신을 찾아왔습니다."
+    locked:
+      luckyTime: "22:00~22:30 (영감의 시간)"
+      helper: "영감을 주는 예술가"
+      caution: "영감을 기다리기만 하지 마세요."
+      moneyDetail: "창의적 아이디어가 수익이 됩니다."
+      loveDetail: "로맨틱한 영감을 받으세요."
+      conditionDetail: "예술 활동이 치유입니다."
+
+  - id: T736
+    open:
+      oneLiner: "발명의 재능이 발휘됩니다."
+      summary: "새로운 것을 만들어내는 힘이 있습니다."
+    locked:
+      luckyTime: "10:00~10:30 (발명의 시간)"
+      helper: "혁신적 사고를 가진 동료"
+      caution: "발명이 실용적이어야 합니다."
+      moneyDetail: "특허가 자산이 됩니다."
+      loveDetail: "새로운 데이트를 발명하세요."
+      conditionDetail: "자신만의 건강법을 개발하세요."
+
+  - id: T737
+    open:
+      oneLiner: "예술혼이 깨어납니다."
+      summary: "아름다움을 창조하는 영혼이 있습니다."
+    locked:
+      luckyTime: "21:00~21:30 (예술의 시간)"
+      helper: "예술적 감각을 가진 친구"
+      caution: "예술과 현실의 균형을 맞추세요."
+      moneyDetail: "예술에 투자하세요."
+      loveDetail: "사랑을 예술처럼 표현하세요."
+      conditionDetail: "아름다움이 치유력을 가집니다."
+
+  - id: T738
+    open:
+      oneLiner: "건설의 기운이 솟습니다."
+      summary: "무언가를 세우고 쌓을 때입니다."
+    locked:
+      luckyTime: "08:00~08:30 (건설의 시간)"
+      helper: "함께 만들어갈 파트너"
+      caution: "기초가 튼튼해야 합니다."
+      moneyDetail: "자산을 쌓아가세요."
+      loveDetail: "관계의 기반을 다지세요."
+      conditionDetail: "근육을 만들어가세요."
+
+  - id: T739
+    open:
+      oneLiner: "제작의 즐거움을 느낍니다."
+      summary: "손으로 만드는 것에서 기쁨을 찾습니다."
+    locked:
+      luckyTime: "14:00~14:30 (제작의 시간)"
+      helper: "함께 만들 동료"
+      caution: "완벽을 추구하다 완성을 못 합니다."
+      moneyDetail: "직접 만들면 비용이 절감됩니다."
+      loveDetail: "손수 선물을 만들어보세요."
+      conditionDetail: "손을 쓰는 취미가 두뇌에 좋습니다."
+
+  - id: T740
+    open:
+      oneLiner: "작품이 완성됩니다."
+      summary: "오랜 노력의 결실을 볼 때입니다."
+    locked:
+      luckyTime: "18:00~18:30 (완성의 시간)"
+      helper: "완성을 축하할 사람"
+      caution: "완성에 만족하지 말고 다음을 준비하세요."
+      moneyDetail: "프로젝트가 수익을 냅니다."
+      loveDetail: "관계가 결실을 맺습니다."
+      conditionDetail: "목표 체중에 도달합니다."
+
+  - id: T741
+    open:
+      oneLiner: "울타리가 소중한 것을 지킵니다."
+      summary: "경계를 세워 안전을 확보하세요."
+    locked:
+      luckyTime: "19:00~19:30 (경계의 시간)"
+      helper: "경계를 함께 세울 동료"
+      caution: "너무 높은 울타리는 고립을 부릅니다."
+      moneyDetail: "손실 제한을 설정하세요."
+      loveDetail: "건강한 경계가 필요합니다."
+      conditionDetail: "자신을 보호하는 한계를 정하세요."
+
+  - id: T742
+    open:
+      oneLiner: "보루가 견고합니다."
+      summary: "무너지지 않는 방어선이 있습니다."
+    locked:
+      luckyTime: "20:00~20:30 (요새의 시간)"
+      helper: "함께 지킬 수비대"
+      caution: "공격도 최선의 방어입니다."
+      moneyDetail: "안전 자산이 버팀목입니다."
+      loveDetail: "신뢰가 관계의 요새입니다."
+      conditionDetail: "면역력이 건강의 보루입니다."
+
+  - id: T743
+    open:
+      oneLiner: "비밀이 지켜집니다."
+      summary: "드러내지 않아야 할 것은 숨기세요."
+    locked:
+      luckyTime: "23:00~23:30 (비밀의 시간)"
+      helper: "입이 무거운 친구"
+      caution: "비밀이 부담이 되지 않게 하세요."
+      moneyDetail: "투자 전략을 공개하지 마세요."
+      loveDetail: "서로의 비밀을 지켜주세요."
+      conditionDetail: "스트레스가 되는 비밀은 털어놓으세요."
+
+  - id: T744
+    open:
+      oneLiner: "피신처가 마련됩니다."
+      summary: "잠시 쉬어갈 곳이 필요합니다."
+    locked:
+      luckyTime: "22:00~22:30 (피신의 시간)"
+      helper: "쉼터를 제공할 사람"
+      caution: "도망이 해결책은 아닙니다."
+      moneyDetail: "비상 자금처를 마련하세요."
+      loveDetail: "서로에게 쉼터가 되세요."
+      conditionDetail: "휴식이 필요합니다."
+
+  - id: T745
+    open:
+      oneLiner: "갑옷이 마음을 보호합니다."
+      summary: "상처받지 않도록 자신을 지키세요."
+    locked:
+      luckyTime: "07:00~07:30 (무장의 시간)"
+      helper: "든든한 지원군"
+      caution: "갑옷이 소통을 막지 않게 하세요."
+      moneyDetail: "헤지로 리스크를 관리하세요."
+      loveDetail: "방어적 태도가 관계를 막습니다."
+      conditionDetail: "예방 접종을 하세요."
+
+  - id: T746
+    open:
+      oneLiner: "탈출구가 열립니다."
+      summary: "갇혀있던 상황에서 빠져나올 길이 보입니다."
+    locked:
+      luckyTime: "06:00~06:30 (탈출의 시간)"
+      helper: "출구를 알려줄 안내자"
+      caution: "탈출 후를 대비하세요."
+      moneyDetail: "손절의 기회입니다."
+      loveDetail: "독성 관계에서 벗어나세요."
+      conditionDetail: "나쁜 습관에서 탈출하세요."
+
+  - id: T747
+    open:
+      oneLiner: "속박이 풀립니다."
+      summary: "자유로워지는 감각을 느끼세요."
+    locked:
+      luckyTime: "08:00~08:30 (해제의 시간)"
+      helper: "속박을 풀어줄 조력자"
+      caution: "갑자기 풀리면 방향을 잃을 수 있습니다."
+      moneyDetail: "구속 조건이 해제됩니다."
+      loveDetail: "집착에서 벗어나세요."
+      conditionDetail: "경직된 몸을 풀어주세요."
+
+  - id: T748
+    open:
+      oneLiner: "날개가 돋칩니다."
+      summary: "높이 날아오를 준비가 되었습니다."
+    locked:
+      luckyTime: "09:00~09:30 (비상의 시간)"
+      helper: "날개를 달아줄 후원자"
+      caution: "너무 높이 날면 추락합니다."
+      moneyDetail: "도약의 기회입니다."
+      loveDetail: "사랑이 날개를 달아줍니다."
+      conditionDetail: "몸이 가벼워집니다."
+
+  - id: T749
+    open:
+      oneLiner: "해방감이 밀려옵니다."
+      summary: "자유의 달콤함을 만끽하세요."
+    locked:
+      luckyTime: "10:00~10:30 (자유의 시간)"
+      helper: "자유를 함께 즐길 친구"
+      caution: "자유에 취해 책임을 잊지 마세요."
+      moneyDetail: "재정적 속박에서 벗어납니다."
+      loveDetail: "자유로운 사랑을 하세요."
+      conditionDetail: "스트레스에서 해방됩니다."
+
+  - id: T750
+    open:
+      oneLiner: "750의 관문, 60%를 통과했습니다."
+      summary: "6할을 지나 목표가 가까워집니다."
+    locked:
+      luckyTime: "12:00~12:30 (관문의 시간)"
+      helper: "함께 통과한 동료"
+      caution: "마지막 40%가 가장 중요합니다."
+      moneyDetail: "60%의 목표를 달성했습니다."
+      loveDetail: "함께 온 길을 축하하세요."
+      conditionDetail: "6할의 여정을 완주했습니다. 힘내세요."
