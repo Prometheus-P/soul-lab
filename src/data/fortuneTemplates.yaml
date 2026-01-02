@@ -9647,3 +9647,605 @@ templates:
       moneyDetail: "63%의 목표를 달성했습니다."
       loveDetail: "함께 오른 길을 돌아보세요."
       conditionDetail: "거의 다 왔습니다. 마지막까지 힘내세요."
+
+  # T801-T850: 높음/정상, 낮음/저점, 강함/강인, 약함/유연, 빠름/신속
+
+  - id: T801
+    open:
+      oneLiner: "정상에 가까워집니다."
+      summary: "높은 곳에서 넓게 봅니다."
+    locked:
+      luckyTime: "11:00~11:30 (정상의 시간)"
+      helper: "정상을 함께 밟을 동료"
+      caution: "정상에서 오래 머물 수 없습니다."
+      moneyDetail: "최고 수익률에 가까워집니다."
+      loveDetail: "관계의 정점을 경험합니다."
+      conditionDetail: "최상의 컨디션입니다."
+
+  - id: T802
+    open:
+      oneLiner: "높이 오른 만큼 멀리 봅니다."
+      summary: "고지에서 전망이 트입니다."
+    locked:
+      luckyTime: "10:00~10:30 (전망의 시간)"
+      helper: "높은 곳을 아는 등반가"
+      caution: "높은 곳은 바람이 셉니다."
+      moneyDetail: "장기 전망이 밝습니다."
+      loveDetail: "관계의 미래가 보입니다."
+      conditionDetail: "건강 전망이 좋습니다."
+
+  - id: T803
+    open:
+      oneLiner: "상승 기류를 탑니다."
+      summary: "저절로 올라가는 힘이 있습니다."
+    locked:
+      luckyTime: "09:00~09:30 (상승의 시간)"
+      helper: "상승 기류를 읽는 전문가"
+      caution: "상승이 영원하지 않습니다."
+      moneyDetail: "시장이 상승합니다."
+      loveDetail: "사랑이 깊어집니다."
+      conditionDetail: "에너지가 올라갑니다."
+
+  - id: T804
+    open:
+      oneLiner: "피크를 향해 달립니다."
+      summary: "최고점에 도달할 준비가 되었습니다."
+    locked:
+      luckyTime: "12:00~12:30 (절정의 시간)"
+      helper: "정상을 경험한 선배"
+      caution: "피크 후에는 하락이 옵니다."
+      moneyDetail: "수익 실현 타이밍입니다."
+      loveDetail: "열정의 정점입니다."
+      conditionDetail: "최고 컨디션을 유지하세요."
+
+  - id: T805
+    open:
+      oneLiner: "고점을 인식합니다."
+      summary: "더 이상 오를 곳이 없음을 압니다."
+    locked:
+      luckyTime: "14:00~14:30 (인식의 시간)"
+      helper: "시장을 읽는 분석가"
+      caution: "고점 인식이 늦으면 손해입니다."
+      moneyDetail: "이익 실현을 고려하세요."
+      loveDetail: "관계의 성숙을 인식하세요."
+      conditionDetail: "컨디션 관리에 신경 쓰세요."
+
+  - id: T806
+    open:
+      oneLiner: "바닥을 찍고 올라갑니다."
+      summary: "가장 낮은 곳에서 반등합니다."
+    locked:
+      luckyTime: "06:00~06:30 (반등의 시간)"
+      helper: "바닥에서 함께할 동지"
+      caution: "바닥인 줄 알았는데 더 내려갈 수 있습니다."
+      moneyDetail: "저점 매수 기회입니다."
+      loveDetail: "관계가 회복됩니다."
+      conditionDetail: "건강이 회복됩니다."
+
+  - id: T807
+    open:
+      oneLiner: "저점을 확인합니다."
+      summary: "더 이상 내려갈 곳이 없습니다."
+    locked:
+      luckyTime: "05:00~05:30 (저점의 시간)"
+      helper: "바닥을 아는 전문가"
+      caution: "저점 확인이 어렵습니다."
+      moneyDetail: "분할 매수를 시작하세요."
+      loveDetail: "관계의 바닥에서 다시 시작하세요."
+      conditionDetail: "최악은 지났습니다."
+
+  - id: T808
+    open:
+      oneLiner: "낮은 곳에서 겸손을 배웁니다."
+      summary: "아래에서 보면 다르게 보입니다."
+    locked:
+      luckyTime: "07:00~07:30 (겸손의 시간)"
+      helper: "겸손한 어른"
+      caution: "너무 낮추면 밟힙니다."
+      moneyDetail: "기본으로 돌아가세요."
+      loveDetail: "겸손하게 다가가세요."
+      conditionDetail: "기초부터 다시 시작하세요."
+
+  - id: T809
+    open:
+      oneLiner: "골짜기에서 힘을 모읍니다."
+      summary: "낮은 곳에서 에너지를 축적합니다."
+    locked:
+      luckyTime: "08:00~08:30 (축적의 시간)"
+      helper: "함께 힘을 모을 파트너"
+      caution: "골짜기에 너무 오래 머물지 마세요."
+      moneyDetail: "현금을 비축하세요."
+      loveDetail: "관계의 에너지를 채우세요."
+      conditionDetail: "휴식으로 에너지를 모으세요."
+
+  - id: T810
+    open:
+      oneLiner: "밑바닥에서 시작합니다."
+      summary: "가장 낮은 곳에서 출발하면 올라갈 일만 남습니다."
+    locked:
+      luckyTime: "04:00~04:30 (시작의 시간)"
+      helper: "처음부터 함께할 동료"
+      caution: "바닥에서 시작하면 힘이 많이 듭니다."
+      moneyDetail: "소액부터 시작하세요."
+      loveDetail: "처음부터 다시 시작하세요."
+      conditionDetail: "기초부터 쌓아가세요."
+
+  - id: T811
+    open:
+      oneLiner: "강철 같은 의지가 빛납니다."
+      summary: "부러지지 않는 힘이 있습니다."
+    locked:
+      luckyTime: "14:00~14:30 (강철의 시간)"
+      helper: "강인한 정신을 가진 멘토"
+      caution: "너무 강하면 부러집니다."
+      moneyDetail: "흔들리지 않는 투자를 하세요."
+      loveDetail: "사랑을 지키는 힘이 필요합니다."
+      conditionDetail: "체력을 기르세요."
+
+  - id: T812
+    open:
+      oneLiner: "강인함이 어려움을 이깁니다."
+      summary: "단단한 마음이 시련을 견딥니다."
+    locked:
+      luckyTime: "15:00~15:30 (강인의 시간)"
+      helper: "어려움을 이긴 선배"
+      caution: "강인함이 고집이 되지 않게 하세요."
+      moneyDetail: "변동성을 견디세요."
+      loveDetail: "관계의 어려움을 이겨내세요."
+      conditionDetail: "면역력을 강화하세요."
+
+  - id: T813
+    open:
+      oneLiner: "힘이 넘칩니다."
+      summary: "에너지가 충만합니다."
+    locked:
+      luckyTime: "10:00~10:30 (파워의 시간)"
+      helper: "에너지 넘치는 동료"
+      caution: "힘을 남용하지 마세요."
+      moneyDetail: "공격적 투자가 가능합니다."
+      loveDetail: "적극적으로 다가가세요."
+      conditionDetail: "최고의 체력 상태입니다."
+
+  - id: T814
+    open:
+      oneLiner: "견고함이 흔들림을 막습니다."
+      summary: "단단한 기반이 안정을 줍니다."
+    locked:
+      luckyTime: "11:00~11:30 (견고의 시간)"
+      helper: "안정적인 파트너"
+      caution: "견고함이 경직되지 않게 하세요."
+      moneyDetail: "안정적 수익을 추구하세요."
+      loveDetail: "관계의 기반을 단단히 하세요."
+      conditionDetail: "뼈를 튼튼히 하세요."
+
+  - id: T815
+    open:
+      oneLiner: "불굴의 정신이 살아납니다."
+      summary: "쓰러져도 다시 일어납니다."
+    locked:
+      luckyTime: "13:00~13:30 (불굴의 시간)"
+      helper: "포기하지 않는 동지"
+      caution: "때로는 쉬어가는 것도 필요합니다."
+      moneyDetail: "실패해도 다시 도전하세요."
+      loveDetail: "포기하지 마세요."
+      conditionDetail: "회복력을 믿으세요."
+
+  - id: T816
+    open:
+      oneLiner: "유연함이 강함을 이깁니다."
+      summary: "부드러움이 단단함을 감싸니다."
+    locked:
+      luckyTime: "16:00~16:30 (유연의 시간)"
+      helper: "유연한 사고를 가진 멘토"
+      caution: "너무 유연하면 중심을 잃습니다."
+      moneyDetail: "유연한 투자 전략이 필요합니다."
+      loveDetail: "융통성 있게 대처하세요."
+      conditionDetail: "스트레칭으로 유연성을 기르세요."
+
+  - id: T817
+    open:
+      oneLiner: "약함이 공감을 부릅니다."
+      summary: "약점을 보여줘야 연결됩니다."
+    locked:
+      luckyTime: "20:00~20:30 (솔직의 시간)"
+      helper: "약함을 받아줄 친구"
+      caution: "약점을 악용하는 사람을 조심하세요."
+      moneyDetail: "리스크를 인정하세요."
+      loveDetail: "완벽하지 않아도 괜찮습니다."
+      conditionDetail: "약한 부분을 보완하세요."
+
+  - id: T818
+    open:
+      oneLiner: "부드러움이 저항을 줄입니다."
+      summary: "물처럼 흘러가세요."
+    locked:
+      luckyTime: "18:00~18:30 (유동의 시간)"
+      helper: "순하게 대처하는 친구"
+      caution: "너무 부드러우면 무시당합니다."
+      moneyDetail: "시장에 순응하세요."
+      loveDetail: "부드럽게 다가가세요."
+      conditionDetail: "몸을 부드럽게 풀어주세요."
+
+  - id: T819
+    open:
+      oneLiner: "섬세함이 차이를 만듭니다."
+      summary: "세심한 배려가 감동을 줍니다."
+    locked:
+      luckyTime: "19:00~19:30 (섬세의 시간)"
+      helper: "세심한 관찰자"
+      caution: "너무 섬세하면 예민해집니다."
+      moneyDetail: "디테일이 수익을 좌우합니다."
+      loveDetail: "작은 것에 신경 쓰세요."
+      conditionDetail: "작은 변화도 주의 깊게 살피세요."
+
+  - id: T820
+    open:
+      oneLiner: "연약함 속에 아름다움이 있습니다."
+      summary: "깨지기 쉬운 것이 더 소중합니다."
+    locked:
+      luckyTime: "21:00~21:30 (연약의 시간)"
+      helper: "연약함을 이해하는 사람"
+      caution: "연약함을 핑계로 삼지 마세요."
+      moneyDetail: "취약한 부분을 보완하세요."
+      loveDetail: "서로의 연약함을 보듬으세요."
+      conditionDetail: "약한 부분을 강화하세요."
+
+  - id: T821
+    open:
+      oneLiner: "빠르게 움직입니다."
+      summary: "기회는 빠른 자에게 옵니다."
+    locked:
+      luckyTime: "09:00~09:30 (신속의 시간)"
+      helper: "빠른 결정을 돕는 조언자"
+      caution: "속도에 정확성을 희생하지 마세요."
+      moneyDetail: "빠른 판단이 수익을 냅니다."
+      loveDetail: "기회를 놓치지 마세요."
+      conditionDetail: "민첩성을 기르세요."
+
+  - id: T822
+    open:
+      oneLiner: "순발력이 빛납니다."
+      summary: "즉각적인 대응이 필요합니다."
+    locked:
+      luckyTime: "08:00~08:30 (순발의 시간)"
+      helper: "순발력 좋은 동료"
+      caution: "순발력에 지혜를 더하세요."
+      moneyDetail: "시장 변화에 빠르게 대응하세요."
+      loveDetail: "상대방의 신호를 빨리 알아채세요."
+      conditionDetail: "반응 속도를 높이세요."
+
+  - id: T823
+    open:
+      oneLiner: "속전속결로 처리합니다."
+      summary: "빠르게 끝내야 할 때입니다."
+    locked:
+      luckyTime: "07:00~07:30 (속결의 시간)"
+      helper: "일 처리가 빠른 파트너"
+      caution: "서둘러 실수하지 마세요."
+      moneyDetail: "빠른 거래가 유리합니다."
+      loveDetail: "결정을 미루지 마세요."
+      conditionDetail: "증상이 나타나면 바로 대처하세요."
+
+  - id: T824
+    open:
+      oneLiner: "스피드가 경쟁력입니다."
+      summary: "빠른 것이 살아남습니다."
+    locked:
+      luckyTime: "10:00~10:30 (스피드의 시간)"
+      helper: "빠른 실행력을 가진 동료"
+      caution: "속도전에 휩쓸리지 마세요."
+      moneyDetail: "빠른 회전이 수익을 높입니다."
+      loveDetail: "먼저 연락하세요."
+      conditionDetail: "빠른 회복이 중요합니다."
+
+  - id: T825
+    open:
+      oneLiner: "급류를 타고 갑니다."
+      summary: "빠른 흐름에 몸을 맡기세요."
+    locked:
+      luckyTime: "11:00~11:30 (급류의 시간)"
+      helper: "급류를 아는 항해사"
+      caution: "급류에 휩쓸리지 않게 주의하세요."
+      moneyDetail: "모멘텀을 타세요."
+      loveDetail: "감정의 흐름을 따르세요."
+      conditionDetail: "에너지 흐름을 느끼세요."
+
+  - id: T826
+    open:
+      oneLiner: "천천히 가면 더 멀리 갑니다."
+      summary: "느림의 가치를 알게 됩니다."
+    locked:
+      luckyTime: "17:00~17:30 (느림의 시간)"
+      helper: "느긋한 친구"
+      caution: "너무 느리면 기회를 놓칩니다."
+      moneyDetail: "장기 투자를 하세요."
+      loveDetail: "서두르지 마세요."
+      conditionDetail: "충분히 쉬세요."
+
+  - id: T827
+    open:
+      oneLiner: "멈춤이 답일 때가 있습니다."
+      summary: "가만히 있는 것도 행동입니다."
+    locked:
+      luckyTime: "22:00~22:30 (정지의 시간)"
+      helper: "기다릴 줄 아는 멘토"
+      caution: "멈춤이 회피가 되지 않게 하세요."
+      moneyDetail: "관망이 최선입니다."
+      loveDetail: "기다려 주세요."
+      conditionDetail: "휴식이 필요합니다."
+
+  - id: T828
+    open:
+      oneLiner: "급할수록 돌아가세요."
+      summary: "우회가 결국 빠른 길입니다."
+    locked:
+      luckyTime: "15:00~15:30 (우회의 시간)"
+      helper: "다른 길을 아는 안내자"
+      caution: "우회가 도피가 되지 않게 하세요."
+      moneyDetail: "직접 투자 대신 펀드를 고려하세요."
+      loveDetail: "직접 말하기 어려우면 편지를 쓰세요."
+      conditionDetail: "증상 완화보다 원인 치료를 하세요."
+
+  - id: T829
+    open:
+      oneLiner: "여유가 품격입니다."
+      summary: "급하지 않아야 실수를 줄입니다."
+    locked:
+      luckyTime: "16:00~16:30 (여유의 시간)"
+      helper: "여유로운 어른"
+      caution: "여유가 나태가 되지 않게 하세요."
+      moneyDetail: "조급함을 버리세요."
+      loveDetail: "관계에 여유를 주세요."
+      conditionDetail: "스트레스를 줄이세요."
+
+  - id: T830
+    open:
+      oneLiner: "점진적 발전이 안전합니다."
+      summary: "한 걸음씩 나아가세요."
+    locked:
+      luckyTime: "14:00~14:30 (점진의 시간)"
+      helper: "꾸준한 동료"
+      caution: "너무 느리면 도태됩니다."
+      moneyDetail: "적립식 투자를 하세요."
+      loveDetail: "관계를 천천히 발전시키세요."
+      conditionDetail: "점진적으로 운동량을 늘리세요."
+
+  - id: T831
+    open:
+      oneLiner: "최고의 상태에 도달합니다."
+      summary: "정점에서 빛납니다."
+    locked:
+      luckyTime: "12:00~12:30 (최고의 시간)"
+      helper: "정상에 함께 오를 동료"
+      caution: "정점에서 오래 머물 수 없습니다."
+      moneyDetail: "최고 수익을 실현하세요."
+      loveDetail: "사랑의 정점을 즐기세요."
+      conditionDetail: "최상의 컨디션을 유지하세요."
+
+  - id: T832
+    open:
+      oneLiner: "정상에서 세상을 봅니다."
+      summary: "높은 곳에서 보면 다 보입니다."
+    locked:
+      luckyTime: "11:00~11:30 (정상의 시간)"
+      helper: "높은 곳을 아는 선배"
+      caution: "정상에서 교만해지지 마세요."
+      moneyDetail: "시장 전체를 조망하세요."
+      loveDetail: "관계의 전체 그림을 보세요."
+      conditionDetail: "전체적인 건강을 점검하세요."
+
+  - id: T833
+    open:
+      oneLiner: "하강 준비를 합니다."
+      summary: "내려가는 것도 기술입니다."
+    locked:
+      luckyTime: "15:00~15:30 (하강의 시간)"
+      helper: "하산을 도울 가이드"
+      caution: "하강을 두려워하지 마세요."
+      moneyDetail: "수익 실현을 시작하세요."
+      loveDetail: "평온한 관계로 전환하세요."
+      conditionDetail: "무리하지 마세요."
+
+  - id: T834
+    open:
+      oneLiner: "완만한 내리막을 걷습니다."
+      summary: "급경사보다 완경사가 안전합니다."
+    locked:
+      luckyTime: "16:00~16:30 (완만의 시간)"
+      helper: "안전한 길을 아는 안내자"
+      caution: "완만해도 방심하면 안 됩니다."
+      moneyDetail: "점진적으로 정리하세요."
+      loveDetail: "부드럽게 변화하세요."
+      conditionDetail: "서서히 휴식을 취하세요."
+
+  - id: T835
+    open:
+      oneLiner: "저점 근처입니다."
+      summary: "바닥이 가까워졌습니다."
+    locked:
+      luckyTime: "05:00~05:30 (저점의 시간)"
+      helper: "저점을 경험한 선배"
+      caution: "저점이라고 확신하지 마세요."
+      moneyDetail: "분할 매수를 고려하세요."
+      loveDetail: "관계의 바닥을 지나고 있습니다."
+      conditionDetail: "최악은 거의 지났습니다."
+
+  - id: T836
+    open:
+      oneLiner: "단단한 결심이 필요합니다."
+      summary: "굳은 의지만이 길을 엽니다."
+    locked:
+      luckyTime: "07:00~07:30 (결심의 시간)"
+      helper: "함께 결심할 동지"
+      caution: "결심만으로는 부족합니다."
+      moneyDetail: "투자 원칙을 지키세요."
+      loveDetail: "사랑을 지키겠다고 결심하세요."
+      conditionDetail: "건강 목표를 세우세요."
+
+  - id: T837
+    open:
+      oneLiner: "강한 집중력을 발휘합니다."
+      summary: "한 가지에 몰입합니다."
+    locked:
+      luckyTime: "09:00~09:30 (집중의 시간)"
+      helper: "집중력 좋은 파트너"
+      caution: "집중이 집착이 되지 않게 하세요."
+      moneyDetail: "핵심 투자에 집중하세요."
+      loveDetail: "상대방에게 집중하세요."
+      conditionDetail: "하나의 운동에 집중하세요."
+
+  - id: T838
+    open:
+      oneLiner: "내구력이 시험받습니다."
+      summary: "오래 버티는 것이 승리입니다."
+    locked:
+      luckyTime: "14:00~14:30 (내구의 시간)"
+      helper: "오래 함께할 파트너"
+      caution: "무리하게 버티면 망가집니다."
+      moneyDetail: "장기 보유 전략을 유지하세요."
+      loveDetail: "관계를 오래 유지하세요."
+      conditionDetail: "지구력을 기르세요."
+
+  - id: T839
+    open:
+      oneLiner: "탄력적으로 대응합니다."
+      summary: "밀렸다가 튀어오릅니다."
+    locked:
+      luckyTime: "10:00~10:30 (탄력의 시간)"
+      helper: "탄력적 사고를 가진 멘토"
+      caution: "탄력에도 한계가 있습니다."
+      moneyDetail: "반등을 노리세요."
+      loveDetail: "다시 가까워질 수 있습니다."
+      conditionDetail: "회복력을 믿으세요."
+
+  - id: T840
+    open:
+      oneLiner: "적응력을 발휘합니다."
+      summary: "환경에 맞춰 변화합니다."
+    locked:
+      luckyTime: "11:00~11:30 (적응의 시간)"
+      helper: "적응력 좋은 동료"
+      caution: "적응이 변질이 되지 않게 하세요."
+      moneyDetail: "시장 변화에 적응하세요."
+      loveDetail: "상대방에게 맞춰가세요."
+      conditionDetail: "새로운 환경에 적응하세요."
+
+  - id: T841
+    open:
+      oneLiner: "순간을 포착합니다."
+      summary: "찰나의 기회를 잡습니다."
+    locked:
+      luckyTime: "08:00~08:30 (포착의 시간)"
+      helper: "순간을 보는 눈이 있는 사람"
+      caution: "모든 순간을 잡으려 하지 마세요."
+      moneyDetail: "타이밍을 잡으세요."
+      loveDetail: "고백의 순간을 놓치지 마세요."
+      conditionDetail: "몸의 신호를 포착하세요."
+
+  - id: T842
+    open:
+      oneLiner: "전광석화처럼 움직입니다."
+      summary: "번갯불처럼 빠르게 행동합니다."
+    locked:
+      luckyTime: "07:00~07:30 (번개의 시간)"
+      helper: "빠른 행동력을 가진 동료"
+      caution: "성급함이 실수를 부릅니다."
+      moneyDetail: "빠른 매매가 유리합니다."
+      loveDetail: "망설이지 말고 행동하세요."
+      conditionDetail: "빠른 대처가 중요합니다."
+
+  - id: T843
+    open:
+      oneLiner: "반사신경이 작동합니다."
+      summary: "자동으로 최선의 반응을 합니다."
+    locked:
+      luckyTime: "06:00~06:30 (반사의 시간)"
+      helper: "반응이 빠른 파트너"
+      caution: "반사적 반응이 항상 옳지는 않습니다."
+      moneyDetail: "본능적 판단을 믿으세요."
+      loveDetail: "직감을 따르세요."
+      conditionDetail: "몸이 알아서 반응합니다."
+
+  - id: T844
+    open:
+      oneLiner: "민첩하게 피합니다."
+      summary: "위험을 재빨리 피합니다."
+    locked:
+      luckyTime: "09:00~09:30 (회피의 시간)"
+      helper: "위험을 감지하는 동료"
+      caution: "도망만이 능사는 아닙니다."
+      moneyDetail: "손절로 손실을 줄이세요."
+      loveDetail: "불필요한 갈등을 피하세요."
+      conditionDetail: "유해 환경을 피하세요."
+
+  - id: T845
+    open:
+      oneLiner: "급가속합니다."
+      summary: "속도를 높여 질주합니다."
+    locked:
+      luckyTime: "10:00~10:30 (가속의 시간)"
+      helper: "함께 달릴 동료"
+      caution: "급가속은 에너지를 많이 씁니다."
+      moneyDetail: "공격적 투자로 전환하세요."
+      loveDetail: "관계를 빠르게 진전시키세요."
+      conditionDetail: "인터벌 트레이닝을 해보세요."
+
+  - id: T846
+    open:
+      oneLiner: "완급 조절을 합니다."
+      summary: "빠르고 느림을 조절합니다."
+    locked:
+      luckyTime: "15:00~15:30 (조절의 시간)"
+      helper: "페이스 조절을 돕는 코치"
+      caution: "일정한 속도도 필요합니다."
+      moneyDetail: "투자 비율을 조절하세요."
+      loveDetail: "관계의 속도를 조절하세요."
+      conditionDetail: "운동 강도를 조절하세요."
+
+  - id: T847
+    open:
+      oneLiner: "끈기 있게 지속합니다."
+      summary: "멈추지 않고 계속 갑니다."
+    locked:
+      luckyTime: "13:00~13:30 (지속의 시간)"
+      helper: "끝까지 함께할 파트너"
+      caution: "무의미한 지속은 시간 낭비입니다."
+      moneyDetail: "꾸준히 투자하세요."
+      loveDetail: "관계를 유지하세요."
+      conditionDetail: "규칙적으로 운동하세요."
+
+  - id: T848
+    open:
+      oneLiner: "힘과 속도의 균형을 맞춥니다."
+      summary: "파워와 스피드를 조화시킵니다."
+    locked:
+      luckyTime: "11:00~11:30 (균형의 시간)"
+      helper: "밸런스를 아는 코치"
+      caution: "한쪽에 치우치지 마세요."
+      moneyDetail: "공격과 방어의 균형을 맞추세요."
+      loveDetail: "밀고 당기기의 균형을 찾으세요."
+      conditionDetail: "근력과 유산소를 균형 있게 하세요."
+
+  - id: T849
+    open:
+      oneLiner: "지구력이 승패를 가릅니다."
+      summary: "끝까지 버티는 자가 이깁니다."
+    locked:
+      luckyTime: "17:00~17:30 (지구력의 시간)"
+      helper: "오래 함께할 동지"
+      caution: "지구력에도 한계가 있습니다."
+      moneyDetail: "장기전으로 임하세요."
+      loveDetail: "오래 함께할 준비를 하세요."
+      conditionDetail: "지구력을 기르세요."
+
+  - id: T850
+    open:
+      oneLiner: "850의 봉우리, 67%를 지났습니다."
+      summary: "3분의 2를 넘어 정상이 보입니다."
+    locked:
+      luckyTime: "12:00~12:30 (봉우리의 시간)"
+      helper: "함께 오르는 등반대"
+      caution: "마지막 33%가 가장 험합니다."
+      moneyDetail: "67%의 목표를 달성했습니다."
+      loveDetail: "함께 온 길을 돌아보세요."
+      conditionDetail: "정상이 가까워집니다. 힘내세요."
