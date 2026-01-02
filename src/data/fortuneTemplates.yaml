@@ -4816,3 +4816,608 @@ templates:
       moneyDetail: "투자 여정을 점검하세요."
       loveDetail: "함께 온 시간을 축하하세요."
       conditionDetail: "꾸준함이 건강의 비결입니다."
+
+  # T401-T410: 여행과 탐험
+  - id: T401
+    open:
+      oneLiner: "출발처럼 새로운 여정이 시작됩니다."
+      summary: "출발의 에너지가 흐릅니다. 첫 발을 내딛으세요."
+    locked:
+      luckyTime: "07:00~07:30 (출발의 시간)"
+      helper: "함께 떠나는 사람"
+      caution: "준비 없이 떠나면 고생합니다."
+      moneyDetail: "새로운 투자 여정을 시작하세요."
+      loveDetail: "새로운 시작을 함께하세요."
+      conditionDetail: "새 루틴을 시작하기 좋은 날입니다."
+
+  - id: T402
+    open:
+      oneLiner: "지도처럼 방향을 잡으면 길이 보입니다."
+      summary: "지도의 에너지가 흐릅니다. 계획을 세우세요."
+    locked:
+      luckyTime: "09:00~09:30 (계획의 시간)"
+      helper: "길을 아는 사람"
+      caution: "지도만 보면 풍경을 놓칩니다."
+      moneyDetail: "투자 로드맵을 그리세요."
+      loveDetail: "관계의 방향을 정하세요."
+      conditionDetail: "건강 계획을 세우세요."
+
+  - id: T403
+    open:
+      oneLiner: "나침반처럼 흔들려도 북쪽을 가리킵니다."
+      summary: "나침반의 에너지가 흐릅니다. 방향을 잃지 마세요."
+    locked:
+      luckyTime: "10:00~10:30 (방향의 시간)"
+      helper: "방향을 잡아주는 사람"
+      caution: "자기장이 강하면 나침반도 흔들립니다."
+      moneyDetail: "투자 원칙을 지키세요."
+      loveDetail: "진심의 방향을 따르세요."
+      conditionDetail: "건강의 기본 방향을 유지하세요."
+
+  - id: T404
+    open:
+      oneLiner: "탐험처럼 미지의 영역에 도전하세요."
+      summary: "탐험의 에너지가 흐릅니다. 새로운 것을 발견하세요."
+    locked:
+      luckyTime: "11:00~11:30 (탐험의 시간)"
+      helper: "도전정신이 강한 사람"
+      caution: "무모한 탐험은 위험합니다."
+      moneyDetail: "새로운 투자처를 탐색하세요."
+      loveDetail: "상대의 새로운 면을 발견하세요."
+      conditionDetail: "새로운 운동에 도전하세요."
+
+  - id: T405
+    open:
+      oneLiner: "휴게소처럼 잠시 쉬어가도 됩니다."
+      summary: "휴식의 에너지가 흐릅니다. 쉬어가세요."
+    locked:
+      luckyTime: "15:00~15:30 (휴식의 시간)"
+      helper: "쉬어갈 줄 아는 사람"
+      caution: "너무 오래 쉬면 게을러집니다."
+      moneyDetail: "투자도 쉬어갈 때가 있습니다."
+      loveDetail: "편안한 시간을 함께하세요."
+      conditionDetail: "충분한 휴식이 다음을 위한 준비입니다."
+
+  - id: T406
+    open:
+      oneLiner: "정상처럼 목표에 도달하는 기쁨이 옵니다."
+      summary: "정상의 에너지가 흐릅니다. 성취의 시간입니다."
+    locked:
+      luckyTime: "12:00~12:30 (정상의 시간)"
+      helper: "함께 정상에 선 사람"
+      caution: "정상에서 내려오는 것도 중요합니다."
+      moneyDetail: "목표 수익에 도달합니다."
+      loveDetail: "관계의 정점을 맞이합니다."
+      conditionDetail: "최상의 컨디션을 즐기세요."
+
+  - id: T407
+    open:
+      oneLiner: "하산처럼 안전하게 내려오는 것도 실력입니다."
+      summary: "하산의 에너지가 흐릅니다. 안전하게 마무리하세요."
+    locked:
+      luckyTime: "16:00~16:30 (하산의 시간)"
+      helper: "안전을 챙기는 사람"
+      caution: "내려갈 때 사고가 많습니다."
+      moneyDetail: "수익 실현 후 안전하게 정리하세요."
+      loveDetail: "흥분이 가라앉으면 현실을 보세요."
+      conditionDetail: "쿨다운으로 마무리하세요."
+
+  - id: T408
+    open:
+      oneLiner: "오아시스처럼 사막 속 희망이 보입니다."
+      summary: "오아시스의 에너지가 흐릅니다. 희망이 있습니다."
+    locked:
+      luckyTime: "14:00~14:30 (희망의 시간)"
+      helper: "희망을 주는 사람"
+      caution: "신기루인지 확인하세요."
+      moneyDetail: "어려운 시기에 기회가 보입니다."
+      loveDetail: "메마른 마음에 오아시스가 옵니다."
+      conditionDetail: "수분 보충이 생명입니다."
+
+  - id: T409
+    open:
+      oneLiner: "귀환처럼 돌아올 곳이 있다는 것이 행복입니다."
+      summary: "귀환의 에너지가 흐릅니다. 집으로 돌아가세요."
+    locked:
+      luckyTime: "18:00~18:30 (귀환의 시간)"
+      helper: "기다려주는 사람"
+      caution: "돌아갈 곳을 잃지 마세요."
+      moneyDetail: "원금 회복이 최우선입니다."
+      loveDetail: "돌아갈 품이 있다는 것이 사랑입니다."
+      conditionDetail: "본래의 건강 상태로 회복하세요."
+
+  - id: T410
+    open:
+      oneLiner: "추억처럼 여정의 경험이 자산이 됩니다."
+      summary: "추억의 에너지가 흐릅니다. 경험이 쌓입니다."
+    locked:
+      luckyTime: "21:00~21:30 (추억의 시간)"
+      helper: "추억을 나누는 사람"
+      caution: "추억에만 살면 현재를 놓칩니다."
+      moneyDetail: "경험이 투자 실력을 높입니다."
+      loveDetail: "함께한 추억이 관계를 단단하게 합니다."
+      conditionDetail: "경험이 건강 관리 능력을 높입니다."
+
+  # T411-T420: 직업과 역할
+  - id: T411
+    open:
+      oneLiner: "선생처럼 가르침이 배움이 됩니다."
+      summary: "선생의 에너지가 흐릅니다. 가르치며 배우세요."
+    locked:
+      luckyTime: "09:00~09:30 (가르침의 시간)"
+      helper: "배움을 나누는 사람"
+      caution: "가르치려만 하면 배울 수 없습니다."
+      moneyDetail: "지식 공유가 기회를 만듭니다."
+      loveDetail: "서로 가르치고 배우는 관계가 좋습니다."
+      conditionDetail: "건강 지식을 나누세요."
+
+  - id: T412
+    open:
+      oneLiner: "의사처럼 진단이 치료의 시작입니다."
+      summary: "의사의 에너지가 흐릅니다. 문제를 정확히 파악하세요."
+    locked:
+      luckyTime: "10:00~10:30 (진단의 시간)"
+      helper: "문제를 정확히 짚는 사람"
+      caution: "오진은 치료를 그르칩니다."
+      moneyDetail: "투자 문제를 정확히 진단하세요."
+      loveDetail: "관계 문제의 원인을 찾으세요."
+      conditionDetail: "정기 검진이 중요합니다."
+
+  - id: T413
+    open:
+      oneLiner: "변호사처럼 논리적 설득이 승리합니다."
+      summary: "변호사의 에너지가 흐릅니다. 논리로 승부하세요."
+    locked:
+      luckyTime: "14:00~14:30 (논쟁의 시간)"
+      helper: "논리적인 사람"
+      caution: "감정 없는 논리는 차갑습니다."
+      moneyDetail: "논리적 투자 판단이 필요합니다."
+      loveDetail: "설득보다 이해가 먼저입니다."
+      conditionDetail: "스트레스 관리가 중요합니다."
+
+  - id: T414
+    open:
+      oneLiner: "건축가처럼 설계가 완성을 결정합니다."
+      summary: "건축가의 에너지가 흐릅니다. 설계를 잘하세요."
+    locked:
+      luckyTime: "08:00~08:30 (설계의 시간)"
+      helper: "계획을 잘 세우는 사람"
+      caution: "설계 없이 짓으면 무너집니다."
+      moneyDetail: "투자 구조를 설계하세요."
+      loveDetail: "관계의 청사진을 그리세요."
+      conditionDetail: "건강 계획을 체계적으로 세우세요."
+
+  - id: T415
+    open:
+      oneLiner: "요리사처럼 재료의 조화가 맛을 만듭니다."
+      summary: "요리사의 에너지가 흐릅니다. 조화를 이루세요."
+    locked:
+      luckyTime: "12:00~12:30 (조리의 시간)"
+      helper: "조화를 아는 사람"
+      caution: "재료가 좋아도 손이 안 맞으면 맛이 없습니다."
+      moneyDetail: "포트폴리오의 조화가 중요합니다."
+      loveDetail: "서로 다른 재료가 조화를 이루세요."
+      conditionDetail: "균형 잡힌 영양 섭취가 중요합니다."
+
+  - id: T416
+    open:
+      oneLiner: "예술가처럼 창의적 표현이 빛납니다."
+      summary: "예술가의 에너지가 흐릅니다. 창의력을 발휘하세요."
+    locked:
+      luckyTime: "22:00~22:30 (창작의 시간)"
+      helper: "창의적인 사람"
+      caution: "예술만으로는 밥을 못 먹습니다."
+      moneyDetail: "창의적 아이디어가 수익을 냅니다."
+      loveDetail: "특별한 방식으로 사랑을 표현하세요."
+      conditionDetail: "창의적 활동이 정신 건강을 높입니다."
+
+  - id: T417
+    open:
+      oneLiner: "운동선수처럼 훈련이 실력을 만듭니다."
+      summary: "선수의 에너지가 흐릅니다. 꾸준히 훈련하세요."
+    locked:
+      luckyTime: "06:00~06:30 (훈련의 시간)"
+      helper: "함께 훈련하는 사람"
+      caution: "과훈련은 부상을 부릅니다."
+      moneyDetail: "투자 실력도 훈련으로 늡니다."
+      loveDetail: "관계도 연습이 필요합니다."
+      conditionDetail: "꾸준한 운동이 체력을 만듭니다."
+
+  - id: T418
+    open:
+      oneLiner: "농부처럼 심고 기다리면 수확이 옵니다."
+      summary: "농부의 에너지가 흐릅니다. 인내의 시간입니다."
+    locked:
+      luckyTime: "05:00~05:30 (파종의 시간)"
+      helper: "기다릴 줄 아는 사람"
+      caution: "씨 뿌리지 않으면 거둘 수 없습니다."
+      moneyDetail: "장기 투자가 큰 수확을 냅니다."
+      loveDetail: "사랑도 정성껏 가꿔야 합니다."
+      conditionDetail: "좋은 습관의 씨앗을 심으세요."
+
+  - id: T419
+    open:
+      oneLiner: "과학자처럼 가설을 세우고 검증하세요."
+      summary: "과학자의 에너지가 흐릅니다. 실험 정신이 필요합니다."
+    locked:
+      luckyTime: "11:00~11:30 (실험의 시간)"
+      helper: "분석적인 사람"
+      caution: "가설에 집착하면 진실을 놓칩니다."
+      moneyDetail: "데이터로 투자 가설을 검증하세요."
+      loveDetail: "관계에도 시행착오가 필요합니다."
+      conditionDetail: "건강 가설을 직접 테스트하세요."
+
+  - id: T420
+    open:
+      oneLiner: "지휘자처럼 전체를 조율하는 힘이 필요합니다."
+      summary: "지휘자의 에너지가 흐릅니다. 조율의 시간입니다."
+    locked:
+      luckyTime: "19:00~19:30 (조율의 시간)"
+      helper: "조율을 잘하는 사람"
+      caution: "혼자 연주하면 지휘가 필요 없습니다."
+      moneyDetail: "다양한 자산을 조율하세요."
+      loveDetail: "관계의 하모니를 만드세요."
+      conditionDetail: "몸과 마음의 조화를 이루세요."
+
+  # T421-T430: 감정과 기분
+  - id: T421
+    open:
+      oneLiner: "기쁨처럼 행복이 넘쳐흐릅니다."
+      summary: "기쁨의 에너지가 흐릅니다. 행복한 하루입니다."
+    locked:
+      luckyTime: "10:00~10:30 (기쁨의 시간)"
+      helper: "함께 기뻐하는 사람"
+      caution: "기쁨에 취해 현실을 잊지 마세요."
+      moneyDetail: "수익의 기쁨을 누리세요."
+      loveDetail: "사랑의 기쁨이 넘칩니다."
+      conditionDetail: "기쁜 마음이 면역력을 높입니다."
+
+  - id: T422
+    open:
+      oneLiner: "슬픔처럼 눈물도 치유의 과정입니다."
+      summary: "슬픔의 에너지가 흐릅니다. 울어도 됩니다."
+    locked:
+      luckyTime: "23:00~23:30 (치유의 시간)"
+      helper: "함께 슬퍼해주는 사람"
+      caution: "슬픔에 오래 머물면 빠져나오기 힘듭니다."
+      moneyDetail: "손실을 인정하고 앞으로 나아가세요."
+      loveDetail: "슬픔을 나누면 반이 됩니다."
+      conditionDetail: "감정 해소가 건강에 좋습니다."
+
+  - id: T423
+    open:
+      oneLiner: "분노처럼 에너지를 올바르게 써야 합니다."
+      summary: "분노의 에너지가 흐릅니다. 에너지를 전환하세요."
+    locked:
+      luckyTime: "14:00~14:30 (전환의 시간)"
+      helper: "감정을 다스리는 사람"
+      caution: "분노는 독이 됩니다."
+      moneyDetail: "감정적 투자 결정을 피하세요."
+      loveDetail: "화를 삭이고 대화하세요."
+      conditionDetail: "분노는 혈압을 올립니다."
+
+  - id: T424
+    open:
+      oneLiner: "불안처럼 걱정은 준비를 부릅니다."
+      summary: "불안의 에너지가 흐릅니다. 준비로 불안을 줄이세요."
+    locked:
+      luckyTime: "08:00~08:30 (준비의 시간)"
+      helper: "안심시켜주는 사람"
+      caution: "과도한 불안은 마비를 일으킵니다."
+      moneyDetail: "리스크 대비로 불안을 줄이세요."
+      loveDetail: "솔직한 대화가 불안을 줄입니다."
+      conditionDetail: "불안은 수면을 방해합니다."
+
+  - id: T425
+    open:
+      oneLiner: "평온처럼 고요한 마음이 지혜를 줍니다."
+      summary: "평온의 에너지가 흐릅니다. 마음을 비우세요."
+    locked:
+      luckyTime: "06:00~06:30 (평온의 시간)"
+      helper: "평온한 사람"
+      caution: "무관심과 평온은 다릅니다."
+      moneyDetail: "냉정한 판단이 가능합니다."
+      loveDetail: "평온한 관계가 오래갑니다."
+      conditionDetail: "명상이 마음을 평온하게 합니다."
+
+  - id: T426
+    open:
+      oneLiner: "설렘처럼 두근거림이 시작을 알립니다."
+      summary: "설렘의 에너지가 흐릅니다. 새로운 시작입니다."
+    locked:
+      luckyTime: "09:00~09:30 (설렘의 시간)"
+      helper: "설레게 하는 사람"
+      caution: "설렘만으로 관계가 유지되지 않습니다."
+      moneyDetail: "새 투자에 대한 기대가 있습니다."
+      loveDetail: "설레는 만남이 기다립니다."
+      conditionDetail: "두근거림이 활력을 줍니다."
+
+  - id: T427
+    open:
+      oneLiner: "지루함처럼 변화가 필요한 신호입니다."
+      summary: "지루함의 에너지가 흐릅니다. 변화를 시도하세요."
+    locked:
+      luckyTime: "15:00~15:30 (변화의 시간)"
+      helper: "자극을 주는 사람"
+      caution: "변화를 위한 변화는 혼란을 줍니다."
+      moneyDetail: "포트폴리오 리밸런싱이 필요합니다."
+      loveDetail: "관계에 새로운 자극이 필요합니다."
+      conditionDetail: "새로운 루틴으로 활력을 찾으세요."
+
+  - id: T428
+    open:
+      oneLiner: "그리움처럼 부재가 가치를 알게 합니다."
+      summary: "그리움의 에너지가 흐릅니다. 소중함을 느끼세요."
+    locked:
+      luckyTime: "20:00~20:30 (그리움의 시간)"
+      helper: "마음을 나누는 사람"
+      caution: "그리움에 빠지면 현재를 놓칩니다."
+      moneyDetail: "잃은 것에서 교훈을 얻으세요."
+      loveDetail: "떨어져 있으면 그리워집니다."
+      conditionDetail: "잃기 전에 건강을 챙기세요."
+
+  - id: T429
+    open:
+      oneLiner: "감사처럼 가진 것을 세면 풍요해집니다."
+      summary: "감사의 에너지가 흐릅니다. 감사를 세어보세요."
+    locked:
+      luckyTime: "07:00~07:30 (감사의 시간)"
+      helper: "감사를 아는 사람"
+      caution: "당연하게 여기면 잃습니다."
+      moneyDetail: "있는 것에 감사하면 더 옵니다."
+      loveDetail: "감사 표현이 관계를 좋게 합니다."
+      conditionDetail: "감사하는 마음이 건강을 지킵니다."
+
+  - id: T430
+    open:
+      oneLiner: "희망처럼 내일을 기대하면 오늘이 견딥니다."
+      summary: "희망의 에너지가 흐릅니다. 내일을 기대하세요."
+    locked:
+      luckyTime: "05:00~05:30 (희망의 시간)"
+      helper: "희망을 주는 사람"
+      caution: "희망만으로는 현실이 바뀌지 않습니다."
+      moneyDetail: "장기적 비전이 희망을 줍니다."
+      loveDetail: "함께할 미래를 그리세요."
+      conditionDetail: "희망이 치유의 시작입니다."
+
+  # T431-T440: 신체와 건강
+  - id: T431
+    open:
+      oneLiner: "심장처럼 중심이 뛰어야 전체가 삽니다."
+      summary: "심장의 에너지가 흐릅니다. 핵심을 지키세요."
+    locked:
+      luckyTime: "08:00~08:30 (심장의 시간)"
+      helper: "핵심을 아는 사람"
+      caution: "심장에 무리가 가면 전체가 멈춥니다."
+      moneyDetail: "핵심 자산을 지키세요."
+      loveDetail: "진심이 심장입니다."
+      conditionDetail: "심장 건강이 최우선입니다."
+
+  - id: T432
+    open:
+      oneLiner: "뇌처럼 생각이 행동을 결정합니다."
+      summary: "뇌의 에너지가 흐릅니다. 생각을 정리하세요."
+    locked:
+      luckyTime: "10:00~10:30 (사고의 시간)"
+      helper: "명석한 사람"
+      caution: "생각만 하면 행동이 없습니다."
+      moneyDetail: "전략적 사고가 투자를 이끕니다."
+      loveDetail: "머리와 가슴의 균형이 필요합니다."
+      conditionDetail: "두뇌 활동을 활발하게 하세요."
+
+  - id: T433
+    open:
+      oneLiner: "폐처럼 호흡이 생명을 유지합니다."
+      summary: "폐의 에너지가 흐릅니다. 깊이 호흡하세요."
+    locked:
+      luckyTime: "06:00~06:30 (호흡의 시간)"
+      helper: "함께 숨 쉬는 사람"
+      caution: "숨이 막히면 모든 것이 멈춥니다."
+      moneyDetail: "현금 흐름이 숨입니다."
+      loveDetail: "숨 막히지 않는 관계가 좋습니다."
+      conditionDetail: "깊은 호흡이 스트레스를 줄입니다."
+
+  - id: T434
+    open:
+      oneLiner: "간처럼 해독이 건강을 지킵니다."
+      summary: "간의 에너지가 흐릅니다. 정화가 필요합니다."
+    locked:
+      luckyTime: "01:00~01:30 (해독의 시간)"
+      helper: "정화를 돕는 사람"
+      caution: "독소가 쌓이면 기능이 떨어집니다."
+      moneyDetail: "불량 자산을 정리하세요."
+      loveDetail: "관계의 독소를 해독하세요."
+      conditionDetail: "간 건강이 전체 건강의 기초입니다."
+
+  - id: T435
+    open:
+      oneLiner: "위장처럼 소화해야 영양이 됩니다."
+      summary: "위장의 에너지가 흐릅니다. 소화의 시간입니다."
+    locked:
+      luckyTime: "12:00~12:30 (소화의 시간)"
+      helper: "소화를 돕는 사람"
+      caution: "과식은 소화불량을 일으킵니다."
+      moneyDetail: "정보를 소화하고 투자하세요."
+      loveDetail: "상대를 이해하고 받아들이세요."
+      conditionDetail: "소화가 잘 되어야 영양 흡수가 됩니다."
+
+  - id: T436
+    open:
+      oneLiner: "근육처럼 쓰면 강해지고 안 쓰면 약해집니다."
+      summary: "근육의 에너지가 흐릅니다. 사용해야 강해집니다."
+    locked:
+      luckyTime: "07:00~07:30 (훈련의 시간)"
+      helper: "함께 훈련하는 사람"
+      caution: "과훈련은 부상을 부릅니다."
+      moneyDetail: "투자 실력도 연습으로 늡니다."
+      loveDetail: "사랑도 표현해야 강해집니다."
+      conditionDetail: "근력 운동이 기초 체력을 만듭니다."
+
+  - id: T437
+    open:
+      oneLiner: "뼈처럼 기본이 튼튼해야 전체가 섭니다."
+      summary: "뼈의 에너지가 흐릅니다. 기본을 다지세요."
+    locked:
+      luckyTime: "09:00~09:30 (기초의 시간)"
+      helper: "기본기가 탄탄한 사람"
+      caution: "뼈가 약하면 쉽게 부러집니다."
+      moneyDetail: "투자 기본기를 다지세요."
+      loveDetail: "관계의 뼈대를 튼튼히 하세요."
+      conditionDetail: "칼슘 섭취와 뼈 건강을 챙기세요."
+
+  - id: T438
+    open:
+      oneLiner: "피부처럼 보호막이 외부를 막습니다."
+      summary: "피부의 에너지가 흐릅니다. 보호막을 세우세요."
+    locked:
+      luckyTime: "21:00~21:30 (보호의 시간)"
+      helper: "보호해주는 사람"
+      caution: "보호막이 무너지면 감염됩니다."
+      moneyDetail: "리스크 헷지로 보호막을 치세요."
+      loveDetail: "적당한 경계가 관계를 지킵니다."
+      conditionDetail: "피부 관리가 건강 관리입니다."
+
+  - id: T439
+    open:
+      oneLiner: "신경처럼 연결이 반응을 만듭니다."
+      summary: "신경의 에너지가 흐릅니다. 연결을 강화하세요."
+    locked:
+      luckyTime: "11:00~11:30 (연결의 시간)"
+      helper: "연결을 만드는 사람"
+      caution: "과민 반응은 에너지를 소모합니다."
+      moneyDetail: "정보 네트워크를 강화하세요."
+      loveDetail: "소통 채널을 열어두세요."
+      conditionDetail: "신경을 안정시키세요."
+
+  - id: T440
+    open:
+      oneLiner: "면역처럼 방어력이 건강을 지킵니다."
+      summary: "면역의 에너지가 흐릅니다. 방어력을 높이세요."
+    locked:
+      luckyTime: "22:00~22:30 (방어의 시간)"
+      helper: "건강을 챙기는 사람"
+      caution: "면역력이 떨어지면 쉽게 무너집니다."
+      moneyDetail: "비상 자금이 면역력입니다."
+      loveDetail: "관계의 신뢰가 면역력입니다."
+      conditionDetail: "면역력 강화가 최고의 예방입니다."
+
+  # T441-T450: 관계와 유대
+  - id: T441
+    open:
+      oneLiner: "가족처럼 무조건적인 유대가 힘이 됩니다."
+      summary: "가족의 에너지가 흐릅니다. 가까운 사람을 챙기세요."
+    locked:
+      luckyTime: "19:00~19:30 (가족의 시간)"
+      helper: "가족 같은 사람"
+      caution: "가까운 사람에게 소홀하기 쉽습니다."
+      moneyDetail: "가족의 재정을 함께 계획하세요."
+      loveDetail: "가족 같은 편안함이 사랑입니다."
+      conditionDetail: "가족의 건강도 내 건강입니다."
+
+  - id: T442
+    open:
+      oneLiner: "친구처럼 함께해서 외롭지 않습니다."
+      summary: "친구의 에너지가 흐릅니다. 우정을 나누세요."
+    locked:
+      luckyTime: "20:00~20:30 (우정의 시간)"
+      helper: "진정한 친구"
+      caution: "친구에게도 예의가 필요합니다."
+      moneyDetail: "친구와 돈 거래는 신중하게."
+      loveDetail: "연인이기 전에 친구가 되세요."
+      conditionDetail: "함께 운동하는 친구가 좋습니다."
+
+  - id: T443
+    open:
+      oneLiner: "멘토처럼 이끌어주는 사람이 필요합니다."
+      summary: "멘토의 에너지가 흐릅니다. 조언을 구하세요."
+    locked:
+      luckyTime: "10:00~10:30 (조언의 시간)"
+      helper: "경험 많은 멘토"
+      caution: "맹목적으로 따르지 마세요."
+      moneyDetail: "투자 멘토를 찾으세요."
+      loveDetail: "연애 선배의 조언을 들으세요."
+      conditionDetail: "건강 전문가의 조언을 따르세요."
+
+  - id: T444
+    open:
+      oneLiner: "파트너처럼 함께해서 더 강해집니다."
+      summary: "파트너의 에너지가 흐릅니다. 협력의 시간입니다."
+    locked:
+      luckyTime: "14:00~14:30 (협력의 시간)"
+      helper: "든든한 파트너"
+      caution: "의존과 협력은 다릅니다."
+      moneyDetail: "투자 파트너를 찾으세요."
+      loveDetail: "인생의 파트너가 되세요."
+      conditionDetail: "운동 파트너가 동기부여를 줍니다."
+
+  - id: T445
+    open:
+      oneLiner: "이웃처럼 가까이 있는 사람이 먼 친척보다 낫습니다."
+      summary: "이웃의 에너지가 흐릅니다. 주변을 살피세요."
+    locked:
+      luckyTime: "18:00~18:30 (이웃의 시간)"
+      helper: "가까운 이웃"
+      caution: "이웃과 너무 가까우면 피곤합니다."
+      moneyDetail: "가까운 기회를 놓치지 마세요."
+      loveDetail: "가까운 사람에게서 인연이 시작됩니다."
+      conditionDetail: "주변 환경이 건강에 영향을 줍니다."
+
+  - id: T446
+    open:
+      oneLiner: "동료처럼 같은 목표가 유대를 만듭니다."
+      summary: "동료의 에너지가 흐릅니다. 팀워크가 중요합니다."
+    locked:
+      luckyTime: "09:00~09:30 (팀워크의 시간)"
+      helper: "함께 일하는 동료"
+      caution: "경쟁과 협력의 균형이 필요합니다."
+      moneyDetail: "팀 투자가 효과적입니다."
+      loveDetail: "함께 목표를 향해 가세요."
+      conditionDetail: "팀 운동이 더 효과적입니다."
+
+  - id: T447
+    open:
+      oneLiner: "낯선 사람처럼 새로운 인연이 옵니다."
+      summary: "새 인연의 에너지가 흐릅니다. 열린 마음으로."
+    locked:
+      luckyTime: "11:00~11:30 (만남의 시간)"
+      helper: "새로운 인연"
+      caution: "모든 사람을 믿으면 안 됩니다."
+      moneyDetail: "새로운 네트워크가 기회를 줍니다."
+      loveDetail: "새로운 만남이 기다립니다."
+      conditionDetail: "새로운 건강 정보를 접하세요."
+
+  - id: T448
+    open:
+      oneLiner: "선배처럼 경험을 나누는 것이 성장입니다."
+      summary: "선배의 에너지가 흐릅니다. 경험을 나누세요."
+    locked:
+      luckyTime: "16:00~16:30 (전수의 시간)"
+      helper: "경험 많은 선배"
+      caution: "과거 경험이 항상 맞는 건 아닙니다."
+      moneyDetail: "투자 경험을 배우세요."
+      loveDetail: "연애 경험에서 배우세요."
+      conditionDetail: "건강 관리 노하우를 전수받으세요."
+
+  - id: T449
+    open:
+      oneLiner: "후배처럼 새로운 시각이 혁신을 가져옵니다."
+      summary: "후배의 에너지가 흐릅니다. 새 시각을 받아들이세요."
+    locked:
+      luckyTime: "13:00~13:30 (혁신의 시간)"
+      helper: "새로운 시각을 가진 사람"
+      caution: "경험을 무시하면 같은 실수를 합니다."
+      moneyDetail: "새로운 투자 트렌드를 배우세요."
+      loveDetail: "새로운 방식의 사랑을 시도하세요."
+      conditionDetail: "최신 건강 트렌드를 참고하세요."
+
+  - id: T450
+    open:
+      oneLiner: "450의 여정, 36%를 지나고 있습니다."
+      summary: "이정표의 에너지가 흐릅니다. 꾸준히 전진 중입니다."
+    locked:
+      luckyTime: "15:00~15:30 (이정표의 시간)"
+      helper: "함께 걷는 동반자"
+      caution: "급하지 않게 꾸준히."
+      moneyDetail: "투자 여정의 36%를 지났습니다."
+      loveDetail: "함께한 시간이 쌓입니다."
+      conditionDetail: "꾸준함이 건강의 비결입니다."
